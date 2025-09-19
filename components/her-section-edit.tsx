@@ -113,7 +113,7 @@ export const HeroSectionEdit = () => {
 				{isPreloaded && (
 					<Carousel
 						className="min-h-[600px] md:min-h-screen"
-						duration={4000}
+						duration={4}
 						onSlideChange={setCurrentSlideIndex}>
 						<HeroSlide1 />
 						<HeroSlide2 />
