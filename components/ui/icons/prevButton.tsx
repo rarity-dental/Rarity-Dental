@@ -1,0 +1,38 @@
+import { cn } from "@/lib/utils";
+import React from "react";
+
+export interface IconProps extends React.SVGProps<SVGSVGElement> {}
+
+export const PreviousButton = React.forwardRef<SVGSVGElement, IconProps>(
+	({ className, ...props }, ref) => (
+		<svg
+			width="48"
+			height="64"
+			viewBox="0 0 48 64"
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg"
+			ref={ref}
+			{...props}
+			className={cn("", className)}
+		>
+			<path
+				d="M0 0H16C33.6731 0 48 14.3269 48 32C48 49.6731 33.6731 64 16 64H0V0Z"
+				fill="#73383E"
+				fill-opacity="0.3"
+			/>
+			<path
+				d="M22.375 23.25L13.625 32L22.375 40.75"
+				stroke="white"
+				strokeWidth="1.75"
+				strokeLinecap="round"
+				strokeLinejoin="round"
+			/>
+		</svg>
+	)
+);
+
+PreviousButton.displayName = "PreviousButton";
+
+// <svg width="48" height="64" viewBox="0 0 48 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+// </svg>

@@ -1,0 +1,42 @@
+/* In globals.css or technologyPage.css */
+.portable-text h1 {
+	font-size: 2.5rem;
+	font-weight: bold;
+	margin-bottom: 1rem;
+}
+
+.portable-text h2 {
+	font-size: 2rem;
+	font-weight: bold;
+	margin-top: 2rem;
+	margin-bottom: 1rem;
+	color: #73383e;
+}
+
+.portable-text h3 {
+	font-size: 1.75rem;
+	font-weight: bold;
+	margin-top: 1.5rem;
+	margin-bottom: 0.75rem;
+}
+
+.portable-text p {
+	font-size: 1.125rem;
+	line-height: 1.7;
+}
+
+.portable-text ul,
+.portable-text ol {
+	margin-left: 1.5rem;
+	margin-bottom: 1rem;
+	font-size: 1.125rem;
+}
+
+.portable-text li {
+	margin-bottom: 0.5rem;
+}
+
+.portable-text a {
+	color: #0000ff;
+	text-decoration: underline;
+}

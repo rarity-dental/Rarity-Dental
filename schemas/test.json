@@ -1,0 +1,388 @@
+{
+	"_createdAt": "2024-11-13T19:38:59Z",
+	"_id": "e6cf3738-f8f2-4c9a-a857-d74607db640b",
+	"_rev": "mPqpWHnj3iUAgd8SmsnM7k",
+	"_type": "smiledesignstandalone",
+	"_updatedAt": "2024-11-14T00:31:32Z",
+	"benefits": {
+		"description": "At Rarity Dental, experience the transformative power of expert smile design. We offer a comprehensive approach to smile enhancement, focusing on aesthetics and functionality to give you the confidence to smile brightly every day. Our team combines advanced technology with personalized care to deliver exceptional results.",
+		"image": {
+			"_type": "image",
+			"asset": {
+				"_ref": "image-fbf176eeb2512baaeb32bd9c76781b52727341e8-2400x1600-webp",
+				"_type": "reference"
+			}
+		},
+		"items": [
+			{
+				"_key": "e1efff7b1f9f",
+				"icon": {
+					"_type": "image",
+					"asset": {
+						"_ref": "image-68a6556dcb31cdbf4ac9825a8a45ac0fb6c75239-800x746-png",
+						"_type": "reference"
+					}
+				},
+				"text": "Our treatments are designed to provide durable results, keeping your smile radiant for years to come. Using top-quality materials and advanced techniques, we ensure that your investment in a smile makeover is worthwhile.",
+				"title": "Long-Lasting Results"
+			},
+			{
+				"_key": "41bd079fd2c3",
+				"icon": {
+					"_type": "image",
+					"asset": {
+						"_ref": "image-7b3e2b9cef20d41afa279f27f720a12305e8f09b-659x800-png",
+						"_type": "reference"
+					}
+				},
+				"text": "At Rarity Dental, experience the transformative power of expert smile design. We offer a comprehensive approach to smile enhancement, focusing on aesthetics and functionality to give you the confidence to smile brightly every day. Our team combines advanced technology with personalized care to deliver exceptional results.",
+				"title": "Medical-Grade Smile Solutions"
+			},
+			{
+				"_key": "cdbf361c433f",
+				"icon": {
+					"_type": "image",
+					"asset": {
+						"_ref": "image-bab921186004e4b48d811c90ba1f939805b4dee7-800x800-png",
+						"_type": "reference"
+					}
+				},
+				"text": "At Rarity Dental, we understand that each smile is unique. Our team develops a personalized treatment plan based on your specific needs and goals, ensuring optimal results that align with your facial aesthetics.",
+				"title": "Customised Treatment Plans"
+			}
+		],
+		"title": "Benefits of Choosing Smile Design at Rarity Dental"
+	},
+	"carousel": {
+		"items": [
+			{
+				"_key": "7c6aba59d3e7",
+				"image": {
+					"_type": "image",
+					"asset": {
+						"_ref": "image-5a89a7407bafc9454b233d3d5362faa52add13d4-1156x771-jpg",
+						"_type": "reference"
+					}
+				},
+				"title": "Digital Smile Design"
+			},
+			{
+				"_key": "c23ae135e65d",
+				"image": {
+					"_type": "image",
+					"asset": {
+						"_ref": "image-04c0e53efd08187c978fe687246acf62cdf4bd31-838x559-jpg",
+						"_type": "reference"
+					}
+				},
+				"title": "DSD Image"
+			},
+			{
+				"_key": "f3dc830bd401",
+				"image": {
+					"_type": "image",
+					"asset": {
+						"_ref": "image-05cbaa4ca2a91ea6f202e151b5afefa208738709-838x559-jpg",
+						"_type": "reference"
+					}
+				},
+				"title": "Smile 1 Day"
+			}
+		]
+	},
+	"faqs": [
+		{
+			"_key": "fb7058dce03dfb834b09b45d69998611",
+			"answer": "Digital Smile Design (DSD) is an advanced dental treatment planning tool that allows dentists to analyze a patient's facial and dental structure and create a customized, digital preview of their ideal smile. It combines digital imaging, software, and artistic principles to give patients a clear vision of their expected results before any treatment begins.",
+			"question": "What is Digital Smile Design (DSD)?"
+		},
+		{
+			"_key": "b412cdb972a790885f729c59d93e60e8",
+			"answer": "DSD involves capturing high-quality photos and videos of the patient's face, teeth, and smile. This data is then processed using specialized software that helps design the ideal smile shape, size, and alignment to match the patient’s facial aesthetics. The dentist and patient can review this digital preview and make adjustments before starting any procedure.",
+			"question": "How does Digital Smile Design work?"
+		},
+		{
+			"_key": "1be3e6e5141ecd57a8a7947da7f545ee",
+			"answer": "DSD allows for precise planning, personalized smile customization, and greater patient involvement in the design process. Patients can visualize their future smile, which leads to more predictable and satisfactory outcomes. It also reduces the risk of unexpected results.",
+			"question": "What are the benefits of Digital Smile Design?"
+		},
+		{
+			"_key": "d0be72ed5363a44d41a066995335cd13",
+			"answer": "No, the DSD process itself is completely non-invasive and painless. It primarily involves taking photos, videos, and digital impressions of your teeth and smile, which are then used to create a virtual model.",
+			"question": "Is Digital Smile Design painful?"
+		},
+		{
+			"_key": "48a0a0e3f17241696af22495914f1bb7",
+			"answer": "The cost of Smile Design in Gurgaon varies depending on the complexity of the treatment plan, materials used, and the expertise of the dentist. On average, it can range from ₹20,000 to ₹1,00,000 or more. Consult with a dental specialist for an accurate estimate based on your individual needs.",
+			"question": "How much does Smile Design cost in Gurgaon?"
+		},
+		{
+			"_key": "f90bf5c3ce65491d42ad7bcdde8be4c1",
+			"answer": "Smile Design treatments can be long-lasting, but their permanence depends on the procedures involved. For instance, porcelain veneers and crowns can last many years with proper care, but they may need replacement after some time. Regular maintenance and good oral hygiene are essential to prolong the results.",
+			"question": "Is Smile Design permanent?"
+		},
+		{
+			"_key": "43da594de3fe577543c22cd49868df75",
+			"answer": "A Smile Makeover typically involves a combination of cosmetic dentistry procedures such as teeth whitening, veneers, crowns, bonding, and alignment adjustments. The treatment plan is customized to enhance the overall appearance of the patient’s smile.",
+			"question": "What does a Smile Makeover involve?"
+		},
+		{
+			"_key": "14543ef4e574d28bcc46ed9349e025d9",
+			"answer": "The initial design and consultation process can take a few days, but the complete Smile Design treatment timeline depends on the specific procedures required. It can range from a few weeks to several months, depending on factors like dental restorations, orthodontics, or surgeries involved.",
+			"question": "How long does a Digital Smile Design treatment take?"
+		},
+		{
+			"_key": "ec67526e660b98823e1495386f796775",
+			"answer": "Individuals who want to improve their smile’s aesthetics and have specific concerns, such as discolored, misaligned, or chipped teeth, are typically good candidates. A dentist will evaluate the patient’s dental and facial structure to determine suitability.",
+			"question": "Who is a good candidate for Digital Smile Design?"
+		},
+		{
+			"_key": "c65e7d26ed227a88ab9ac5fdc675d4ac",
+			"answer": "Yes, one of the key advantages of Digital Smile Design is that it allows you to visualize the proposed outcome before any procedures begin. You’ll work closely with your dentist to create a smile design that suits your facial aesthetics and personal preferences.",
+			"question": "Can I see what my smile will look like before treatment?"
+		},
+		{
+			"_key": "b547c01ac0311d9e5ff2502e8ba99654",
+			"answer": "Yes, DSD is a safe and non-invasive planning tool. It involves no physical alteration of your teeth during the design process. Any subsequent procedures recommended by your dentist will be performed with standard safety protocols.",
+			"question": "Is Digital Smile Design safe?"
+		},
+		{
+			"_key": "850bff618ea1fcffb962d809a7d76bc8",
+			"answer": "Most insurance plans do not cover cosmetic procedures like Digital Smile Design, as it is considered elective. However, it’s best to check with your insurance provider to confirm coverage details.",
+			"question": "Does insurance cover Digital Smile Design?"
+		},
+		{
+			"_key": "32b82f655fdea80cf59e89a297f0f504",
+			"answer": "Good oral hygiene, including regular brushing, flossing, and dental check-ups, is essential. Avoid staining foods and beverages, and avoid habits that may damage your teeth, like chewing hard objects.",
+			"question": "How do I care for my smile after a Smile Design treatment?"
+		}
+	],
+	"heroSection": {
+		"heroPointers": [
+			"Experience a personalized approach to smile makeovers with cutting-edge digital technology.",
+			"Discover the art of a perfect smile with precision and advanced dental aesthetics.",
+			"Redefine your smile with customized treatments designed to bring out your best",
+			"Unlock your perfect smile with the latest innovations in cosmetic dentistry",
+			"Our expert team blends artistry and technology to create a smile uniquely yours"
+		],
+		"title": "Transform Your Smile with Advanced Smile Design at Rarity Dental, Gurgaon",
+		"videoUrl": "https://firebasestorage.googleapis.com/v0/b/casamed-6ec79.appspot.com/o/beyond-dental%2Fvideos%2FSmile%20Designing%2Fsmile-hero.mp4?alt=media&token=af49156a-fa64-45a3-9a48-311c0fecefec"
+	},
+	"howCanWeHelp": {
+		"description": "We help patients achieve their ideal smile with advanced smile design solutions at Rarity Dental in Gurgaon. From precise digital assessments to personalized treatments, we ensure your comfort and satisfaction. Whether you’re looking to enhance aesthetics or correct functional issues, our experienced team is here to craft the perfect smile for you.",
+		"image": {
+			"_type": "image",
+			"asset": {
+				"_ref": "image-c7ff5f09cf25f44ba5f3508d1b11f0c1e0b8803b-2400x1600-webp",
+				"_type": "reference"
+			}
+		},
+		"items": [
+			{
+				"_key": "0ca0db175216",
+				"description": "Our specialists in Gurgaon provide tailored smile design treatments, ensuring maximum aesthetic enhancement with natural-looking results that align with your facial features.",
+				"icon": {
+					"_type": "image",
+					"asset": {
+						"_ref": "image-a9a734ada4b5fc92bb53c8d54c56ba5b5bf66d51-737x800-png",
+						"_type": "reference"
+					}
+				},
+				"text": "Natural Transformation"
+			},
+			{
+				"_key": "b825dfc09107",
+				"description": "We offer personalized consultations, answering all your questions to make your smile journey seamless and reassuring, supported by the latest digital smile design technology",
+				"icon": {
+					"_type": "image",
+					"asset": {
+						"_ref": "image-e87e0854be7e58eecc93218dc2144517eaecfbb5-780x800-png",
+						"_type": "reference"
+					}
+				},
+				"text": "Comprehensive Guidance"
+			}
+		],
+		"title": "Call the Experts for Smile Design"
+	},
+	"howWeWork": {
+		"description": "Rarity Dental in Gurgaon is a state-of-the-art clinic specializing in personalized smile design and cosmetic dental treatments. Led by experienced cosmetic dentists, Rarity Dental uses advanced technology to deliver exceptional results and prioritize patient comfort and care.",
+		"items": [
+			{
+				"_key": "476e0d105929",
+				"icon": {
+					"_type": "image",
+					"asset": {
+						"_ref": "image-9b7630e3d3f362c9b01a42dc8ffeb17be7d2fa69-65x64-png",
+						"_type": "reference"
+					}
+				},
+				"text": "Discover a personalized smile journey at Rarity Dental. Our expert team uses state-of-the-art digital imaging to understand your unique needs and design a treatment plan tailored to you.",
+				"title": "Initial Consultation and Digital Imaging"
+			},
+			{
+				"_key": "69136787c3aa",
+				"icon": {
+					"_type": "image",
+					"asset": {
+						"_ref": "image-91c4c8674cc25ddea1e04d783dd43fc2725eb6ee-65x64-png",
+						"_type": "reference"
+					}
+				},
+				"text": "Experience the art and science of smile design with our advanced smile analysis. At Rarity Dental, we focus on crafting a smile that enhances your natural beauty and aligns with your facial structure.",
+				"title": "Smile Analysis and Design"
+			},
+			{
+				"_key": "69db2505087e",
+				"icon": {
+					"_type": "image",
+					"asset": {
+						"_ref": "image-f60cd00ce547b467705c1c2e4e518809e5727ba9-65x64-png",
+						"_type": "reference"
+					}
+				},
+				"text": "See your future smile before treatment begins! Our preview technology at Rarity Dental allows you to visualize the results and make informed decisions with confidence.",
+				"title": "Previewing Your New Smile"
+			},
+			{
+				"_key": "7a510777116f",
+				"icon": {
+					"_type": "image",
+					"asset": {
+						"_ref": "image-a234139c09ab57d428bc06bea7b93c299c64c28d-65x64-png",
+						"_type": "reference"
+					}
+				},
+				"text": "Your smile transformation journey culminates in precise treatments and personalized adjustments for lasting results. Rarity Dental ensures that each final touch enhances both function and aesthetics.",
+				"title": "Treatment and Final Adjustments"
+			}
+		],
+		"title": "Our Smile Design Process"
+	},
+	"meta_title": "Smile Designing Standalone",
+	"treatments": {
+		"items": [
+			{
+				"_key": "d2bf426851ce",
+				"icon": {
+					"_type": "image",
+					"asset": {
+						"_ref": "image-26217a3b61f66d0a17c36a28417ebbbf12ac7943-618x800-png",
+						"_type": "reference"
+					}
+				},
+				"text": "Personalized consultation to understand your goals and create a custom smile design plan that suits your aesthetic vision.",
+				"title": "Consultation and Planning"
+			},
+			{
+				"_key": "7e86c087138a",
+				"icon": {
+					"_type": "image",
+					"asset": {
+						"_ref": "image-aab26ab61166743b6098b2b9a91f949a95f824e2-784x800-png",
+						"_type": "reference"
+					}
+				},
+				"text": "Safe, effective whitening to remove stains, enhancing the natural beauty of your teeth for a radiant, youthful smile.",
+				"title": "Teeth Whitening"
+			},
+			{
+				"_key": "8f81bbd8fee4",
+				"icon": {
+					"_type": "image",
+					"asset": {
+						"_ref": "image-938f6f5b61a28b9232dbedacd3d602beea467035-64x64-webp",
+						"_type": "reference"
+					}
+				},
+				"text": "Custom veneers and bonding improve teeth shape, size, and color, creating a flawless, natural-looking smile.",
+				"title": "Veneers and Bonding"
+			},
+			{
+				"_key": "a0471da84776",
+				"icon": {
+					"_type": "image",
+					"asset": {
+						"_ref": "image-184f18cadd27d6eacea80691871b7dab8de85be4-64x64-webp",
+						"_type": "reference"
+					}
+				},
+				"text": "Advanced orthodontic solutions for a well-aligned smile, including braces and invisible aligners tailored to your comfort and preferences.",
+				"title": "Orthodontic Treatment"
+			}
+		],
+		"title": "Common Smile Design Treatments Offered"
+	},
+	"whyChooseUs": {
+		"items": [
+			{
+				"_key": "3e4687dd9cae",
+				"icon": {
+					"_type": "image",
+					"asset": {
+						"_ref": "image-faa0be6506006980ca59040dc1a87fc634d6de04-65x64-png",
+						"_type": "reference"
+					}
+				},
+				"text": "Expertise in Digital Smile Design"
+			},
+			{
+				"_key": "1a682cb05162",
+				"icon": {
+					"_type": "image",
+					"asset": {
+						"_ref": "image-0d31a11c5a9a64c3205c4ddba393d93a36942a66-65x64-png",
+						"_type": "reference"
+					}
+				},
+				"text": "Customized Treatment Plans"
+			},
+			{
+				"_key": "bb2228a82017",
+				"icon": {
+					"_type": "image",
+					"asset": {
+						"_ref": "image-480c268fb39583faaee455cbf9213611286ee0b9-65x64-png",
+						"_type": "reference"
+					}
+				},
+				"text": "State-of-the-Art Technology"
+			},
+			{
+				"_key": "f632aa3b926f",
+				"icon": {
+					"_type": "image",
+					"asset": {
+						"_ref": "image-68a83439da9fbdbc708f376603f8b17e4a8c8f10-65x64-png",
+						"_type": "reference"
+					}
+				},
+				"text": "Experienced and Certified Specialists"
+			},
+			{
+				"_key": "81402d57b9dc",
+				"icon": {
+					"_type": "image",
+					"asset": {
+						"_ref": "image-ea247b1351343f78bf7a05c705dafb429e99ecc0-65x64-png",
+						"_type": "reference"
+					}
+				},
+				"text": "Comprehensive Aftercare and Support"
+			},
+			{
+				"_key": "03a74a002fb1",
+				"icon": {
+					"_type": "image",
+					"asset": {
+						"_ref": "image-7eb337a595d36a09e039ef73f94310c79953a873-65x64-png",
+						"_type": "reference"
+					}
+				},
+				"text": "Comfort-First Approach"
+			}
+		],
+		"title": "Why Choose Rarity Dental for Smile Design?",
+		"videoUrl": "https://firebasestorage.googleapis.com/v0/b/casamed-6ec79.appspot.com/o/beyond-dental%2Fvideos%2FSmile%20Designing%2Fsmile-2.mp4?alt=media&token=e4495d09-3c20-4995-a00b-3d74967aeb3f"
+	}
+}
