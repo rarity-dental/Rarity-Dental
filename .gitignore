@@ -43,5 +43,8 @@ CLAUDE.md
 #PEM file
 *.pem
 
-# ENV file
-*.env
+# env files
+.env
+.env.*
+!.env.example
+
