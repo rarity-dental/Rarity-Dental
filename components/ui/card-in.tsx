@@ -20,6 +20,8 @@ interface CardProps {
 	degree?: { degImg: string; title: string }[];
 	experience?: number;
 	description?: string;
+	descriptionHover?: string;
+	descriptionCard?: string;
 	descriptionDoc?: string;
 	hasButton?: boolean;
 	buttonText?: string;
@@ -41,6 +43,8 @@ export const Card = ({
 	experience,
 	description,
 	descriptionDoc,
+	descriptionHover,
+	descriptionCard,
 	hasButton,
 	buttonText,
 	buttonLink,
@@ -75,17 +79,17 @@ export const Card = ({
 
 	return (
 		<div
-			className={`flex flex-col  max-w-[300px] mx-auto md:min-w-[400px] gap-y-[16px] md:gap-y-[24px] ${className}`}
+			className={`flex flex-col  max-w-[300px] mx-auto md:min-w-[400px] gap-y-[0px] md:gap-y-[0px] ${className} ${degree ? "bg-white" : ""} `}
 			onMouseEnter={handleMouseEnter}
 			onMouseLeave={handleMouseLeave}
 			onClick={handleInteraction}>
-			<div className="relative group">
+			<div className="relative group overflow-hidden">
 				<img
 					src={image}
 					alt={alt || title}
 					width={400}
 					height={imageHeight}
-					className="transition-transform duration-500 ease-in-out transform object-cover"
+					className={`transition-transform duration-300 ease-in-out transform object-cover ${showOverlay ? "scale-105" : ""} `}
 					style={{
 						width: `${isMobile ? "300px" : "400px"}`,
 						height: `${isMobile ? "300px" : `${imageHeight}px`}`,
@@ -100,7 +104,7 @@ export const Card = ({
 								: "opacity-0 pointer-events-none"
 						}`}>
 						<p className="text-[20px] text-white text-center text-ellipsis line-clamp-4 px-[10%]">
-							{descriptionDoc}
+							{descriptionHover}
 						</p>
 
 						<Button
@@ -114,7 +118,7 @@ export const Card = ({
 								rel="noopener noreferrer">
 								<a
 									onClick={(e) => e.stopPropagation()}
-									className="flex justify-center items-center px-4 py-1.5 bg-white  z-[10000] mt-[5%] bg-opacity-100 bg-blur-10 transition-all duration-300 ease-in-out gap-x-2 lg:hover:scale-105 lg:hover:bg-opacity-100 lg:hover:shadow-md rounded-md active:scale-95 cursor-pointer">
+									className={`flex justify-center items-center px-4 py-1.5 bg-white  z-[10000] mt-[5%] bg-opacity-100 bg-blur-10 transition-all duration-300 ease-in-out gap-x-2 lg:hover:scale-105 lg:hover:bg-opacity-100 lg:hover:shadow-md rounded-md active:scale-95 cursor-pointer `}>
 									<InfoIcon
 										size={24}
 										color="#73383E"
@@ -130,23 +134,23 @@ export const Card = ({
 			</div>
 
 			<h3
-				className={`text-[18px] md:text-[32px] text-center ${
+				className={`text-[18px] md:text-[24px] py-1.5 font-semibold text-center ${
 					hasOverlay ? "bg-[#73383E]" : ""
-				}`}
+				}  `}
 				style={{ color: textColor }}>
 				{title}
 			</h3>
 			{description && (
-				<p className="text-[18px] text-[#10090a] text-center line-clamp-4">
+				<p className="text-[18px] text-[#10090a] text-center line-clamp-4 ">
 					{description}
 				</p>
 			)}
 			{degree && experience && (
-				<div className="">
-					<p className="text-[18px] md:text-[24px] uppercase font-semibold font-poppins text-[#55292e] text-center tracking-wider">
+				<div className="py-[10%]">
+					<p className="text-lg md:text-xl uppercase font-semibold font-poppins text-[#55292e] text-center tracking-wider pb-2">
 						{experience} years of experience
 					</p>
-					<div className="max-w-[50%] mx-auto md:max-w-[80%] text-[16px] md:text-[20px] text-[#201011] text-center">
+					<div className="max-w-[80%] mx-auto md:max-w-[90%] text-[16px] md:text-md text-[#201011] text-center">
 						{degree.map((deg, index) => (
 							<div key={index}>
 								<span>{deg.title} </span>
@@ -158,12 +162,16 @@ export const Card = ({
 							</div>
 						))}
 						<div />
+
+						<p className="max-w-[80%] mx-auto md:max-w-[90%] text-[16px] md:text-md text-center text-[#55292e] mt-2">
+							{descriptionCard}
+						</p>
 					</div>
 				</div>
 			)}
 
 			{hasButton && (
-				<div className="flex justify-center items-end h-full">
+				<div className="flex justify-center items-end h-full pt-4">
 					<Link href={"#formDiv"}>
 						<Button
 							variant={"outline"}

@@ -655,8 +655,12 @@ export const doctorData = [
 			"Experience the exceptional care and expertise of Dr. Sneha Singh, where advanced dental techniques and personalized attention come together to create beautiful, healthy smiles for a diverse and discerning clientele.",
 			"Let her passion for prosthodontics and commitment to excellence help you achieve your dental goals and enhance your overall well-being.",
 		],
+		descriptionCard:
+			"Dr. Sneha Singh is regarded as the Best full mouth rehabilitation specialist, trusted as the Best Cosmetic Dentist in Gurgaon, and celebrated as a Smile Design expert in India.",
+		descriptionHover:
+			"Dr. Sneha Singh is a renowned Prosthodontist with years of advanced training, earning her reputation as a smile wizard. Recognized as the Best full mouth rehabilitation specialist, the Best Cosmetic Dentist in Gurgaon, and a Best Smile Design expert in India.",
 		description:
-			"Dr. Sneha Singh is a renowned Prosthodontist with years of advanced training, earning her reputation as a smile wizard. Having completed both her Graduation and Post-Graduation in Prosthodontics and Oral Implantology from the prestigious Rajiv Gandhi University of Health Sciences in Bangalore, Dr. Singh has established herself as a leading expert in her field. Her commitment to excellence is further demonstrated by her additional training in Oral Implantology from the American Academy of Implant Dentistry and her certification in maxillofacial prosthesis fabrication.",
+			"Dr. Sneha Singh is a distinguished Prosthodontist & Implantologist, recognized as the Best full mouth rehabilitation specialist, the Best Cosmetic Dentist in Gurgaon, and a leading Smile Design expert in India. Having completed both her Graduation and Post-Graduation in Prosthodontics and Oral Implantology from the prestigious Rajiv Gandhi University of Health Sciences in Bangalore, Dr. Singh has established herself as a leading expert in her field. Her commitment to excellence is further demonstrated by her additional training in Oral Implantology from the American Academy of Implant Dentistry and her certification in maxillofacial prosthesis fabrication.",
 	},
 	{
 		id: 2,
@@ -715,95 +719,99 @@ export const doctorData = [
 			"With a patient-centric approach, Dr. Manreet is committed to making orthodontic care a positive and transformative experience.",
 			"Her goal is to deliver outstanding results that not only improve smiles but also boost her patients' confidence and overall well-being.",
 		],
+		descriptionCard:
+			"Dr. Manreet Sidhu is widely known as the Best Orthodontist in Gurgaon, ranked among the Top 1% Invisalign providers in India, delivering precise and predictable smile transformations.",
+		descriptionHover:
+			"Highly skilled in Orthodontics and Dentofacial Orthopaedics, recognized as the Best Orthodontist in Gurgaon and among the Top 1% Invisalign providers in India.",
 		description:
-			"Dr. Manreet is a highly skilled specialist in Orthodontics and Dentofacial Orthopedics with extensive experience in her field. She holds a prestigious Membership in Orthodontics from the Royal College of Surgeons, Edinburgh, UK. Certified in both Invisalign and Lingual Orthodontics, Dr. Manreet is dedicated to creating beautiful smiles with utmost care, precision, and perfection.",
+			"Dr. Manreet Sidhu is a highly skilled Orthodontist, regarded as the Best Orthodontist in Gurgaon and ranked among the Top 1% Invisalign providers in India. A highly skilled specialist in Orthodontics and Dentofacial Orthopedics with extensive experience in her field, she holds a prestigious Membership in Orthodontics from the Royal College of Surgeons, Edinburgh, UK. Certified in both Invisalign and Lingual Orthodontics, Dr. Manreet is dedicated to creating beautiful smiles with utmost care, precision, and perfection.",
 	},
-	{
-		id: 3,
-		image: "/images/dr-gaurav-malik.jpg",
-		alt: "Dr. Gaurav Malik – Internationally Trained Implantologist, DDS, at Rarity Dental Gurgaon",
-		title: "Dr. Gaurav Malik",
-		slug: "dr-gaurav-malik",
-		experience: 13,
+	// {
+	// 	id: 3,
+	// 	image: "/images/dr-gaurav-malik.jpg",
+	// 	alt: "Dr. Gaurav Malik – Internationally Trained Implantologist, DDS, at Rarity Dental Gurgaon",
+	// 	title: "Dr. Gaurav Malik",
+	// 	slug: "dr-gaurav-malik",
+	// 	experience: 13,
 
-		degree: [
-			{
-				degImg: "/images/suny-buffalo.png",
-				title: "DDS - SUNY Buffalo",
-			},
-			{
-				degImg: "/images/oral-surgery.jpg",
-				title: "Implantologist",
-			},
-			{
-				degImg: "/images/omicron.jpg",
-				title: "Omicron Kappa Upsilon",
-			},
-		],
-		titleDesc: "Dr. Gaurav Malik - A Leading Implantologist",
-		detailDesc: [
-			"Born and raised in Delhi, Dr. Malik is trilingual, enhancing his ability to serve a diverse patient base.",
-			"Graduating Magna Cum Laude from the School of Dental Medicine at SUNY Buffalo, Dr. Malik earned his Doctor of Dental Surgery (DDS) degree.",
-			"He also holds a Bachelor of Dental Surgery (BDS) from the Maulana Azad Institute of Dental Sciences, Delhi University.",
-			"His academic journey is adorned with prestigious awards, including the Dr. Lata Shenoy Award and the Hanau Best of the Best Prosthodontics Award.",
-			"Dr. Malik's excellence earned him a place in the Omicron Kappa Upsilon, the National Dental Honors Society.",
-			"With over a decade of experience, Dr. Malik has mastered various aspects of dentistry, including general dentistry, preventive care, cosmetic dentistry, and restorative treatments.",
-			"He is an advocate for same-day dentistry and excels in oral surgery and implantology. Dr. Malik continually enhances his skills through advanced training and staying abreast of the latest dental technologies.",
-			"Dr. Malik builds strong, trusting relationships with his patients, providing personalized care tailored to their unique needs. He values patient education, explaining treatment options clearly and addressing any concerns to ensure comfort and understanding.",
-			"His commitment to exceptional care means each patient receives individual attention and a comfortable experience, with feasible treatment options presented transparently.",
-			"Dr. Malik offers a comprehensive range of dental services. From preventive dentistry, including regular check-ups, cleanings, and dental hygiene education, to restorative dentistry with dental fillings, crowns, bridges, and implants to restore function and aesthetics to damaged teeth.",
-			"His expertise in cosmetic dentistry, such as teeth whitening, veneers, and smile makeovers, enhances the appearance of smiles.",
-			"He is also skilled in implant surgeries, including freehand, pilot guided, and fully guided implant surgeries with same-day tooth solutions, and advanced implant services like sinus lifts, guided bone regeneration, connective tissue grafts, and ridge augmentation.",
-			"Dr. Malik excels in oral surgery, handling moderate to difficult wisdom teeth extractions and other surgical extractions, as well as periodontal surgeries, including clinical crown lengthening, frenotomies, and frenectomies.",
-			"Committed to giving back, Dr. Malik actively participates in dental outreach programs, including Remote Area Medical free dental service camps in Tennessee. He strives to provide quality dental care to underserved communities, making a positive impact beyond his practice.",
-		],
-		description:
-			"Dr. Gaurav Malik, DDS, BDS, is a distinguished and compassionate dentist dedicated to providing world-class dental care. With extensive knowledge, a gentle approach, and a commitment to patient comfort, Dr. Malik creates healthy, beautiful smiles that last a lifetime. Born and raised in Delhi, Dr. Malik is trilingual, enhancing his ability to serve a diverse patient base.",
-		servicelist: [
-			{
-				type: "Preventive Dentistry",
-				services: [
-					"Regular Check-Ups",
-					"Cleanings",
-					"Dental Hygiene education",
-				],
-			},
-			{
-				type: "Restorative Dentistry",
-				services: ["Dental Fillings", "Crowns", "Bridges", "Implants"],
-			},
-			{
-				type: "Cosmetic Dentistry",
-				services: ["Teeth whitening", "veneers", "smile makeovers"],
-			},
-			{
-				type: "Implant Surgeries",
-				services: [
-					"Freehand",
-					"Pilot guided",
-					"Fully guided implant surgeries",
-					"Same-day tooth solutions",
-				],
-			},
-			{
-				type: "Advanced Implant Services",
-				services: [
-					"Sinus lifts",
-					"guided bone regeneration",
-					"connective tissue grafts",
-					"ridge augmentation",
-				],
-			},
-			{
-				type: "Oral Surgery",
-				services: [
-					"Wisdom teeth extractions",
-					"surgical extractions",
-					"periodontal surgeries (clinical crown lengthening, frenotomies, frenectomies)",
-				],
-			},
-		],
-	},
+	// 	degree: [
+	// 		{
+	// 			degImg: "/images/suny-buffalo.png",
+	// 			title: "DDS - SUNY Buffalo",
+	// 		},
+	// 		{
+	// 			degImg: "/images/oral-surgery.jpg",
+	// 			title: "Implantologist",
+	// 		},
+	// 		{
+	// 			degImg: "/images/omicron.jpg",
+	// 			title: "Omicron Kappa Upsilon",
+	// 		},
+	// 	],
+	// 	titleDesc: "Dr. Gaurav Malik - A Leading Implantologist",
+	// 	detailDesc: [
+	// 		"Born and raised in Delhi, Dr. Malik is trilingual, enhancing his ability to serve a diverse patient base.",
+	// 		"Graduating Magna Cum Laude from the School of Dental Medicine at SUNY Buffalo, Dr. Malik earned his Doctor of Dental Surgery (DDS) degree.",
+	// 		"He also holds a Bachelor of Dental Surgery (BDS) from the Maulana Azad Institute of Dental Sciences, Delhi University.",
+	// 		"His academic journey is adorned with prestigious awards, including the Dr. Lata Shenoy Award and the Hanau Best of the Best Prosthodontics Award.",
+	// 		"Dr. Malik's excellence earned him a place in the Omicron Kappa Upsilon, the National Dental Honors Society.",
+	// 		"With over a decade of experience, Dr. Malik has mastered various aspects of dentistry, including general dentistry, preventive care, cosmetic dentistry, and restorative treatments.",
+	// 		"He is an advocate for same-day dentistry and excels in oral surgery and implantology. Dr. Malik continually enhances his skills through advanced training and staying abreast of the latest dental technologies.",
+	// 		"Dr. Malik builds strong, trusting relationships with his patients, providing personalized care tailored to their unique needs. He values patient education, explaining treatment options clearly and addressing any concerns to ensure comfort and understanding.",
+	// 		"His commitment to exceptional care means each patient receives individual attention and a comfortable experience, with feasible treatment options presented transparently.",
+	// 		"Dr. Malik offers a comprehensive range of dental services. From preventive dentistry, including regular check-ups, cleanings, and dental hygiene education, to restorative dentistry with dental fillings, crowns, bridges, and implants to restore function and aesthetics to damaged teeth.",
+	// 		"His expertise in cosmetic dentistry, such as teeth whitening, veneers, and smile makeovers, enhances the appearance of smiles.",
+	// 		"He is also skilled in implant surgeries, including freehand, pilot guided, and fully guided implant surgeries with same-day tooth solutions, and advanced implant services like sinus lifts, guided bone regeneration, connective tissue grafts, and ridge augmentation.",
+	// 		"Dr. Malik excels in oral surgery, handling moderate to difficult wisdom teeth extractions and other surgical extractions, as well as periodontal surgeries, including clinical crown lengthening, frenotomies, and frenectomies.",
+	// 		"Committed to giving back, Dr. Malik actively participates in dental outreach programs, including Remote Area Medical free dental service camps in Tennessee. He strives to provide quality dental care to underserved communities, making a positive impact beyond his practice.",
+	// 	],
+	// 	description:
+	// 		"Dr. Gaurav Malik, DDS, BDS, is a distinguished and compassionate dentist dedicated to providing world-class dental care. With extensive knowledge, a gentle approach, and a commitment to patient comfort, Dr. Malik creates healthy, beautiful smiles that last a lifetime. Born and raised in Delhi, Dr. Malik is trilingual, enhancing his ability to serve a diverse patient base.",
+	// 	servicelist: [
+	// 		{
+	// 			type: "Preventive Dentistry",
+	// 			services: [
+	// 				"Regular Check-Ups",
+	// 				"Cleanings",
+	// 				"Dental Hygiene education",
+	// 			],
+	// 		},
+	// 		{
+	// 			type: "Restorative Dentistry",
+	// 			services: ["Dental Fillings", "Crowns", "Bridges", "Implants"],
+	// 		},
+	// 		{
+	// 			type: "Cosmetic Dentistry",
+	// 			services: ["Teeth whitening", "veneers", "smile makeovers"],
+	// 		},
+	// 		{
+	// 			type: "Implant Surgeries",
+	// 			services: [
+	// 				"Freehand",
+	// 				"Pilot guided",
+	// 				"Fully guided implant surgeries",
+	// 				"Same-day tooth solutions",
+	// 			],
+	// 		},
+	// 		{
+	// 			type: "Advanced Implant Services",
+	// 			services: [
+	// 				"Sinus lifts",
+	// 				"guided bone regeneration",
+	// 				"connective tissue grafts",
+	// 				"ridge augmentation",
+	// 			],
+	// 		},
+	// 		{
+	// 			type: "Oral Surgery",
+	// 			services: [
+	// 				"Wisdom teeth extractions",
+	// 				"surgical extractions",
+	// 				"periodontal surgeries (clinical crown lengthening, frenotomies, frenectomies)",
+	// 			],
+	// 		},
+	// 	],
+	// },
 ];
 
 export const serviceData = [

@@ -77,8 +77,11 @@ export const Team = ({ hasEndDiv = true }: TeamProps) => {
 					</h6>
 					<h2 className="text-center text-[28px] md:text-[48px] font-normal text-copyColor max-w-[342px] sm:max-w-[480px] md:max-w-[600px] mx-auto leading-[1em] ">
 						Meet Our Globally Trusted Team of Dental Specialists
-						Based in Gurgaon
 					</h2>
+
+					<p className="text-center text-lg tracking-widest leading-relaxed font-semibold mt-3 uppercase text-[#73383E]/70 font-poppins">
+						Based in Gurgaon
+					</p>
 				</div>
 
 				{isMobile ? (
@@ -116,6 +119,17 @@ export const Team = ({ hasEndDiv = true }: TeamProps) => {
 										descriptionDoc={
 											doctorData[currentCard].description
 										}
+										descriptionCard={
+											doctorData[currentCard]
+												.descriptionCard
+										}
+										descriptionHover={
+											doctorData[currentCard]
+												.descriptionHover
+										}
+										hasButton={true}
+										buttonText="Book Appointment"
+										buttonLink="#formDiv"
 									/>
 								</motion.div>
 							</AnimatePresence>
@@ -167,6 +181,8 @@ export const Team = ({ hasEndDiv = true }: TeamProps) => {
 									title={doctor.title}
 									degree={doctor.degree}
 									descriptionDoc={doctor.description}
+									descriptionCard={doctor.descriptionCard}
+									descriptionHover={doctor.descriptionHover}
 									experience={doctor.experience}
 									imageHeight={400}
 									hasOverlay={true}
