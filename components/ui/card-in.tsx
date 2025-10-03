@@ -150,7 +150,7 @@ export const Card = ({
 					<p className="text-lg md:text-xl uppercase font-semibold font-poppins text-[#55292e] text-center tracking-wider pb-2">
 						{experience} years of experience
 					</p>
-					<div className="max-w-[80%] mx-auto md:max-w-[90%] text-[16px] md:text-md text-[#201011] text-center">
+					<div className="max-w-[76%] mx-auto md:max-w-[90%] text-[16px] md:text-md text-[#201011] text-center">
 						{degree.map((deg, index) => (
 							<div key={index}>
 								<span>{deg.title} </span>
@@ -171,11 +171,12 @@ export const Card = ({
 			)}
 
 			{hasButton && (
-				<div className="flex justify-center items-end h-full pt-4">
+				<div
+					className={`flex justify-center items-end h-full ${degree ? "pt-2 pb-4" : "pt-4"}`}>
 					<Link href={"#formDiv"}>
 						<Button
 							variant={"outline"}
-							className="bg-transparent w-[128px] h-[44px] text-[#73383E] text-[14px] py-2 px-4 border border-[#73383E] rounded-none font-poppins font-semibold hover:bg-[#73383E] hover:text-white hover:border-transparent transition-all duration-300 ease-in-out">
+							className={` bg-transparent min-w-[128px] h-[44px] text-[#73383E] text-[14px] py-2 px-4 border border-[#73383E] rounded-none font-poppins font-semibold hover:bg-[#73383E] hover:text-white hover:border-transparent transition-all duration-300 ease-in-out`}>
 							{buttonText}
 						</Button>
 					</Link>
