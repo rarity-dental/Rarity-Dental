@@ -86,13 +86,20 @@ export const Card = ({
 			<div className="relative group overflow-hidden">
 				<img
 					src={image}
+					srcSet={`
+    ${image}?w=300 300w,
+    ${image}?w=500 500w,
+    ${image}?w=750 750w,
+    ${image}?w=1000 1000w
+  `}
+					sizes="(max-width: 600px) 300px, (max-width: 900px) 500px, 750px"
 					alt={alt || title}
 					width={400}
 					height={imageHeight}
-					className={`transition-transform duration-300 ease-in-out transform object-cover ${showOverlay ? "scale-105" : ""} `}
+					className={`transition-transform duration-300 ease-in-out transform object-cover ${showOverlay ? "scale-105" : ""}`}
 					style={{
-						width: `${isMobile ? "300px" : "400px"}`,
-						height: `${isMobile ? "300px" : `${imageHeight}px`}`,
+						width: isMobile ? "300px" : "400px",
+						height: isMobile ? "300px" : `${imageHeight}px`,
 					}}
 				/>
 

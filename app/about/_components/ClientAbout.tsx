@@ -260,10 +260,10 @@ export default function AboutUsPage() {
 								safety, quality, or comfort.
 							</p>
 							<div className="pt-8">
-								<Card className="inline-block px-8 py-4 bg-[#73383E] text-primary-foreground border-0 shadow-lg group">
+								<Card className="inline-block px-8 py-4 bg-[#73383E] text-primary-foreground border-0 shadow-lg group cursor-pointer hover:shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95">
 									<a
 										href="#formDiv"
-										className="text-xl font-semibold cursor-pointer group-hover:scale-105 transition-transform duration-300">
+										className="text-xl font-semibold ">
 										If you&apos;ve been hiding your smile,
 										we&apos;re here to help.
 									</a>

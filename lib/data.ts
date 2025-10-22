@@ -664,8 +664,8 @@ export const doctorData = [
 	},
 	{
 		id: 2,
-		image: "/images/dr-manreet-sidhu.webp",
-		imageOptimized: "/images/dr-manreet-sidhu.webp",
+		image: "/images/dr-manreet-sidhu-op.webp",
+		imageOptimized: "/images/dr-manreet-sidhu-op.webp",
 		title: "Dr. Manreet Sidhu",
 		alt: "Dr. Manreet Sidhu – Orthodontist and Certified Invisalign Provider at Rarity Dental Gurgaon",
 		slug: "dr-manreet-sidhu",

@@ -225,7 +225,7 @@ const SkeletonThree = ({ paramName }: { paramName: string }) => {
 			}}>
 			<motion.div className=" h-[300px] md:h-full w-full rounded-lg relative ">
 				<img
-					src={`${paramName === "dr-gaurav-malik" ? "/images/dr-gaurav-malik.jpg" : paramName === "dr-manreet-sidhu" ? "/images/dr-manreet-sidhu.webp" : "/images/dr-sneha-singh.png"}`}
+					src={`${paramName === "dr-gaurav-malik" ? "/images/dr-gaurav-malik.jpg" : paramName === "dr-manreet-sidhu" ? "/images/dr-manreet-sidhu-op.webp" : "/images/dr-sneha-singh.png"}`}
 					alt="avatar"
 					sizes="100%"
 					className="object-cover absolute inset-0 w-full h-full md:scale-[80%] rounded-lg"

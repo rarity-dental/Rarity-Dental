@@ -21,23 +21,23 @@ export const BeforeAfter = () => {
 		{
 			id: 1,
 			type: "dual" as const,
-			beforeImage: "/images/before-after/d-11.webp",
-			afterImage: "/images/before-after/d-12.webp",
+			beforeImage: "/images/before-after/d-11-op.webp",
+			afterImage: "/images/before-after/d-12-op.webp",
 			alt1: `Top Left : Before smile makeover with broken and spaced front teeth – Rarity Dental Gurgaon \n Bottom Left: After smile makeover with aligned and restored teeth – Rarity Dental Gurgaon`,
 			alt2: `Top Right : Before image showing crooked upper teeth – Rarity Dental Gurgaon \n Bottom Right: After cosmetic dental treatment with even natural smile – Rarity Dental Gurgaon`,
 		},
 		{
 			id: 2,
 			type: "dual" as const,
-			beforeImage: "/images/before-after/d-21.webp",
-			afterImage: "/images/before-after/d-22.webp",
+			beforeImage: "/images/before-after/d-21-op.webp",
+			afterImage: "/images/before-after/d-22-op.webp",
 			alt1: `Top Left : Before smile makeover showing damaged and misaligned teeth – Rarity Dental Gurgaon \n Bottom Left: After smile makeover with aligned and restored teeth – Rarity Dental Gurgaon`,
 			alt2: `Top Right : Before cosmetic dental treatment showing spacing issues – Rarity Dental Gurgaon \n Bottom Right: After smile enhancement with natural, aligned teeth – Rarity Dental Gurgaon`,
 		},
 		{
 			id: 3,
 			type: "dual" as const,
-			beforeImage: "/images/before-after/d-32.webp",
+			beforeImage: "/images/before-after/d-32-op.webp",
 			afterImage: "/images/before-after/s-1.webp",
 			alt1: `Top Left : Before treatment showing decayed misaligned teeth – Rarity Dental Gurgaon \n Bottom Left: After makeover with restored white teeth – Rarity Dental Gurgaon`,
 			alt2: `Top Right : Before image with missing and uneven front teeth – Rarity Dental Gurgaon \n Bottom Right: After smile transformation with aligned natural teeth – Rarity Dental Gurgaon`,
@@ -46,14 +46,14 @@ export const BeforeAfter = () => {
 			id: 4,
 			type: "dual" as const,
 			beforeImage: "/images/before-after/s-2.webp",
-			afterImage: "/images/before-after/s-3.webp",
+			afterImage: "/images/before-after/s-3-op.webp",
 			alt1: `Top Left : Before smile makeover with spacing issues – Rarity Dental Gurgaon \n Bottom Left: After treatment with even, white smile – Rarity Dental Gurgaon`,
 			alt2: `Top Right : Before smile correction with missing front tooth – Rarity Dental Gurgaon \n Bottom Right: After cosmetic restoration of front teeth – Rarity Dental Gurgaon`,
 		},
 		{
 			id: 5,
 			type: "landscape" as const,
-			image: "/images/before-after/p-1.webp",
+			image: "/images/before-after/p-1-op.webp",
 			alt: `Elderly woman with glasses \n
 			Left (Before): \n
 			Before dental restoration of elderly woman with worn teeth – Rarity Dental Gurgaon \n
@@ -63,7 +63,7 @@ export const BeforeAfter = () => {
 		{
 			id: 6,
 			type: "landscape" as const,
-			image: "/images/before-after/p-2.webp",
+			image: "/images/before-after/p-2-op.webp",
 			alt: `Male patient with cap \n
 			Left (Before): \n
 			Before smile restoration of male with broken front teeth – Rarity Dental Gurgaon \n
@@ -73,7 +73,7 @@ export const BeforeAfter = () => {
 		{
 			id: 7,
 			type: "landscape" as const,
-			image: "/images/before-after/p-3.webp",
+			image: "/images/before-after/p-3-op.webp",
 			alt: `Left (Before): \n
 			Before smile makeover of elderly male patient with missing teeth and uneven bite – Rarity Dental Gurgaon \n
 			Right (After): \n
@@ -82,7 +82,7 @@ export const BeforeAfter = () => {
 		{
 			id: 8,
 			type: "landscape" as const,
-			image: "/images/before-after/p-4.webp",
+			image: "/images/before-after/p-4-op.webp",
 			alt: `Image – Female patient (front face) \n
 			Left (Before): \n
 			Before smile makeover of female with discolored and missing teeth – Rarity Dental Gurgaon \n
@@ -159,51 +159,95 @@ export const BeforeAfter = () => {
 										{slide.type === "dual" ? (
 											<>
 												<div className="absolute inset-0 flex">
+													{/* LEFT SIDE - BEFORE IMAGE */}
 													<div className="w-1/2 relative">
 														<img
 															src={
 																slide.beforeImage
 															}
-															alt={slide?.alt1!}
-															fetchPriority="high"
+															srcSet={`
+            ${slide.beforeImage}?w=400 400w,
+            ${slide.beforeImage}?w=800 800w,
+            ${slide.beforeImage}?w=1200 1200w
+          `}
 															sizes="(max-width: 768px) 100vw, 50vw"
+															alt={slide.alt1}
+															loading={
+																slide.id === 1
+																	? "eager"
+																	: "lazy"
+															}
+															fetchPriority={
+																slide.id === 1
+																	? "high"
+																	: "auto"
+															}
 															className="object-cover absolute inset-0 w-full h-full"
 														/>
 														<div className="absolute top-4 left-4 bg-white px-2 py-1 rounded text-sm font-semibold">
 															Before
 														</div>
-
-														<div className="absolute bottom-4 left-4 bg-white px-2 py-1 rounded text-sm font-semibold">
-															After
-														</div>
 													</div>
+
+													{/* RIGHT SIDE - AFTER IMAGE */}
 													<div className="w-1/2 relative">
 														<img
 															src={
 																slide.afterImage
 															}
-															alt={slide?.alt2!}
-															fetchPriority="high"
+															srcSet={`
+            ${slide.afterImage}?w=400 400w,
+            ${slide.afterImage}?w=800 800w,
+            ${slide.afterImage}?w=1200 1200w
+          `}
 															sizes="(max-width: 768px) 100vw, 50vw"
+															alt={slide.alt2}
+															loading={
+																slide.id === 1
+																	? "eager"
+																	: "lazy"
+															}
+															fetchPriority={
+																slide.id === 1
+																	? "high"
+																	: "auto"
+															}
 															className="object-cover absolute inset-0 w-full h-full"
 														/>
+														<div className="absolute top-4 right-4 bg-white px-2 py-1 rounded text-sm font-semibold">
+															After
+														</div>
 													</div>
 												</div>
 											</>
 										) : (
+											// LANDSCAPE SLIDE
 											<div className="relative h-full w-full">
 												<img
 													src={slide.image}
-													alt={slide?.alt!}
-													fetchPriority="high"
+													srcSet={`
+														${slide.image}?w=500 500w,
+														${slide.image}?w=800 800w,
+														${slide.image}?w=1200 1200w
+													`}
 													sizes="(max-width: 768px) 100vw, 80vw"
+													alt={slide.alt}
+													loading={
+														slide.id === 1
+															? "eager"
+															: "lazy"
+													}
+													fetchPriority={
+														slide.id === 1
+															? "high"
+															: "auto"
+													}
 													className="object-cover absolute inset-0 w-full h-full"
 												/>
 
 												<div className="absolute top-4 left-4 bg-white px-2 py-1 rounded text-sm font-semibold">
 													Before
 												</div>
-
 												<div className="absolute top-4 right-4 bg-white px-2 py-1 rounded text-sm font-semibold">
 													After
 												</div>

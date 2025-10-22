@@ -23,84 +23,84 @@ export default function TestimonialTestComponent() {
 			author: "Lisa, Sweden",
 			quote: "I never knew dental care could be this luxurious! Rarity exceeded all my expectations.",
 			rating: 4.5,
-			image: "/images/testim1.avif", // Update with your image path
+			image: "/images/testim1.webp", // Update with your image path
 		},
 		{
 			id: 2,
 			author: "Sarah, Happy Client",
 			quote: "I was so nervous about my procedure, but the team made me feel so comfortable and at ease.",
 			rating: 4.5,
-			image: "/images/testim3.avif", // Update with your image path
+			image: "/images/testim3.webp", // Update with your image path
 		},
 		{
 			id: 3,
 			author: "Kimi, Loyal Customer",
 			quote: "I've been coming here for years and I've never had a bad experience. Highly recommend!",
 			rating: 5,
-			image: "/images/testim4.avif",
+			image: "/images/testim4.webp",
 		},
 		{
 			id: 4,
 			author: "Lisa, Sweden",
 			quote: "I never knew dental care could be this luxurious! Rarity exceeded all my expectations.",
 			rating: 4.5,
-			image: "/images/testim1.avif", // Update with your image path
+			image: "/images/testim1.webp", // Update with your image path
 		},
 		{
 			id: 5,
 			author: "Sarah, Happy Client",
 			quote: "I was so nervous about my procedure, but the team made me feel so comfortable and at ease.",
 			rating: 4.5,
-			image: "/images/testim3.avif", // Update with your image path
+			image: "/images/testim3.webp", // Update with your image path
 		},
 		{
 			id: 6,
 			author: "Kimi, Loyal Customer",
 			quote: "I've been coming here for years and I've never had a bad experience. Highly recommend!",
 			rating: 5,
-			image: "/images/testim4.avif",
+			image: "/images/testim4.webp",
 		},
 		{
 			id: 7,
 			author: "Lisa, Sweden",
 			quote: "I never knew dental care could be this luxurious! Rarity exceeded all my expectations.",
 			rating: 4.5,
-			image: "/images/testim1.avif", // Update with your image path
+			image: "/images/testim1.webp", // Update with your image path
 		},
 		{
 			id: 8,
 			author: "Sarah, Happy Client",
 			quote: "I was so nervous about my procedure, but the team made me feel so comfortable and at ease.",
 			rating: 4.5,
-			image: "/images/testim3.avif", // Update with your image path
+			image: "/images/testim3.webp", // Update with your image path
 		},
 		{
 			id: 9,
 			author: "Kimi, Loyal Customer",
 			quote: "I've been coming here for years and I've never had a bad experience. Highly recommend!",
 			rating: 5,
-			image: "/images/testim4.avif",
+			image: "/images/testim4.webp",
 		},
 		{
 			id: 10,
 			author: "Lisa, Sweden",
 			quote: "I never knew dental care could be this luxurious! Rarity exceeded all my expectations.",
 			rating: 4.5,
-			image: "/images/testim1.avif", // Update with your image path
+			image: "/images/testim1.webp", // Update with your image path
 		},
 		{
 			id: 11,
 			author: "Sarah, Happy Client",
 			quote: "I was so nervous about my procedure, but the team made me feel so comfortable and at ease.",
 			rating: 4.5,
-			image: "/images/testim3.avif", // Update with your image path
+			image: "/images/testim3.webp", // Update with your image path
 		},
 		{
 			id: 12,
 			author: "Kimi, Loyal Customer",
 			quote: "I've been coming here for years and I've never had a bad experience. Highly recommend!",
 			rating: 5,
-			image: "/images/testim4.avif",
+			image: "/images/testim4.webp",
 		},
 	];
 
