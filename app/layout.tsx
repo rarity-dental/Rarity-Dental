@@ -1,33 +1,33 @@
-import { Belleza } from "next/font/google";
+import { Belleza, Poppins } from "next/font/google";
 import "./globals.css";
 import { ClientProvider } from "@/providers/client-provider";
 import { GoogleTagManager } from "@next/third-parties/google";
 import { Metadata } from "next";
-// import { TawkToScript } from "@/components/TawkComponent";
 
-const belleza = Belleza({ weight: "400", subsets: ["latin"], display: "swap" });
+const belleza = Belleza({
+	weight: "400",
+	subsets: ["latin"],
+	display: "swap",
+	variable: "--font-belleza",
+});
+
+const poppins = Poppins({
+	subsets: ["latin"],
+	weight: ["400", "500", "600", "700"],
+	display: "swap",
+	variable: "--font-poppins",
+});
 
 export const metadata: Metadata = {
 	metadataBase: new URL("https://www.raritydental.com"),
-	// title: {
-	// 	default: "Rarity Dental",
-	// 	// template: "%s | Rarity Dental",
-	// },
-	// description: "Unwind in Luxury",
 	twitter: {
 		card: "summary_large_image",
 		images: ["/images/og-img.jpg"],
-		title: {
-			default: "Rarity Dental",
-			template: "%s | Rarity Dental",
-		},
+		title: { default: "Rarity Dental", template: "%s | Rarity Dental" },
 	},
 	openGraph: {
 		images: ["/images/og-img.jpg"],
-		title: {
-			default: "Rarity Dental",
-			template: "%s | Rarity Dental",
-		},
+		title: { default: "Rarity Dental", template: "%s | Rarity Dental" },
 	},
 };
 
@@ -39,11 +39,10 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<GoogleTagManager gtmId="GTM-WB6467W9" />
-			<body className={`${belleza.className} bg-[#F7F2EC] relative`}>
-				<ClientProvider>
-					{/* <TawkToScript /> */}
-					{children}
-				</ClientProvider>
+			{/* <TawkToScript /> */}
+			<body
+				className={`${belleza.variable} ${poppins.variable} font-belleza bg-[#F7F2EC] relative`}>
+				<ClientProvider>{children}</ClientProvider>
 			</body>
 		</html>
 	);

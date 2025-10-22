@@ -21,8 +21,8 @@ const config = {
 		extend: {
 			fontFamily: {
 				inter: ["Inter", "sans-serif"],
-				belleza: ["Belleza", "sans-serif"],
-				poppins: ["Poppins", "sans-serif"],
+				belleza: ["var(--font-belleza)", "sans-serif"],
+				poppins: ["var(--font-poppins)", "sans-serif"],
 				dmSans: ["DM Sans", "sans-serif"],
 				alef: ["Alef", "sans-serif"],
 			},
