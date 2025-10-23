@@ -579,7 +579,7 @@ export const navItems: NavItem[] = [
 export const doctorData = [
 	{
 		id: 1,
-		image: "/images/dr-sneha-singh.png",
+		image: "/images/dr-sneha-singh.webp",
 		alt: "Dr. Sneha Singh – Prosthodontist and Implantologist at Rarity Dental Gurgaon",
 		title: "Dr Sneha Singh ",
 		slug: "dr-sneha-singh",
@@ -820,21 +820,21 @@ export const serviceData = [
 		title: "Full Mouth Reconstruction",
 		description:
 			"Rejuvenate your oral health with comprehensive full mouth rehabilitation, combining aesthetics and functionality for a complete transformation. Let us craft the smile of your dreams.",
-		image: "/images/procedures/full-mouth.jpg",
+		image: "/images/procedures/full-mouth.webp",
 	},
 	{
 		id: 2,
 		title: "Dental Implants",
 		description:
 			"Restore functionality and aesthetics with our advanced dental implant solutions. Our expert team ensures seamless integration for a natural-looking smile that lasts a lifetime.",
-		image: "/images/procedures/dental-implants.jpg",
+		image: "/images/procedures/dental-implants.webp",
 	},
 	{
 		id: 3,
 		title: "Cosmetic Dentistry",
 		description:
 			"Transform your smile with our range of cosmetic dentistry services tailored to enhance your natural beauty. From teeth whitening to porcelain veneers, let us craft the smile of your dreams.",
-		image: "/images/procedures/cosmetic-dentistry.jpg",
+		image: "/images/procedures/cosmetic-dentistry.webp",
 	},
 	{
 		id: 4,
@@ -855,7 +855,7 @@ export const serviceData = [
 		title: "Teeth Whitening",
 		description:
 			"Brighten your smile with our professional teeth whitening services, offering safe and effective solutions for a dazzling smile. Experience the freedom to smile confidently throughout your treatment journey.",
-		image: "/images/procedures/teeth-white.jpg",
+		image: "/images/procedures/teeth-white.webp",
 	},
 	{
 		id: 7,
@@ -869,7 +869,7 @@ export const serviceData = [
 		title: "Comprehensive Consultations",
 		description:
 			"Start your journey to optimal oral health with our thorough and personalized dental consultations, addressing all your concerns. Our team of dentists will assess your needs, discuss your goals, and create a personalized treatment plan to achieve your desired oral health.",
-		image: "/images/procedures/comp-consult.jpg",
+		image: "/images/procedures/comp-consult.webp",
 	},
 	{
 		id: 9,
@@ -883,21 +883,21 @@ export const serviceData = [
 		title: "Smile Makeover Consultation",
 		description:
 			"Begin your journey to a radiant smile with our comprehensive consultation. Our expert dentists will assess your needs, discuss your goals, and create a personalized treatment plan to achieve your dream smile.",
-		image: "/images/procedures/smile-makeover.jpg",
+		image: "/images/procedures/smile-makeover.webp",
 	},
 	{
 		id: 11,
 		title: "Digital Smile Designing",
 		description:
 			"Visualize your new smile before treatment begins with our cutting-edge digital smile design technology. We'll create a virtual mockup of your ideal smile, allowing you to preview and refine your results.",
-		image: "/images/procedures/dsd-image.jpg",
+		image: "/images/procedures/dsd-image.webp",
 	},
 	{
 		id: 12,
 		title: "Gum Contouring",
 		description:
 			"Enhance your smile's aesthetics by reshaping your gum line. Our precise gum contouring techniques can correct a 'gummy' smile or uneven gum margins, creating a more balanced and attractive smile. Experience the freedom to smile confidently throughout your treatment journey.",
-		image: "/images/procedures/gum-contouring.JPG",
+		image: "/images/procedures/gum-contouring.webp",
 	},
 	{
 		id: 13,

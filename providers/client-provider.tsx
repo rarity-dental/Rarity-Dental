@@ -18,7 +18,7 @@ export function ClientProvider({ children }: { children: React.ReactNode }) {
 
 	// Prevent splash screen from showing again in the same session
 	useEffect(() => {
-		const splashShown = sessionStorage.getItem('splash-shown');
+		const splashShown = sessionStorage.getItem("splash-shown");
 		if (splashShown && isHome) {
 			setIsLoading(false);
 			setHasShownSplash(true);
@@ -27,7 +27,7 @@ export function ClientProvider({ children }: { children: React.ReactNode }) {
 
 	// Handle splash completion
 	const handleSplashComplete = () => {
-		sessionStorage.setItem('splash-shown', 'true');
+		sessionStorage.setItem("splash-shown", "true");
 		setIsLoading(false);
 		setHasShownSplash(true);
 	};
