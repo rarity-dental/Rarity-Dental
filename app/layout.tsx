@@ -8,6 +8,8 @@ const belleza = Belleza({
 	weight: "400",
 	subsets: ["latin"],
 	display: "swap",
+	preload: true,
+	adjustFontFallback: true,
 	variable: "--font-belleza",
 });
 
@@ -15,6 +17,8 @@ const poppins = Poppins({
 	subsets: ["latin"],
 	weight: ["400", "500", "600", "700"],
 	display: "swap",
+	preload: true,
+	adjustFontFallback: true,
 	variable: "--font-poppins",
 });
 
@@ -38,10 +42,10 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<GoogleTagManager gtmId="GTM-WB6467W9" />
 			{/* <TawkToScript /> */}
 			<body
 				className={`${belleza.variable} ${poppins.variable} font-belleza bg-[#F7F2EC] relative`}>
+				<GoogleTagManager gtmId="GTM-WB6467W9" />
 				<ClientProvider>{children}</ClientProvider>
 			</body>
 		</html>

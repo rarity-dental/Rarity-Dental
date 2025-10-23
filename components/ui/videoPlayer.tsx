@@ -54,9 +54,8 @@ const LocalVideo: React.FC<LocalVideoProps> = ({ src, onVideoLoaded }) => {
 				autoPlay
 				playsInline
 				muted
-				preload="auto"
-				poster="https://firebasestorage.googleapis.com/v0/b/casamed-6ec79.appspot.com/o/beyond-dental%2Fimages%2Fplaceholder-video.jpg?alt=media&token=0f6a1711-cf5c-4ee4-9c4c-4c17e7d58c10"
-			>
+				preload="metadata"
+				poster="https://firebasestorage.googleapis.com/v0/b/casamed-6ec79.appspot.com/o/beyond-dental%2Fimages%2Fplaceholder-video.jpg?alt=media&token=0f6a1711-cf5c-4ee4-9c4c-4c17e7d58c10">
 				<source
 					src={src}
 					type="video/mp4"
@@ -66,8 +65,7 @@ const LocalVideo: React.FC<LocalVideoProps> = ({ src, onVideoLoaded }) => {
 
 			<button
 				onClick={handlePlayPause}
-				className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-full p-4 hover:bg-opacity-75 transition-all"
-			>
+				className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-full p-4 hover:bg-opacity-75 transition-all">
 				{isPlaying ? <Pause /> : <Play />}
 			</button>
 		</div>

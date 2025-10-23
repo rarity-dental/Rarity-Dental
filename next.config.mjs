@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-	images: {
+    // Ensure text compression for HTML and assets
+    compress: true,
+    poweredByHeader: false,
+    images: {
 		remotePatterns: [
 			{
 				protocol: "https",

@@ -45,7 +45,7 @@ export async function getBlogTPage(slug: string): Promise<BlogT> {
       }
   }`;
 
-	return client.fetch(query, { slug });
+return client.fetch(query, { slug }, { next: { revalidate: 3600 } });
 }
 
 export async function getBlogTPagesByCategory(
@@ -67,7 +67,7 @@ export async function getBlogTPagesByCategory(
       "ogImageUrl": ogImage.asset->url
   }`;
 
-	return client.fetch(query, { category });
+return client.fetch(query, { category }, { next: { revalidate: 3600 } });
 }
 
 export async function getAllBlogsT(): Promise<BlogT[]> {
@@ -104,7 +104,7 @@ export async function getAllBlogsT(): Promise<BlogT[]> {
       }
   }`;
 
-	return client.fetch(query);
+return client.fetch(query, {}, { next: { revalidate: 3600 } });
 }
 
 export async function getCategoryStandalonePage(
@@ -202,7 +202,7 @@ export async function getCategoryStandalonePage(
     }
   }`;
 
-	return client.fetch(query, { category });
+return client.fetch(query, { category }, { next: { revalidate: 3600 } });
 }
 export async function getInternationalPatientsPage(): Promise<InternationalPatientsPage> {
 	const query = `*[_type == "internationalPatientsPage"][0] {
@@ -296,7 +296,7 @@ export async function getInternationalPatientsPage(): Promise<InternationalPatie
     }
   }`;
 
-	return client.fetch(query);
+return client.fetch(query, {}, { next: { revalidate: 3600 } });
 }
 export async function getInvisalignPage(): Promise<InvisalignPage> {
 	const query = `*[_type == "invisalignPage"][0] {
@@ -490,7 +490,7 @@ export async function getStandalonePage(
 			}
   }`;
 
-	return client.fetch(query, { category, pageSlug });
+return client.fetch(query, { category, pageSlug }, { next: { revalidate: 3600 } });
 }
 
 export async function getStandalonePagesNoCat(): Promise<StandalonePage[]> {
@@ -766,5 +766,5 @@ export async function fetchHomePageMetadata(): Promise<HomepageMetadata> {
     ogDescription,
     "ogImage": ogImage.asset->url
   }`;
-	return client.fetch(query);
+return client.fetch(query, {}, { next: { revalidate: 3600 } });
 }

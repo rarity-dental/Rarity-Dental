@@ -1,4 +1,3 @@
-import { Alef } from "next/font/google";
 import type { Config } from "tailwindcss";
 
 const config = {
@@ -24,7 +23,6 @@ const config = {
 				belleza: ["var(--font-belleza)", "sans-serif"],
 				poppins: ["var(--font-poppins)", "sans-serif"],
 				dmSans: ["DM Sans", "sans-serif"],
-				alef: ["Alef", "sans-serif"],
 			},
 			colors: {
 				border: "hsl(var(--border))",

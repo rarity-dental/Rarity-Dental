@@ -11,6 +11,9 @@ import Slide from "@/components/ui/animated-sections";
 import { fetchHomePageMetadata } from "@/sanity/sanity.query";
 import TestimonialTestComponent from "@/components/testim-section-test";
 
+// Cache and revalidate the homepage to reduce TTFB
+export const revalidate = 3600; // seconds
+
 const HeroSectionEdit = dynamic(
 	() =>
 		import("@/components/her-section-edit").then(

@@ -162,7 +162,7 @@ export default async function AdvancedTechnologyPage() {
 							muted
 							loop
 							playsInline
-							preload="auto"
+							preload="metadata"
 							poster={data.heroSection.posterImage}
 							className="absolute top-0 left-0 w-full h-full object-cover scale-x-[-1] ">
 							<source

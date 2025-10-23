@@ -180,10 +180,6 @@
 
 		--radius: 0.5rem;
 
-		@font-face {
-			font-family: "Poppins";
-		}
-
 		--chart-1: 12 76% 61%;
 
 		--chart-2: 173 58% 39%;
