@@ -79,14 +79,14 @@ const SplashScreen = ({ finishLoading }: SplashScreenProps) => {
 			});
 		};
 
-		const simulateProgressSteps = async () => {
-			// Simulate initial loading steps for better UX
-			const steps = [10, 25, 40, 60, 80];
-			for (const step of steps) {
-				await new Promise(resolve => setTimeout(resolve, 200));
-				setProgress(step);
-			}
-		};
+        const simulateProgressSteps = async () => {
+            // Keep simulation snappy to avoid delaying LCP
+            const steps = [10, 30, 60, 90];
+            for (const step of steps) {
+                await new Promise(resolve => setTimeout(resolve, 100));
+                setProgress(step);
+            }
+        };
 
 		const loadAllAssets = async () => {
 			try {
@@ -99,14 +99,9 @@ const SplashScreen = ({ finishLoading }: SplashScreenProps) => {
 					...videoUrls.map((url) => loadVideo(url)),
 				]);
 
-				// Complete the progress
-				setProgress(100);
-				
-				// Ensure minimum loading time for UX and animation visibility
-				const minLoadTime = 1000; // Time to show 100% before finishing
-				setTimeout(() => {
-					finishLoading();
-				}, minLoadTime);
+                // Complete the progress and finish immediately
+                setProgress(100);
+                finishLoading();
 			} catch (error) {
 				console.error("Error loading assets:", error);
 				setProgress(100);
@@ -118,10 +113,10 @@ const SplashScreen = ({ finishLoading }: SplashScreenProps) => {
 		};
 
 		// Add a maximum timeout to prevent infinite loading
-		const maxTimeout = setTimeout(() => {
-			console.warn("Splash screen max timeout reached");
-			finishLoading();
-		}, 8000); // 8 second maximum
+        const maxTimeout = setTimeout(() => {
+            console.warn("Splash screen max timeout reached");
+            finishLoading();
+        }, 5000); // tighter maximum
 
 		loadAllAssets();
 

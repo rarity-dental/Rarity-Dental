@@ -4,7 +4,8 @@ import { Button } from "./ui/button";
 
 export const ValuesSection = () => {
 	return (
-		<div className="py-[8%] flex flex-col md:flex-row justify-between items-center w-full  max-w-[342px] md:max-w-[600px] xl:max-w-[1064px] mx-auto  ">
+		<div className="py-[8%] flex flex-col md:flex-row justify-between items-center w-full  max-w-[342px] md:max-w-[600px] xl:max-w-[1064px] mx-auto  "
+			style={{ contentVisibility: "auto", containIntrinsicSize: "800px" }}>
 			<div className="flex flex-col w-full md:w-1/2 justify-center  items-center md:items-start">
 				<h6 className="text-[14px] tracking-widest leading-relaxed font-semibold uppercase text-[#73383E] font-poppins mb-[12px]">
 					OUR VALUES
@@ -59,7 +60,9 @@ export const ValuesSection = () => {
 				<img
 					src="/images/values-image.webp"
 					alt="Values Image"
-					fetchPriority="high"
+					loading="lazy"
+					fetchPriority="low"
+					decoding="async"
 					sizes="90%"
 					className="object-cover rounded-lg absolute inset-0 w-full h-full"
 				/>

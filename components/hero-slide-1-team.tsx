@@ -3,7 +3,7 @@ import Slide from "./ui/animated-sections";
 import { Button } from "./ui/button";
 
 import { useIsMobile, useIsTablet } from "@/hooks/useIsMobile";
-// import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 
 export const HeroSlide1 = () => {
@@ -14,12 +14,13 @@ export const HeroSlide1 = () => {
 		<div className="w-full min-h-[600px] md:min-h-screen flex flex-col justify-between relative">
 			{isMobile ? (
 				<div className="w-full min-h-[600px] flex flex-col relative">
-					<img
+					<Image
 						src="/images/rarity-hero-team.webp"
 						alt="Team Background"
-						className="absolute inset-0 object-cover object-center w-full h-full"
-						fetchPriority="high"
+						fill
+						priority
 						sizes="100vw"
+						className="object-cover object-center"
 						style={{
 							transform: "translateZ(0)",
 							backfaceVisibility: "hidden",
@@ -66,12 +67,13 @@ export const HeroSlide1 = () => {
 				</div>
 			) : isTablet ? (
 				<div className="w-full min-h-[600px] relative h-full">
-					<img
+					<Image
 						src="/images/rarity-hero-team.webp"
 						alt="Team Background"
-						className="absolute inset-0 object-cover object-center w-full h-full"
-						fetchPriority="high"
+						fill
+						priority
 						sizes="100vw"
+						className="object-cover object-center"
 						style={{
 							transform: "translateZ(0)",
 							backfaceVisibility: "hidden",
@@ -114,13 +116,16 @@ export const HeroSlide1 = () => {
 				</div>
 			) : (
 				<div className="w-full min-h-screen relative overflow-visible">
-					<img
-						src="/images/rarity-hero-team.webp"
-						alt="Team Image"
-						fetchPriority="high"
-						sizes="100vw"
-						className="object-cover object-right-top absolute top-0 left-0"
-					/>
+					<div className="absolute top-0 left-0 right-0 bottom-0">
+						<Image
+							src="/images/rarity-hero-team.webp"
+							alt="Team Image"
+							fill
+							priority
+							sizes="100vw"
+							className="object-cover object-right-top"
+						/>
+					</div>
 
 					<div className="w-full flex flex-col justify-between items-center mb-8 xl:mb-0 px-6 xl:px-0 py-[3.8%] max-w-5xl h-[45%] mx-auto">
 						<Slide

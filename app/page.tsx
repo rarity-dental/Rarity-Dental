@@ -14,13 +14,7 @@ import TestimonialTestComponent from "@/components/testim-section-test";
 // Cache and revalidate the homepage to reduce TTFB
 export const revalidate = 3600; // seconds
 
-const HeroSectionEdit = dynamic(
-	() =>
-		import("@/components/her-section-edit").then(
-			(mod) => mod.HeroSectionEdit
-		),
-	{ ssr: false }
-);
+import { HeroSectionEdit } from "@/components/her-section-edit";
 const ParallaxBanner = dynamic(
 	() => import("@/components/ui/parallaxH").then((mod) => mod.ParallaxBanner),
 	{ ssr: false }

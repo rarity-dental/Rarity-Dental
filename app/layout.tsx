@@ -1,7 +1,7 @@
 import { Belleza, Poppins } from "next/font/google";
 import "./globals.css";
 import { ClientProvider } from "@/providers/client-provider";
-import { GoogleTagManager } from "@next/third-parties/google";
+import Script from "next/script";
 import { Metadata } from "next";
 
 const belleza = Belleza({
@@ -40,14 +40,22 @@ export default function RootLayout({
 }: {
 	children: React.ReactNode;
 }) {
-	return (
-		<html lang="en">
-			{/* <TawkToScript /> */}
-			<body
-				className={`${belleza.variable} ${poppins.variable} font-belleza bg-[#F7F2EC] relative`}>
-				<GoogleTagManager gtmId="GTM-WB6467W9" />
-				<ClientProvider>{children}</ClientProvider>
-			</body>
-		</html>
-	);
+    return (
+        <html lang="en">
+            <head>
+                {/* Optional: speed up DNS/TLS for GTM if used */}
+                <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="" />
+            </head>
+            {/* <TawkToScript /> */}
+            <body
+                className={`${belleza.variable} ${poppins.variable} font-belleza bg-[#F7F2EC] relative`}>
+                {/* Defer GTM load so it doesn't contend with LCP */}
+                <Script
+                    src={`https://www.googletagmanager.com/gtm.js?id=GTM-WB6467W9`}
+                    strategy="lazyOnload"
+                />
+                <ClientProvider>{children}</ClientProvider>
+            </body>
+        </html>
+    );
 }

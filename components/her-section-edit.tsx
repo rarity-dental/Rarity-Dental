@@ -37,6 +37,7 @@ const HeroSlide3Video = dynamic(
 export const HeroSectionEdit = () => {
     const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
     const [isPreloaded, setIsPreloaded] = useState(false);
+    const [carouselReady, setCarouselReady] = useState(false);
 
 	const isHeroSlide1 = currentSlideIndex === 0;
 
@@ -70,6 +71,40 @@ export const HeroSectionEdit = () => {
 
         preloadAssets();
     }, []);
+
+    // Once initial assets are ready, allow carousel to mount next frame
+    useEffect(() => {
+        if (isPreloaded) {
+            const id = requestAnimationFrame(() => setCarouselReady(true));
+            return () => cancelAnimationFrame(id);
+        }
+    }, [isPreloaded]);
+
+    const SSRFirstSlide = (
+        <div className={`relative w-full h-full xl:mb-0 z-10 ${carouselReady ? 'hidden' : ''}`}>
+            <div className="w-full min-h-[600px] md:min-h-screen flex flex-col justify-between relative">
+                <div className="w-full min-h-[600px] relative h-full">
+                    <img
+                        src="/images/rarity-hero-team.webp"
+                        alt="Team Background"
+                        className="absolute inset-0 object-cover object-center w-full h-full"
+                        fetchPriority="high"
+                        sizes="100vw"
+                    />
+                    <div className="flex-1 flex flex-col justify-between pt-[4%] pb-[4%] px-[2%] relative z-10 space-y-[10%] h-full">
+                        <div className="text-center max-w-3xl mx-auto px-2 pl-4">
+                            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight tracking-tight text-white mb-4 pt-[12%]">
+                                Best Dental Clinic in Gurgaon for
+                                <br />
+                                Smile Makeovers, Implants & Invisalign
+                            </h1>
+                            <p className="text-white mb-4">Delivering Unmatched Dental Excellence for 13+ years</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
 
     // After initial hero assets, preload slides in strict order: 1,2,3,5,4
     // Note: Slide 1 main hero image is already part of splash preload.
@@ -156,8 +191,9 @@ export const HeroSectionEdit = () => {
 					willChange: "transform",
 				}}
 			/>
-			<div className="relative w-full h-full xl:mb-0 z-10">
-				{isPreloaded && (
+			{SSRFirstSlide}
+			<div className={`relative w-full h-full xl:mb-0 z-10 ${!carouselReady ? 'hidden' : ''}`}>
+				{carouselReady && (
 					<Carousel
 						className="min-h-[600px] md:min-h-screen"
 						duration={4}
