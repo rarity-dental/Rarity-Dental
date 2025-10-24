@@ -47,19 +47,21 @@ export const HeroSlide5 = () => {
 							</Slide>
 						</div>
 						<div className="h-[200px] relative flex justify-center items-center">
-							<img
-								src="/images/manreet/manreet-square.webp"
-								fetchPriority="high"
-								sizes="max(100vw, 700px)"
-								alt="Team Image"
-								className="object-contain object-bottom ml-[0%] absolute inset-0 w-full h-full"
-								style={{
-									transform: "translateZ(0)",
-									backfaceVisibility: "hidden",
-									perspective: "1000px",
-									willChange: "transform",
-								}}
-							/>
+                        <img
+                            src="/images/manreet/manreet-square.webp"
+                            loading="lazy"
+                            fetchPriority="low"
+                            decoding="async"
+                            sizes="max(100vw, 700px)"
+                            alt="Team Image"
+                            className="object-contain object-bottom ml-[0%] absolute inset-0 w-full h-full"
+                            style={{
+                                transform: "translateZ(0)",
+                                backfaceVisibility: "hidden",
+                                perspective: "1000px",
+                                willChange: "transform",
+                            }}
+                        />
 						</div>
 					</div>
 				</div>
@@ -100,13 +102,15 @@ export const HeroSlide5 = () => {
 						</div>
 					</div>
 					<div className="h-[300px] relative flex justify-center items-center mb-8">
-						<img
-							src="/images/manreet/manreet-square.webp"
-							fetchPriority="high"
-							sizes="max(100vw, 700px)"
-							alt="Team Image"
-							className="object-contain object-bottom ml-[0%] scale-[150%] absolute inset-0 w-full h-full"
-						/>
+                        <img
+                            src="/images/manreet/manreet-square.webp"
+                            loading="lazy"
+                            fetchPriority="low"
+                            decoding="async"
+                            sizes="max(100vw, 700px)"
+                            alt="Team Image"
+                            className="object-contain object-bottom ml-[0%] scale-[150%] absolute inset-0 w-full h-full"
+                        />
 					</div>
 				</div>
 			) : (
@@ -115,13 +119,15 @@ export const HeroSlide5 = () => {
 						<Slide
 							delay={0.4}
 							className="relative h-[82%]">
-							<img
-								src="/images/manreet/manreet-square.webp"
-								fetchPriority="high"
-								sizes="max(100vw, 700px)"
-								alt="Team Image"
-								className="object-contain absolute inset-0 w-full h-full"
-							/>
+                            <img
+                                src="/images/manreet/manreet-square.webp"
+                                loading="lazy"
+                                fetchPriority="low"
+                                decoding="async"
+                                sizes="max(100vw, 700px)"
+                                alt="Team Image"
+                                className="object-contain absolute inset-0 w-full h-full"
+                            />
 						</Slide>
 					</div>
 					<div className="w-full h-full flex flex-col gap-y-4 2xl:gap-y-8 justify-start mb-8 xl:mb-0 px-6 xl:px-12 py-8 xl:pt-[8%] 2xl:pt-[11%] max-w-6xl 4xl:max-w-7xl mx-auto">

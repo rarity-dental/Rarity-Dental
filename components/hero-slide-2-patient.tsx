@@ -54,19 +54,21 @@ export const HeroSlide2 = () => {
 							</Slide>
 						</div>
 						<div className="h-[300px] relative flex justify-center items-center">
-							<img
-								src="/images/hs2-italian-img.webp"
-								fetchPriority="high"
-								sizes="max(100vw, 700px)"
-								alt="Team Image"
-								className="absolute object-cover object-right-bottom ml-8 inset-0 w-full h-full"
-								style={{
-									transform: "translateZ(0)",
-									backfaceVisibility: "hidden",
-									perspective: "1000px",
-									willChange: "transform",
-								}}
-							/>
+                            <img
+                                src="/images/hs2-italian-img.webp"
+                                loading="lazy"
+                                fetchPriority="low"
+                                decoding="async"
+                                sizes="max(100vw, 700px)"
+                                alt="Team Image"
+                                className="absolute object-cover object-right-bottom ml-8 inset-0 w-full h-full"
+                                style={{
+                                    transform: "translateZ(0)",
+                                    backfaceVisibility: "hidden",
+                                    perspective: "1000px",
+                                    willChange: "transform",
+                                }}
+                            />
 						</div>
 					</div>
 				</div>
@@ -105,13 +107,15 @@ export const HeroSlide2 = () => {
 						</div>
 					</div>
 					<div className="h-[300px] relative flex justify-center items-center mb-8">
-						<img
-							src="/images/hs2-italian-img.webp"
-							fetchPriority="high"
-							sizes="max(100vw, 700px)"
-							alt="Team Image"
-							className="object-contain object-bottom ml-[5%] scale-[150%] absolute inset-0 w-full h-full"
-						/>
+                        <img
+                            src="/images/hs2-italian-img.webp"
+                            loading="lazy"
+                            fetchPriority="low"
+                            decoding="async"
+                            sizes="max(100vw, 700px)"
+                            alt="Team Image"
+                            className="object-contain object-bottom ml-[5%] scale-[150%] absolute inset-0 w-full h-full"
+                        />
 					</div>
 				</div>
 			) : (
@@ -120,13 +124,15 @@ export const HeroSlide2 = () => {
 						delay={0.4}
 						className="absolute w-1/2 h-[75%] bottom-[0%] -right-[3%]">
 						<div className="h-full relative">
-							<img
-								src="/images/hs2-italian-img.webp"
-								fetchPriority="high"
-								sizes="max(100vw, 700px)"
-								alt="Team Image"
-								className="object-contain object-bottom absolute inset-0 w-full h-full"
-							/>
+                        <img
+                            src="/images/hs2-italian-img.webp"
+                            loading="lazy"
+                            fetchPriority="low"
+                            decoding="async"
+                            sizes="max(100vw, 700px)"
+                            alt="Team Image"
+                            className="object-contain object-bottom absolute inset-0 w-full h-full"
+                        />
 						</div>
 					</Slide>
 

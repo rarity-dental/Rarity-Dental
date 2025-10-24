@@ -3,7 +3,7 @@ import Slide from "./ui/animated-sections";
 import { Button } from "./ui/button";
 
 import { useIsMobile, useIsTablet } from "@/hooks/useIsMobile";
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
 
 export const HeroSlide1 = () => {
@@ -114,13 +114,12 @@ export const HeroSlide1 = () => {
 				</div>
 			) : (
 				<div className="w-full min-h-screen relative overflow-visible">
-					<Image
+					<img
 						src="/images/rarity-hero-team.webp"
 						alt="Team Image"
-						fill
-						priority
+						fetchPriority="high"
 						sizes="100vw"
-						className="object-cover object-right-top"
+						className="object-cover object-right-top absolute top-0 left-0"
 					/>
 
 					<div className="w-full flex flex-col justify-between items-center mb-8 xl:mb-0 px-6 xl:px-0 py-[3.8%] max-w-5xl h-[45%] mx-auto">
