@@ -4,12 +4,16 @@ import { Button } from "./ui/button";
 
 export const ValuesSection = () => {
 	return (
-		<div className="py-[8%] flex flex-col md:flex-row justify-between items-center w-full  max-w-[342px] md:max-w-[600px] xl:max-w-[1064px] mx-auto  "
-			style={{ contentVisibility: "auto", containIntrinsicSize: "800px" }}>
+		<div
+			className="py-[8%] flex flex-col md:flex-row justify-between items-center w-full  max-w-[342px] md:max-w-[600px] xl:max-w-[1064px] mx-auto  "
+			style={{
+				contentVisibility: "auto",
+				containIntrinsicSize: "800px",
+			}}>
 			<div className="flex flex-col w-full md:w-1/2 justify-center  items-center md:items-start">
-				<h6 className="text-[14px] tracking-widest leading-relaxed font-semibold uppercase text-[#73383E] font-poppins mb-[12px]">
+				<h2 className="text-[14px] tracking-widest leading-relaxed font-semibold uppercase text-[#73383E] font-poppins mb-[12px]">
 					OUR VALUES
-				</h6>
+				</h2>
 				<h2 className="text-[24px] md:text-[32px] font-normal text-copyColor mb-[20px] leading-[1.1em] text-center md:text-left 4xl:leading-snug">
 					Our Values – Delivering Confident Smiles with Premium Dental
 					Care in Gurgaon

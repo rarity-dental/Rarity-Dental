@@ -841,14 +841,14 @@ export const serviceData = [
 		title: "Invisible Braces",
 		description:
 			"Achieve a flawless smile discreetly with our advanced invisible braces, designed for comfort and effective teeth alignment. Experience the freedom to smile confidently throughout your treatment journey.",
-		image: "/images/procedures/invisible-braces.jpg",
+		image: "/images/procedures/invisible-braces.webp",
 	},
 	{
 		id: 5,
 		title: "Facial Pain Cures",
 		description:
 			"Experience relief from chronic facial pain with our specialized treatments tailored to address the root cause and restore comfort. Let us treat your pain with confidence.",
-		image: "/images/procedures/facial-pain.jpg",
+		image: "/images/procedures/facial-pain.webp",
 	},
 	{
 		id: 6,
@@ -862,7 +862,7 @@ export const serviceData = [
 		title: "Painless Root Canals",
 		description:
 			"Undergo root canal treatment with ease using our painless techniques, ensuring comfort while saving your natural tooth. Experience the freedom to smile confidently throughout your treatment journey.",
-		image: "/images/procedures/painless-rc.jpg",
+		image: "/images/procedures/painless-rc.webp",
 	},
 	{
 		id: 8,
@@ -876,7 +876,7 @@ export const serviceData = [
 		title: "Advanced Gum Treatments",
 		description:
 			"Protect and rejuvenate your gums with our advanced treatments, ensuring the foundation of your smile remains healthy and strong. Experience the freedom to smile confidently throughout your treatment journey.",
-		image: "/images/procedures/adv-gum.jpg",
+		image: "/images/procedures/adv-gum.webp",
 	},
 	{
 		id: 10,

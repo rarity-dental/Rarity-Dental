@@ -55,6 +55,7 @@ export const Navbar = () => {
 						</p>
 						<Link
 							href="tel:+917899418483"
+							aria-label="phone"
 							className="flex md:hidden transition-all duration-8000 ease-in-out gap-x-2 justify-center items-center  cursor-pointer ">
 							<PhoneIcon
 								width={20}

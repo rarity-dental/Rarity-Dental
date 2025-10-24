@@ -111,8 +111,7 @@ export const ConsultationForm = ({
 
 	return (
 		<div
-			className={`w-full h-full py-8 px-8 flex flex-col justify-center gap-10 bg-[#73383E] ${className}`}
-		>
+			className={`w-full h-full py-8 px-8 flex flex-col justify-center gap-10 bg-[#73383E] ${className}`}>
 			<div className="flex flex-col gap-y-4">
 				<h2 className="text-white text-[32px] font-normal tracking-tight leading-tight">
 					Fill the form for enquiries and consultation requests
@@ -124,8 +123,7 @@ export const ConsultationForm = ({
 
 			<form
 				onSubmit={handleSubmit(onSubmit)}
-				className="flex flex-col gap-y-3 font-poppins"
-			>
+				className="flex flex-col gap-y-3 font-poppins">
 				<div className="w-full flex gap-x-3 relative">
 					<div className="w-full">
 						<input
@@ -196,8 +194,7 @@ export const ConsultationForm = ({
 				<button
 					type="submit"
 					disabled={isSubmitting}
-					className="bg-[#47413c] text-[#ECE3DB] py-3 rounded-none hover:bg-[#86806c] active:scale-95 transition-all duration-500 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed"
-				>
+					className="bg-[#47413c] text-[#ECE3DB] py-3 rounded-none hover:bg-[#86806c] active:scale-95 transition-all duration-500 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed">
 					{isSubmitting ? "Submitting..." : buttonText}
 				</button>
 			</form>

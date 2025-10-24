@@ -9,6 +9,7 @@ export const FloatingWhatsAppButton = () => {
 			<div>
 				<a
 					href="https://api.whatsapp.com/send?phone=917899418483"
+					aria-label="phone"
 					className="decoration-transparent">
 					<div className="contact_icon">
 						<IconBrandWhatsapp className="w-8 h-8" />

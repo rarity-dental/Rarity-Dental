@@ -69,9 +69,9 @@ export const Footer = ({ hasEndDiv = true }: FooterProps) => {
 				<div className="flex flex-col md:flex-row gap-y-[24px] lg:gap-x-[40px] flex-1 ">
 					<div className="flex flex-col gap-y-[16px] md:gap-y-[24px] w-[180px]">
 						<div className="flex flex-col gap-[11px]">
-							<h4 className="text-[24px] text-white whitespace-nowrap">
+							<h2 className="text-[24px] text-white whitespace-nowrap">
 								Important Links
-							</h4>
+							</h2>
 							<div className="w-[200px] h-[1px] bg-white opacity-[18%]" />
 						</div>
 						<ul className="w-full flex flex-col gap-[4px] lg:gap-[24px]">
@@ -92,9 +92,9 @@ export const Footer = ({ hasEndDiv = true }: FooterProps) => {
 					</div>
 					<div className="flex flex-col gap-y-[16px] md:gap-y-[24px] w-[180px]">
 						<div className="flex flex-col gap-[11px]">
-							<h4 className="text-[24px] text-white whitespace-nowrap">
+							<h2 className="text-[24px] text-white whitespace-nowrap">
 								Menu
-							</h4>
+							</h2>
 							<div className="w-[200px] h-[1px] bg-white opacity-[18%]" />
 						</div>
 						<ul className="w-full flex flex-col gap-[4px] lg:gap-[24px]">
@@ -114,20 +114,20 @@ export const Footer = ({ hasEndDiv = true }: FooterProps) => {
 					</div>
 					<div className="flex flex-col gap-y-[16px] md:gap-y-[24px] min-w-[200px]">
 						<div className="flex flex-col gap-[11px]">
-							<h4 className="text-[24px] text-white whitespace-nowrap">
+							<h2 className="text-[24px] text-white whitespace-nowrap">
 								Contact & Appointments
-							</h4>
+							</h2>
 							<div className="w-[200px] h-[1px] bg-white opacity-[18%]" />
 						</div>
 						<ul className="w-full flex flex-col gap-[4px] lg:gap-[24px]">
-							{contactLinks.map((link) => (
+							{contactLinks.map((link, index) => (
 								<li
 									className="flex flex-col md:flex-row gap-[4px] lg:gap-[24px]"
 									key={link.name}>
 									<div className="flex justify-start w-full items-center space-x-4">
 										<img
 											src={link.icon}
-											alt={link.name}
+											alt={`link icon - ${index + 1}`}
 											width={16}
 											height={16}
 											style={{
@@ -148,9 +148,9 @@ export const Footer = ({ hasEndDiv = true }: FooterProps) => {
 					</div>
 					<div className="flex flex-col gap-y-[16px] md:gap-y-[24px] w-[200px]">
 						<div className="flex flex-col gap-[11px]">
-							<h4 className="text-[24px] text-white whitespace-nowrap">
+							<h2 className="text-[24px] text-white whitespace-nowrap">
 								Address
-							</h4>
+							</h2>
 							<div className="w-[200px] h-[1px] bg-white opacity-[18%]" />
 						</div>
 
