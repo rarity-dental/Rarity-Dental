@@ -38,8 +38,8 @@ const SplashScreen = ({ finishLoading }: SplashScreenProps) => {
 					const percent = Math.round((loaded / total) * 100);
 					setProgress(percent);
 					resolve();
-				}, 3000); // 3 second timeout
-				
+				}, 2000); // 2 second timeout
+
 				img.onload = () => {
 					clearTimeout(timeout);
 					loaded += 1;
@@ -79,29 +79,29 @@ const SplashScreen = ({ finishLoading }: SplashScreenProps) => {
 			});
 		};
 
-        const simulateProgressSteps = async () => {
-            // Keep simulation snappy to avoid delaying LCP
-            const steps = [10, 30, 60, 90];
-            for (const step of steps) {
-                await new Promise(resolve => setTimeout(resolve, 100));
-                setProgress(step);
-            }
-        };
+		const simulateProgressSteps = async () => {
+			// Keep simulation snappy to avoid delaying LCP
+			const steps = [10, 30, 60, 90];
+			for (const step of steps) {
+				await new Promise((resolve) => setTimeout(resolve, 100));
+				setProgress(step);
+			}
+		};
 
 		const loadAllAssets = async () => {
 			try {
 				// Start with simulated progress
 				await simulateProgressSteps();
-				
+
 				// Load only critical images
 				await Promise.all([
 					...imageUrls.map((url) => loadImage(url)),
 					...videoUrls.map((url) => loadVideo(url)),
 				]);
 
-                // Complete the progress and finish immediately
-                setProgress(100);
-                finishLoading();
+				// Complete the progress and finish immediately
+				setProgress(100);
+				finishLoading();
 			} catch (error) {
 				console.error("Error loading assets:", error);
 				setProgress(100);
@@ -113,10 +113,10 @@ const SplashScreen = ({ finishLoading }: SplashScreenProps) => {
 		};
 
 		// Add a maximum timeout to prevent infinite loading
-        const maxTimeout = setTimeout(() => {
-            console.warn("Splash screen max timeout reached");
-            finishLoading();
-        }, 5000); // tighter maximum
+		const maxTimeout = setTimeout(() => {
+			console.warn("Splash screen max timeout reached");
+			finishLoading();
+		}, 2000); // tighter maximum
 
 		loadAllAssets();
 
