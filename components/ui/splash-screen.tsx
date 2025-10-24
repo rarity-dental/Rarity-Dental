@@ -38,7 +38,7 @@ const SplashScreen = ({ finishLoading }: SplashScreenProps) => {
 					const percent = Math.round((loaded / total) * 100);
 					setProgress(percent);
 					resolve();
-				}, 2000); // 2 second timeout
+				}, 1500); // 2 second timeout
 
 				img.onload = () => {
 					clearTimeout(timeout);
@@ -116,7 +116,7 @@ const SplashScreen = ({ finishLoading }: SplashScreenProps) => {
 		const maxTimeout = setTimeout(() => {
 			console.warn("Splash screen max timeout reached");
 			finishLoading();
-		}, 2000); // tighter maximum
+		}, 1500); // tighter maximum
 
 		loadAllAssets();
 
