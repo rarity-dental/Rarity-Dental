@@ -156,7 +156,7 @@ export const Carousel: React.FC<Props> = ({
 			)}>
 			<button
 				onClick={() => handleManualControl("prev")}
-				className="active:scale-[95%] rounded-full p-2 transition-all duration-500 ease-in-out focus:outline-none z-10 absolute   top-[300px] lg:top-[340px] 2xl:top-[540px] transform -translate-y-[1/2] left-[1%]"
+				className="active:scale-[95%] rounded-full p-2 transition-all duration-500 ease-in-out focus:outline-none z-[100000] absolute   top-[300px] lg:top-[340px] 2xl:top-[540px] transform -translate-y-[1/2] left-[1%]"
 				aria-label="Previous slide">
 				<img
 					width={48}
@@ -167,7 +167,7 @@ export const Carousel: React.FC<Props> = ({
 			</button>
 			<button
 				onClick={() => handleManualControl("next")}
-				className=" active:scale-[95%] rounded-full p-2 transition-all duration-500 ease-in-out focus:outline-none z-10  top-[300px] lg:top-[340px] 2xl:top-[540px]  transform -translate-y-[1/2] absolute right-[1%]"
+				className=" active:scale-[95%] rounded-full p-2 transition-all duration-500 ease-in-out focus:outline-none z-[100000]  top-[300px] lg:top-[340px] 2xl:top-[540px]  transform -translate-y-[1/2] absolute right-[1%]"
 				aria-label="Next slide">
 				<img
 					width={48}
