@@ -12,7 +12,7 @@ import { XIcon } from "./icons/xIcon";
 export const socialLinks = [
 	{
 		name: "Facebook",
-		link: "#",
+		link: "https://www.facebook.com/p/Rarity-Dental-61572610386897",
 		icon: (
 			<FbIcon className="w-4 h-4 text-[#9A887B] hover:text-white !important transition-colors duration-300 ease-in-out" />
 		),
@@ -31,13 +31,13 @@ export const socialLinks = [
 			<LinkedInIcon className="w-4 h-4 text-[#9A887B] hover:text-white !important transition-colors duration-300 ease-in-out" />
 		),
 	},
-	{
-		name: "X",
-		link: "#",
-		icon: (
-			<XIcon className="w-4 h-4 text-[#9A887B] hover:text-white !important transition-colors duration-300 ease-in-out" />
-		),
-	},
+	// {
+	// 	name: "X",
+	// 	link: "#",
+	// 	icon: (
+	// 		<XIcon className="w-4 h-4 text-[#9A887B] hover:text-white !important transition-colors duration-300 ease-in-out" />
+	// 	),
+	// },
 ];
 
 interface FooterProps {
