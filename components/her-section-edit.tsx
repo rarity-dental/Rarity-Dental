@@ -150,16 +150,12 @@ export const HeroSectionEdit = () => {
 					willChange: "transform",
 				}}
 			/>
-			{/* Pre-hydration: render real slide 1 without animations */}
-			{/* <div className={`relative w-full h-full xl:mb-0 z-10 ${!carouselReady ? "" : "hidden"}`}>
-					{!carouselReady && <HeroSlide1 disableAnimations />}
-				</div> */}
+
 			<div className={`relative w-full h-full xl:mb-0 z-10 `}>
 				<Carousel
 					className="min-h-[600px] md:min-h-screen"
 					duration={4}
 					onSlideChange={setCurrentSlideIndex}>
-					{/* Avoid initial re-animation of slide 1 when carousel mounts */}
 					<HeroSlide1 />
 					<HeroSlide2 />
 					<HeroSlide3Video />
