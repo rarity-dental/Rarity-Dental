@@ -10,6 +10,8 @@ type props = {
 	className?: string;
 	delay?: number;
 	staggerChildren?: number;
+	// When true, render without motion animations
+	disabled?: boolean;
 };
 
 export default function Slide({
@@ -17,6 +19,7 @@ export default function Slide({
 	delay = 0.6,
 	className,
 	staggerChildren = 0.4,
+	disabled = false,
 }: props) {
 	const ref = useRef(null);
 	const isInview = useInView(ref, { once: true });
@@ -28,6 +31,10 @@ export default function Slide({
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [isInview]);
+
+	if (disabled) {
+		return <div ref={ref as any} className={cn("w-full", className)}>{children}</div>;
+	}
 
 	return (
 		<motion.div

@@ -81,35 +81,7 @@ export const HeroSectionEdit = () => {
 		}
 	}, [isPreloaded]);
 
-	const SSRFirstSlide = (
-		<div
-			className={`relative w-full h-full xl:mb-0 z-10 ${carouselReady ? "hidden" : ""}`}>
-			<div className="w-full min-h-[600px] md:min-h-screen flex flex-col justify-between relative">
-				<div className="w-full min-h-[600px] relative h-full">
-					<img
-						src="/images/rarity-hero-team.webp"
-						alt="Team Background"
-						className="absolute inset-0 object-cover object-center w-full h-full"
-						fetchPriority="high"
-						sizes="100vw"
-					/>
-					<div className="flex-1 flex flex-col justify-between pt-[4%] pb-[4%] px-[2%] relative z-10 space-y-[10%] h-full">
-						<div className="text-center max-w-3xl mx-auto px-2 pl-4">
-							<h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight tracking-tight text-white mb-4 pt-[12%]">
-								Best Dental Clinic in Gurgaon for
-								<br />
-								Smile Makeovers, Implants & Invisalign
-							</h1>
-							<p className="text-white mb-4">
-								Delivering Unmatched Dental Excellence for 13+
-								years
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	);
+	// Removed SSRFirstSlide to avoid layout shift
 
 	// After initial hero assets, preload slides in strict order: 1,2,3,5,4
 	// Note: Slide 1 main hero image is already part of splash preload.
@@ -178,40 +150,23 @@ export const HeroSectionEdit = () => {
 					willChange: "transform",
 				}}
 			/>
-			{/* Solid background for HeroSlide1 */}
-			<div
-				className={`absolute inset-0 transition-opacity duration-500 ${
-					isHeroSlide1 ? "opacity-100" : "opacity-0"
-				} bg-[#f7f2ec]`}
-				style={{
-					height: "100%",
-					width: "100%",
-					position: "absolute",
-					top: 0,
-					left: 0,
-					zIndex: 0,
-					transform: "translateZ(0)",
-					backfaceVisibility: "hidden",
-					perspective: "1000px",
-					willChange: "transform",
-				}}
-			/>
-			{SSRFirstSlide}
-			<div
-				className={`relative w-full h-full xl:mb-0 z-10 ${!carouselReady ? "hidden" : ""}`}>
-				{carouselReady && (
-					<Carousel
-						className="min-h-[600px] md:min-h-screen"
-						duration={4}
-						onSlideChange={setCurrentSlideIndex}>
-						<HeroSlide1 />
-						<HeroSlide2 />
-						<HeroSlide3Video />
-						<HeroSlide6 />
-						<HeroSlide5 />
-						<HeroSlide4 />
-					</Carousel>
-				)}
+			{/* Pre-hydration: render real slide 1 without animations */}
+			{/* <div className={`relative w-full h-full xl:mb-0 z-10 ${!carouselReady ? "" : "hidden"}`}>
+					{!carouselReady && <HeroSlide1 disableAnimations />}
+				</div> */}
+			<div className={`relative w-full h-full xl:mb-0 z-10 `}>
+				<Carousel
+					className="min-h-[600px] md:min-h-screen"
+					duration={4}
+					onSlideChange={setCurrentSlideIndex}>
+					{/* Avoid initial re-animation of slide 1 when carousel mounts */}
+					<HeroSlide1 />
+					<HeroSlide2 />
+					<HeroSlide3Video />
+					<HeroSlide6 />
+					<HeroSlide5 />
+					<HeroSlide4 />
+				</Carousel>
 			</div>
 			<div className="w-full mb-[1.1%] xl:mt-0 hidden sm:flex overflow-hidden absolute bottom-[15%] left-0 z-20">
 				<Slide>
