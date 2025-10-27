@@ -136,7 +136,7 @@ export const HeroSectionEdit = () => {
 			<div
 				className={`absolute inset-0 transition-opacity duration-500 ${
 					!isHeroSlide1 ? "opacity-100" : "opacity-0"
-				} bg-[url('/images/hero-back-static-mobile-img.webp')] md:bg-[url('/images/hero-back-img-static.webp')] bg-center md:bg-cover xl:bg-cover bg-no-repeat`}
+				} ${currentSlideIndex === 3 ? "" : "bg-[url('/images/hero-back-static-mobile-img.webp')] md:bg-[url('/images/hero-back-img-static.webp')] bg-center md:bg-cover xl:bg-cover bg-no-repeat"} `}
 				style={{
 					height: "100%",
 					width: "100%",
