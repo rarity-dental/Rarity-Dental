@@ -3,7 +3,7 @@ import "./globals.css";
 import { ClientProvider } from "@/providers/client-provider";
 import Script from "next/script";
 import { Metadata } from "next";
-import { GoogleAnalytics } from "@next/third-parties/google";
+// import { GoogleAnalytics } from "@next/third-parties/google";
 
 const belleza = Belleza({
 	weight: "400",
@@ -63,7 +63,11 @@ export default function RootLayout({
 					src={`https://www.googletagmanager.com/gtag.js?id=AW-16798877123`}
 					strategy="lazyOnload"
 				/>
-				<GoogleAnalytics gaId="G-7TVYNQX0E4" />
+				<Script
+					src={`https://www.googletagmanager.com/gtag.js?id=AW-16798877123`}
+					strategy="lazyOnload"
+				/>
+				{/* <GoogleAnalytics gaId="G-7TVYNQX0E4" /> */}
 				<ClientProvider>{children}</ClientProvider>
 			</body>
 		</html>
