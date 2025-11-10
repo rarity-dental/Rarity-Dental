@@ -30,7 +30,6 @@ const ParallaxBanner = dynamic(
 		),
 	{
 		loading: () => <p>Loading...</p>,
-		ssr: false,
 	}
 );
 const Slide = dynamic(
@@ -40,7 +39,6 @@ const Slide = dynamic(
 		),
 	{
 		loading: () => <p>Loading...</p>,
-		ssr: false,
 	}
 );
 

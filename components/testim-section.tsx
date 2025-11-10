@@ -9,7 +9,7 @@ import { TestimonialSection } from "./ui/testim-test";
 // 	() => import("./ui/testim-test").then((mod) => mod.TestimonialSection),
 // 	{
 // 		loading: () => <p>Loading...</p>,
-// 		ssr: false,
+//
 // 	}
 // );
 

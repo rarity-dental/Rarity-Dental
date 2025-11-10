@@ -22,8 +22,8 @@ const StickyConsultationForm = dynamic(
 	() =>
 		import("@/components/forms/sticky-form").then(
 			(mod) => mod.StickyConsultationForm
-		),
-	{ ssr: false }
+		)
+	// { ssr: false }
 );
 
 export async function generateMetadata({

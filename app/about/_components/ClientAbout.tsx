@@ -32,7 +32,6 @@ const ParallaxBanner = dynamic(
 		),
 	{
 		loading: () => <p>Loading...</p>,
-		ssr: false,
 	}
 );
 

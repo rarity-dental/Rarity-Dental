@@ -15,7 +15,6 @@ const ParallaxBanner = dynamic(
 	() => import("./ui/parallaxH").then((mod) => mod.ParallaxBanner),
 	{
 		loading: () => <p>Loading...</p>,
-		ssr: false,
 	}
 );
 
@@ -23,7 +22,6 @@ const Carousel = dynamic(
 	() => import("./ui/carousel-in").then((mod) => mod.Carousel),
 	{
 		// loading: () => <p>Loading...</p>,
-		ssr: false,
 	}
 );
 
@@ -31,7 +29,6 @@ const HeroSlide3Video = dynamic(
 	() => import("./hero-slide-3-video").then((mod) => mod.HeroSlide3Video),
 	{
 		loading: () => <p>Loading...</p>,
-		ssr: false,
 	}
 );
 
