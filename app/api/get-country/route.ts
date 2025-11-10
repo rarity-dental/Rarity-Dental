@@ -9,7 +9,7 @@ const RATE_LIMIT_DURATION = 1000; // 1 second in milliseconds
 
 export async function GET() {
 	const now = Date.now();
-	const headersList = headers();
+	const headersList = await headers();
 
 	// Get client IP from various headers
 	const forwardedFor = headersList.get("x-forwarded-for");

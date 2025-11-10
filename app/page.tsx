@@ -15,17 +15,14 @@ import TestimonialTestComponent from "@/components/testim-section-test";
 export const revalidate = 3600; // seconds
 
 import { HeroSectionEdit } from "@/components/her-section-edit";
-const ParallaxBanner = dynamic(
-	() => import("@/components/ui/parallaxH").then((mod) => mod.ParallaxBanner),
-	{ ssr: false }
+const ParallaxBanner = dynamic(() =>
+	import("@/components/ui/parallaxH").then((mod) => mod.ParallaxBanner)
 );
 
-const TechAdvantageSection = dynamic(
-	() =>
-		import("@/components/tech-advantage").then(
-			(mod) => mod.TechAdvantageSection
-		),
-	{ ssr: false }
+const TechAdvantageSection = dynamic(() =>
+	import("@/components/tech-advantage").then(
+		(mod) => mod.TechAdvantageSection
+	)
 );
 
 export async function generateMetadata() {

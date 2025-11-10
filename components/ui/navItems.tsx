@@ -66,18 +66,9 @@ export function NavigationMenuItems() {
 					</NavigationMenuContent>
 				</NavigationMenuItem>
 				<NavigationMenuItem className="">
-					<Link
-						href={"/about"}
-						legacyBehavior
-						passHref>
-						<NavigationMenuLink
-							className={cn(
-								navigationMenuTriggerStyle(),
-								"text-white"
-							)}>
-							About Us
-						</NavigationMenuLink>
-					</Link>
+					<NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), "text-white")}>
+						<Link href={"/about"}>About Us</Link>
+					</NavigationMenuLink>
 				</NavigationMenuItem>
 				<NavigationMenuItem>
 					<NavigationMenuTrigger
@@ -167,18 +158,9 @@ export function NavigationMenuItems() {
 						<NavigationMenuItem
 							key={item.id}
 							className="hidden xl:flex">
-							<Link
-								href={item.href}
-								legacyBehavior
-								passHref>
-								<NavigationMenuLink
-									className={cn(
-										navigationMenuTriggerStyle(),
-										"text-white"
-									)}>
-									{item.title}
-								</NavigationMenuLink>
-							</Link>
+							<NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), "text-white")}>
+								<Link href={item.href}>{item.title}</Link>
+							</NavigationMenuLink>
 						</NavigationMenuItem>
 					))}
 				<NavigationMenuItem className="pl-4">
