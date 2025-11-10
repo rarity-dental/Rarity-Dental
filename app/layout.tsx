@@ -68,6 +68,18 @@ export default function RootLayout({
 					strategy="lazyOnload"
 				/>
 				{/* <GoogleAnalytics gaId="G-7TVYNQX0E4" /> */}
+				{/* Initialize gtag and provide required config to avoid deferred hits */}
+				<Script
+					id="gtag-init"
+					strategy="afterInteractive">{`
+				  window.dataLayer = window.dataLayer || [];
+				  function gtag(){window.dataLayer.push(arguments);}
+				  gtag('js', new Date());
+				  // GA4 measurement ID
+				  gtag('config', 'G-7TVYNQX0E4');
+				  // Google Ads conversion ID (optional but recommended if using AW)
+				  gtag('config', 'AW-16798877123');
+				`}</Script>
 				<ClientProvider>{children}</ClientProvider>
 			</body>
 		</html>
