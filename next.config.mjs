@@ -3,6 +3,7 @@ const nextConfig = {
     // Ensure text compression for HTML and assets
     compress: true,
     poweredByHeader: false,
+    transpilePackages: ["sanity", "next-sanity", "@sanity/ui", "@sanity/icons"],
     images: {
 		remotePatterns: [
 			{
