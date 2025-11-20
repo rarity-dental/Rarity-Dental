@@ -105,13 +105,19 @@ const searchItems = [
 export async function generateMetadata({
 	params,
 }: {
-	params: { slug: string };
-}) {
-	return await getMetadata("smile-designing", params.slug);
+	params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+	const { slug } = await params;
+	return getMetadata("smile-designing", slug);
 }
 
-export default async function SmileDesigningPage({ params }: any) {
-	const data = await getStandalonePage("smile-designing", params.slug);
+export default async function SmileDesigningPage({
+	params,
+}: {
+	params: Promise<{ slug: string }>;
+}) {
+	const { slug } = await params;
+	const data = await getStandalonePage("smile-designing", slug);
 
 	if (!data) {
 		return notFound();

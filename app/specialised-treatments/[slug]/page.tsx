@@ -21,6 +21,7 @@ import { getMetadata } from "@/sanity/sanity.query";
 import { Team } from "@/components/team";
 import { CarouselComponent } from "@/components/carousel/carousel-component";
 import { HeroPointers } from "@/components/hero-pointers";
+import { Metadata } from "next";
 
 const ParallaxBanner = dynamic(
 	() =>
@@ -132,14 +133,19 @@ const searchItems = [
 export async function generateMetadata({
 	params,
 }: {
-	params: { slug: string };
-}) {
-	return await getMetadata("specialised-treatments", params.slug);
+	params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+	const { slug } = await params;
+	return getMetadata("specialised-treatments", slug);
 }
 
-export default async function SpecialisedTreatmentsPage({ params }: any) {
-	const data = await getStandalonePage("specialised-treatments", params.slug);
-
+export default async function SpecialisedTreatmentsPage({
+	params,
+}: {
+	params: Promise<{ slug: string }>;
+}) {
+	const { slug } = await params;
+	const data = await getStandalonePage("specialised-treatments", slug);
 	// console.log(data, "data");
 
 	// const [isLoaded, setIsLoaded] = useState(false);

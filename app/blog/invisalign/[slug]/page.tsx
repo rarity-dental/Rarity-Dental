@@ -20,15 +20,20 @@ const StickyConsultationForm = dynamic(
 	// { ssr: false }
 );
 
+type BlogParams = Promise<{ slug: string }>;
+
 export async function generateMetadata({
 	params,
 }: {
-	params: { slug: string };
+	params: BlogParams;
 }): Promise<Metadata> {
-	const blog = await getBlogTPage(params.slug);
+	const { slug } = await params; // ✅ await the params
+
+	const blog = await getBlogTPage(slug);
 	if (!blog) {
 		notFound();
 	}
+
 	return {
 		title: blog.meta_title || blog.pageTitle,
 		description: blog.meta_description,
@@ -37,7 +42,7 @@ export async function generateMetadata({
 			description: blog.ogDescription || blog.meta_description,
 			url:
 				blog.ogUrl ||
-				`https://www.raritydental.com/blog/invisalign/${params.slug}`,
+				`https://www.raritydental.com/blog/invisalign/${slug}`,
 			images: [
 				{
 					url: blog.ogImageUrl || urlFor(blog.image).url(),
@@ -63,22 +68,17 @@ export async function generateMetadata({
 	};
 }
 
-export default async function BlogPage({
-	params,
-}: {
-	params: { slug: string };
-}) {
-	const blog = await getBlogTPage(params.slug);
+export default async function BlogPage({ params }: { params: BlogParams }) {
+	const { slug } = await params; // ✅ await the params
+
+	const blog = await getBlogTPage(slug);
 	if (!blog) {
 		notFound();
 	}
 
-	// console.log(blog);
 	const relatedBlogs: BlogPreviewT[] = await getBlogTPagesByCategory(
 		blog.category
 	);
-
-	// console.log(relatedBlogs.length);
 
 	const sectionGroups: SectionGroup[] = groupSections(blog.sections || []);
 

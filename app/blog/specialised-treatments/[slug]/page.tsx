@@ -26,15 +26,20 @@ const StickyConsultationForm = dynamic(
 	// { ssr: false }
 );
 
+type BlogParams = Promise<{ slug: string }>;
+
 export async function generateMetadata({
 	params,
 }: {
-	params: { slug: string };
+	params: BlogParams;
 }): Promise<Metadata> {
-	const blog = await getBlogTPage(params.slug);
+	const { slug } = await params; // ✅ await the params
+
+	const blog = await getBlogTPage(slug);
 	if (!blog) {
 		notFound();
 	}
+
 	return {
 		title: blog.meta_title || blog.pageTitle,
 		description: blog.meta_description,
@@ -43,7 +48,7 @@ export async function generateMetadata({
 			description: blog.ogDescription || blog.meta_description,
 			url:
 				blog.ogUrl ||
-				`https://www.raritydental.com/blog/specialised-treatments/${params.slug}`,
+				`https://www.raritydental.com/blog/specialised-treatments/${slug}`,
 			images: [
 				{
 					url: blog.ogImageUrl || urlFor(blog.image).url(),
@@ -69,73 +74,17 @@ export async function generateMetadata({
 	};
 }
 
-export default async function BlogPage({
-	params,
-}: {
-	params: { slug: string };
-}) {
-	const blog = await getBlogTPage(params.slug);
+export default async function BlogPage({ params }: { params: BlogParams }) {
+	const { slug } = await params; // ✅ await the params
+
+	const blog = await getBlogTPage(slug);
 	if (!blog) {
 		notFound();
 	}
 
-	// console.log(blog);
 	const relatedBlogs: BlogPreviewT[] = await getBlogTPagesByCategory(
 		blog.category
 	);
-
-	// console.log(relatedBlogs.length);
-
-	const blogSlug = blog?.slug;
-	// console.log(blogSlug);
-
-	// const groupedSections = blog.sections?.reduce(
-	// 	(acc, section) => {
-	// 		const displayName = getSectionDisplayName(section);
-	// 		if (!acc[section.sectionType]) {
-	// 			acc[section.sectionType] = [];
-	// 		}
-	// 		acc[section.sectionType].push(displayName);
-	// 		return acc;
-	// 	},
-	// 	{} as Record<string, string[]>
-	// );
-	// Extract section types for ordering
-	// const sectionTypes = Object.keys(groupedSections);
-
-	// Compute a consistent numberedSections array
-	// interface NumberedSection {
-	// 	mainIndex: number;
-	// 	subIndex: number | null;
-	// 	section: any;
-	// }
-
-	// const numberedSections: NumberedSection[] = [];
-	// const typeCounters: Record<string, number> = {};
-
-	// blog.sections?.forEach((section: any) => {
-	// 	// Increase the counter for this section type
-	// 	if (typeCounters[section.sectionType] === undefined) {
-	// 		typeCounters[section.sectionType] = 0;
-	// 	} else {
-	// 		typeCounters[section.sectionType]++;
-	// 	}
-
-	// 	// If this is the first occurrence, it’s a main entry (subIndex null).
-	// 	// Otherwise, assign subIndex based on how many times this type has occurred before.
-	// 	const isFirstOccurrence = typeCounters[section.sectionType] === 0;
-	// 	numberedSections.push({
-	// 		mainIndex: isFirstOccurrence
-	// 			? numberedSections.length + 1
-	// 			: numberedSections.find(
-	// 					(ns) => ns.section.sectionType === section.sectionType
-	// 				)?.mainIndex || numberedSections.length + 1,
-	// 		subIndex: isFirstOccurrence
-	// 			? null
-	// 			: typeCounters[section.sectionType],
-	// 		section,
-	// 	});
-	// });
 
 	const sectionGroups: SectionGroup[] = groupSections(blog.sections || []);
 
@@ -257,7 +206,7 @@ export default async function BlogPage({
 				</div>
 				{relatedBlogs.length > 1 && (
 					<RelatedTechnologies
-						currentSlug={blogSlug}
+						currentSlug={slug}
 						technologies={relatedBlogs}
 						category={blog?.category as BlogCategory}
 					/>

@@ -21,15 +21,20 @@ const StickyConsultationForm = dynamic(
 	// { ssr: false }
 );
 
+type BlogParams = Promise<{ slug: string }>;
+
 export async function generateMetadata({
 	params,
 }: {
-	params: { slug: string };
+	params: BlogParams;
 }): Promise<Metadata> {
-	const blog = await getBlogTPage(params.slug);
+	const { slug } = await params; // ✅ await the params
+
+	const blog = await getBlogTPage(slug);
 	if (!blog) {
 		notFound();
 	}
+
 	return {
 		title: blog.meta_title || blog.pageTitle,
 		description: blog.meta_description,
@@ -38,7 +43,7 @@ export async function generateMetadata({
 			description: blog.ogDescription || blog.meta_description,
 			url:
 				blog.ogUrl ||
-				`https://www.raritydental.com/blog/internationational-patients/${params.slug}`,
+				`https://www.raritydental.com/blog/internationational-patients/${slug}`,
 			images: [
 				{
 					url: blog.ogImageUrl || urlFor(blog.image).url(),
@@ -64,12 +69,10 @@ export async function generateMetadata({
 	};
 }
 
-export default async function BlogPage({
-	params,
-}: {
-	params: { slug: string };
-}) {
-	const blog = await getBlogTPage(params.slug);
+export default async function BlogPage({ params }: { params: BlogParams }) {
+	const { slug } = await params; // ✅ await the params
+
+	const blog = await getBlogTPage(slug);
 	if (!blog) {
 		notFound();
 	}
@@ -77,8 +80,6 @@ export default async function BlogPage({
 	const relatedBlogs: BlogPreviewT[] = await getBlogTPagesByCategory(
 		blog.category
 	);
-
-	const blogSlug = blog?.slug;
 
 	const sectionGroups: SectionGroup[] = groupSections(blog.sections || []);
 
@@ -200,7 +201,7 @@ export default async function BlogPage({
 				</div>
 				{relatedBlogs.length > 1 && (
 					<RelatedTechnologies
-						currentSlug={blogSlug}
+						currentSlug={slug}
 						technologies={relatedBlogs}
 						category={blog?.category as BlogCategory}
 					/>

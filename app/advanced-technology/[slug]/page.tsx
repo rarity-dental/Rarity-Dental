@@ -21,6 +21,7 @@ import { Team } from "@/components/team";
 import { CarouselComponent } from "@/components/carousel/carousel-component";
 import { FlipCard } from "@/components/flip-card/flip-cards";
 import { HeroPointers } from "@/components/hero-pointers";
+import { Metadata } from "next";
 
 const ParallaxBanner = dynamic(
 	() =>
@@ -122,13 +123,19 @@ const searchItems = [
 export async function generateMetadata({
 	params,
 }: {
-	params: { slug: string };
-}) {
-	return await getMetadata("advanced-technology", params.slug);
+	params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+	const { slug } = await params;
+	return getMetadata("advanced-technology", slug);
 }
 
-export default async function SmileDesigningPage({ params }: any) {
-	const data = await getStandalonePage("advanced-technology", params.slug);
+export default async function AdvancedTechnologyPage({
+	params,
+}: {
+	params: Promise<{ slug: string }>;
+}) {
+	const { slug } = await params;
+	const data = await getStandalonePage("advanced-technology", slug);
 
 	if (!data) {
 		return notFound();

@@ -33,14 +33,14 @@ export const HeroSlide6 = () => {
 							delay={0.4}
 							className="text-center max-w-[380px] mx-auto">
 							<h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight tracking-tight text-white mb-2">
-								Redefining Smiles with Precision & Artistry
+								India’s Leading Award-Winning Dentists
 							</h1>
-							<span className="text-base md:text-lg lg:text-xl xl:text-2xl leading-snug tracking-tight text-white">
+							{/* <span className="text-base md:text-lg lg:text-xl xl:text-2xl leading-snug tracking-tight text-white">
 								Dr. Sneha Singh, India’s top Smile Design expert
 								and Full Mouth Rehabilitation specialist, is
 								trusted nationwide as the best Cosmetic Dentist
 								in Gurgaon.
-							</span>
+							</span> */}
 						</Slide>
 						<Slide
 							delay={1.2}
@@ -82,14 +82,14 @@ export const HeroSlide6 = () => {
 							delay={0.8}
 							className="text-center max-w-[600px] mx-auto mt-16">
 							<p className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight tracking-tight text-white mb-2">
-								Redefining Smiles with Precision & Artistry
+								India’s Leading Award-Winning Dentists
 							</p>
-							<span className="text-base md:text-lg lg:text-xl xl:text-2xl leading-snug tracking-tight text-white">
+							{/* <span className="text-base md:text-lg lg:text-xl xl:text-2xl leading-snug tracking-tight text-white">
 								Dr. Sneha Singh, India’s top Smile Design expert
 								and Full Mouth Rehabilitation specialist, is
 								trusted nationwide as the best Cosmetic Dentist
 								in Gurgaon.
-							</span>
+							</span> */}
 						</Slide>
 						<Slide
 							delay={1.2}
@@ -128,14 +128,14 @@ export const HeroSlide6 = () => {
 							delay={0.4}
 							className="z-[1] flex flex-col items-start justify-center">
 							<h1 className="text-[18px] md:text-[20px] lg:text-[24px] xl:text-[42px] 2xl:text-6xl leading-tight tracking-tighter text-white mb-1 2xl:mb-3 xl:min-w-[600px] text-center w-full">
-								Redefining Smiles with Precision & Artistry
+								India’s Leading Award-Winning Dentists
 							</h1>
-							<p className="text-white mb-6 xl:min-w-[600px] text-2xl text-center w-full">
+							{/* <p className="text-white mb-6 xl:min-w-[600px] text-2xl text-center w-full">
 								Dr. Sneha Singh, India’s top Smile Design expert
 								and Full Mouth Rehabilitation specialist, is
 								trusted nationwide as the best Cosmetic Dentist
 								in Gurgaon.
-							</p>
+							</p> */}
 						</Slide>
 						<Slide
 							delay={0.6}

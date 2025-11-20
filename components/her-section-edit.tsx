@@ -153,10 +153,10 @@ export const HeroSectionEdit = () => {
 					className="min-h-[600px] md:min-h-screen"
 					duration={4}
 					onSlideChange={setCurrentSlideIndex}>
+					<HeroSlide6 />
 					<HeroSlide1 />
 					<HeroSlide2 />
 					<HeroSlide3Video />
-					<HeroSlide6 />
 					<HeroSlide5 />
 					<HeroSlide4 />
 				</Carousel>
