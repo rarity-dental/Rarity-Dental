@@ -15,6 +15,7 @@ import {
 import {
 	getCategoryMetadata,
 	getCategoryStandalonePage,
+	getMetadata,
 	// migrateSmileDesignToCategory,
 } from "@/sanity/sanity.query";
 import { notFound } from "next/navigation";
@@ -23,6 +24,7 @@ import { ConsultationForm } from "@/components/forms/connect-form";
 import { CarouselComponent } from "@/components/carousel/carousel-component";
 import { FlipCard } from "@/components/flip-card/flip-cards";
 import { HeroPointers } from "@/components/hero-pointers";
+import { Metadata } from "next";
 
 const ParallaxBanner = dynamic(
 	() =>
@@ -109,10 +111,16 @@ const searchItems = [
 // 	description: "Smile Designing",
 // };
 
-export async function generateMetadata() {
-	return await getCategoryMetadata("smile-designing");
-}
+type Params = Promise<{ category: string; slug: string }>;
 
+export async function generateMetadata({
+	params,
+}: {
+	params: Params;
+}): Promise<Metadata> {
+	const { category, slug } = await params; // ✅ take BOTH from the URL
+	return getMetadata(category, slug);
+}
 export default async function SmileDesigningPage() {
 	const data = await getCategoryStandalonePage("smile-designing");
 

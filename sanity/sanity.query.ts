@@ -9,6 +9,7 @@ import {
 	InvisalignPage,
 	StandalonePage,
 } from "@/types";
+import { Metadata } from "next";
 
 export async function getBlogTPage(slug: string): Promise<BlogT> {
 	const query = `*[_type == "blogtest" && slug.current == $slug][0] {
@@ -637,45 +638,61 @@ export async function getCategoryMetadata(category: string) {
 	};
 }
 
-export async function getMetadata(category: string, slug: string) {
+export async function getMetadata(
+	category: string,
+	slug: string
+): Promise<Metadata> {
 	const data = await getStandalonePage(category, slug);
 
 	if (!data) {
+		// You can also do `notFound()` above, either is fine:
 		return {
 			title: "Not Found",
 			description: "The requested page does not exist.",
+			robots: { index: false, follow: false },
 		};
 	}
 
+	const SITE = "https://www.raritydental.com";
+
+	// ✅ Build absolute canonical for /category/slug
+	const canonical = `${SITE}/${category}/${slug}`;
+
+	// ✅ Avoid empty image URLs; Twitter accepts string[]
+	const ogImage =
+		data.ogImageUrl && data.ogImageUrl.startsWith("http")
+			? data.ogImageUrl
+			: undefined;
+
 	return {
-		title: data.meta_title || data.ogTitle,
+		title: data.meta_title || data.ogTitle || data.title,
 		description: data.meta_description,
+		alternates: {
+			canonical, // 👈 crucial
+		},
 		openGraph: {
-			title: data.ogTitle || data.meta_title,
+			type: "article",
+			url: canonical, // 👈 absolute
+			title: data.ogTitle || data.meta_title || data.title,
 			description: data.ogDescription || data.meta_description,
-			url: `/${category}/${slug}`,
-			images: [
-				{
-					url: data.ogImageUrl,
-					width: 1200,
-					height: 630,
-					alt: data.ogTitle,
-				},
-			],
+			images: ogImage
+				? [
+						{
+							url: ogImage,
+							width: 1200,
+							height: 630,
+							alt: data.ogTitle || data.meta_title || data.title,
+						},
+					]
+				: undefined,
 		},
 		twitter: {
-			title: data.ogTitle || data.meta_title,
-			description: data.ogDescription || data.meta_description,
-			images: [
-				{
-					url: data.ogImageUrl,
-					width: 1200,
-					height: 630,
-					alt: data.ogTitle,
-				},
-			],
 			card: "summary_large_image",
+			title: data.ogTitle || data.meta_title || data.title,
+			description: data.ogDescription || data.meta_description,
+			images: ogImage ? [ogImage] : undefined, // 👈 string[]
 		},
+		robots: { index: true, follow: true },
 	};
 }
 

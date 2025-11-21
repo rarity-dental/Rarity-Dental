@@ -34,10 +34,14 @@ export async function generateMetadata({
 	if (!blog) {
 		notFound();
 	}
+	const canonicalUrl = `https://www.raritydental.com/blog/${blog.category}/${slug}`;
 
 	return {
 		title: blog.meta_title || blog.pageTitle,
 		description: blog.meta_description,
+		alternates: {
+			canonical: canonicalUrl,
+		},
 		openGraph: {
 			title: blog.ogTitle || blog.meta_title || blog.pageTitle,
 			description: blog.ogDescription || blog.meta_description,

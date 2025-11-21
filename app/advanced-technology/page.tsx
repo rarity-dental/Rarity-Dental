@@ -14,8 +14,9 @@ import {
 } from "@/components/ui/accordion";
 
 import {
-	getCategoryMetadata,
+	// getCategoryMetadata,
 	getCategoryStandalonePage,
+	getMetadata,
 } from "@/sanity/sanity.query";
 import { notFound } from "next/navigation";
 import { Team } from "@/components/team";
@@ -23,6 +24,7 @@ import { Team } from "@/components/team";
 import { CarouselComponent } from "@/components/carousel/carousel-component";
 import { FlipCard } from "@/components/flip-card/flip-cards";
 import { HeroPointers } from "@/components/hero-pointers";
+import { Metadata } from "next";
 
 const ParallaxBanner = dynamic(
 	() =>
@@ -121,8 +123,17 @@ const searchItems = [
 	},
 ];
 
-export async function generateMetadata() {
-	return await getCategoryMetadata("advanced-technology");
+const SITE = "https://www.raritydental.com";
+
+type Params = Promise<{ category: string; slug: string }>;
+
+export async function generateMetadata({
+	params,
+}: {
+	params: Params;
+}): Promise<Metadata> {
+	const { category, slug } = await params; // ✅ take BOTH from the URL
+	return getMetadata(category, slug);
 }
 
 export default async function AdvancedTechnologyPage() {
