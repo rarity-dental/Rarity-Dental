@@ -14,9 +14,8 @@ import {
 } from "@/components/ui/accordion";
 
 import {
-	// getCategoryMetadata,
+	getCategoryMetadata,
 	getCategoryStandalonePage,
-	getMetadata,
 } from "@/sanity/sanity.query";
 import { notFound } from "next/navigation";
 import { Team } from "@/components/team";
@@ -123,17 +122,14 @@ const searchItems = [
 	},
 ];
 
-const SITE = "https://www.raritydental.com";
-
-type Params = Promise<{ category: string; slug: string }>;
+type BlogParams = Promise<{ category: string; slug: string }>;
 
 export async function generateMetadata({
 	params,
 }: {
-	params: Params;
+	params: BlogParams;
 }): Promise<Metadata> {
-	const { category, slug } = await params; // ✅ take BOTH from the URL
-	return getMetadata(category, slug);
+	return await getCategoryMetadata("advanced-technology");
 }
 
 export default async function AdvancedTechnologyPage() {
