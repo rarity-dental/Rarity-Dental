@@ -341,11 +341,26 @@ export const Services = () => {
 						poster="/videos/poster-image-invisalign.webp"
 						preload="metadata"
 						onClick={handlePlayClick}
+						onLoadedData={() => setError(null)}
 						onError={(e) => {
-							console.error(
-								"Video error:",
-								(e.target as HTMLVideoElement).error
-							);
+							const video = e.currentTarget;
+							const mediaError = video?.error || null;
+							if (mediaError) {
+								const code = mediaError.code;
+								const codeMap: Record<number, string> = {
+									1: "MEDIA_ERR_ABORTED",
+									2: "MEDIA_ERR_NETWORK",
+									3: "MEDIA_ERR_DECODE",
+									4: "MEDIA_ERR_SRC_NOT_SUPPORTED",
+								};
+								console.error("Video error:", {
+									code,
+									type: codeMap[code] || "UNKNOWN",
+									message: (mediaError as any).message,
+								});
+							} else {
+								console.error("Video error: unknown");
+							}
 							setError(
 								"Failed to load video. Please try again later."
 							);
