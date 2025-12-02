@@ -67,7 +67,7 @@ export const Team = ({ hasEndDiv = true }: TeamProps) => {
 	};
 
 	return (
-		<Slide delay={1.2}>
+		<Slide delay={0.6}>
 			<div className="min-h-screen w-full relative flex flex-col justify-center items-center  md:pb-0">
 				<PageStartDiv />
 				{hasEndDiv && <PageEndDiv />}

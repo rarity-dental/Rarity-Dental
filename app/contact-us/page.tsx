@@ -54,7 +54,6 @@ export default function ContactUsPage() {
 					</ParallaxBanner>
 				</Slide>
 			</div>
-
 			<Gallery />
 		</div>
 	);
