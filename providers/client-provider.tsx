@@ -41,7 +41,7 @@ export function ClientProvider({ children }: { children: React.ReactNode }) {
 			<Navbar />
 			<Toaster />
 			<Slide>
-				{/* <FloatingWhatsAppButton /> */}
+				<FloatingWhatsAppButton />
 				{children}
 				{/* <div className="absolute h-20 w-full bg-black top-[100vh] z-[1000000]">
 					<div className="w-full h-full flex justify-center items-center">
