@@ -992,7 +992,7 @@ export const addressLinks = [
 	},
 	{
 		name: "42, Ashoka Crescent, Golf Course Road, Gurugram",
-		link: "#",
+		link: "https://maps.app.goo.gl/Gop3pHTokWnsqfVz5",
 		icon: "https://firebasestorage.googleapis.com/v0/b/casamed-6ec79.appspot.com/o/beyond-dental%2Fimages%2Floc-icon.svg?alt=media&token=a75ee6b8-c396-45ec-bc11-f1864c11f5b8",
 	},
 ];
