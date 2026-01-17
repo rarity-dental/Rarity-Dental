@@ -6,10 +6,11 @@ import { motion, AnimatePresence, useInView } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 type Props = {
-	children: React.ReactNode[];
-	className?: string;
-	duration?: number;
-	onSlideChange?: (index: number) => void; // New prop
+    children: React.ReactNode[];
+    className?: string;
+    duration?: number;
+    onSlideChange?: (index: number) => void; // New prop
+    autoplay?: boolean; // control auto-advance (helps LCP on mobile)
 };
 
 type State = {
@@ -57,10 +58,11 @@ function reducer(state: State, action: Action): State {
 let childrenLength = 0;
 
 export const Carousel: React.FC<Props> = ({
-	children,
-	className,
-	duration = 4,
-	onSlideChange = () => {}, // Default no-op function
+    children,
+    className,
+    duration = 4,
+    onSlideChange = () => {}, // Default no-op function
+    autoplay = true,
 }) => {
 	childrenLength = children.length;
 	const [state, dispatch] = useReducer(reducer, initialState);
@@ -96,25 +98,31 @@ export const Carousel: React.FC<Props> = ({
 		};
 	}, []);
 
-	useEffect(() => {
-		if (isInView && !state.isManualControl && state.isVisible) {
-			startAutoplayTimer();
-		} else if (timeoutRef.current) {
-			clearTimeout(timeoutRef.current);
-		}
+    useEffect(() => {
+        if (
+            autoplay &&
+            isInView &&
+            !state.isManualControl &&
+            state.isVisible
+        ) {
+            startAutoplayTimer();
+        } else if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
+        }
 
-		return () => {
-			if (timeoutRef.current) {
-				clearTimeout(timeoutRef.current);
-			}
-		};
-	}, [
-		state.currentIndex,
-		state.isManualControl,
-		state.isVisible,
-		isInView,
-		startAutoplayTimer,
-	]);
+        return () => {
+            if (timeoutRef.current) {
+                clearTimeout(timeoutRef.current);
+            }
+        };
+    }, [
+        autoplay,
+        state.currentIndex,
+        state.isManualControl,
+        state.isVisible,
+        isInView,
+        startAutoplayTimer,
+    ]);
 
 	useEffect(() => {
 		if (onSlideChange) {
@@ -176,30 +184,31 @@ export const Carousel: React.FC<Props> = ({
 					alt="right-arrow"
 				/>
 			</button>{" "}
-			<AnimatePresence mode="wait">
-				<motion.div
-					key={state.currentIndex}
-					initial={{
-						opacity: state.currentIndex === 0 ? 1 : 0,
-						x: state.currentIndex === 0 ? "50%" : 10,
-					}}
-					animate={{
-						opacity: 1,
-						x: 0,
-					}}
-					exit={{
-						opacity: state.currentIndex === 0 ? 1 : 0,
-						x: state.currentIndex === 0 ? "-100%" : -10,
-					}}
-					transition={{
-						type: "tween",
-						duration: state.currentIndex === 0 ? 0.5 : 0.3,
-						ease: "easeInOut",
-					}}
-					className="h-full">
-					{children[state.currentIndex]}
-				</motion.div>
-			</AnimatePresence>
-		</div>
-	);
+            <AnimatePresence mode="wait">
+                <motion.div
+                    key={state.currentIndex}
+                    initial={{
+                        // Avoid animating first slide to stabilize LCP
+                        opacity: state.currentIndex === 0 ? 1 : 0,
+                        x: state.currentIndex === 0 ? 0 : 10,
+                    }}
+                    animate={{
+                        opacity: 1,
+                        x: 0,
+                    }}
+                    exit={{
+                        opacity: state.currentIndex === 0 ? 1 : 0,
+                        x: state.currentIndex === 0 ? 0 : -10,
+                    }}
+                    transition={{
+                        type: "tween",
+                        duration: state.currentIndex === 0 ? 0.5 : 0.3,
+                        ease: "easeInOut",
+                    }}
+                    className="h-full">
+                    {children[state.currentIndex]}
+                </motion.div>
+            </AnimatePresence>
+        </div>
+    );
 };

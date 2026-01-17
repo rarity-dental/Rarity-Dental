@@ -6,7 +6,8 @@ import { useIsMobile, useIsTablet } from "@/hooks/useIsMobile";
 import Image from "next/image";
 import Link from "next/link";
 
-export const HeroSlide6 = () => {
+type HeroSlide6Props = { disableAnimations?: boolean };
+export const HeroSlide6 = ({ disableAnimations = false }: HeroSlide6Props) => {
 	const isMobile = useIsMobile();
 	const isTablet = useIsTablet();
 
@@ -29,9 +30,10 @@ export const HeroSlide6 = () => {
 						}}
 					/>
 					<div className="flex-1 flex flex-col justify-between py-[8%] pb-[40%] px-[2%] relative z-10">
-						<Slide
-							delay={0.4}
-							className="text-center max-w-[380px] mx-auto">
+                    <Slide
+                        disabled={disableAnimations}
+                        delay={0.4}
+                        className="text-center max-w-[380px] mx-auto">
 							<h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight tracking-tight text-white mb-2">
 								India’s Leading Award-Winning Dentists
 							</h1>
@@ -42,9 +44,10 @@ export const HeroSlide6 = () => {
 								in Gurgaon.
 							</span> */}
 						</Slide>
-						<Slide
-							delay={1.2}
-							className="flex justify-center items-center mb-8">
+                    <Slide
+                        disabled={disableAnimations}
+                        delay={1.2}
+                        className="flex justify-center items-center mb-8">
 							<Link
 								href={"#formDiv"}
 								passHref>
@@ -78,9 +81,10 @@ export const HeroSlide6 = () => {
 						}}
 					/>
 					<div className="flex-1 flex flex-col justify-between pt-[4%] pb-[4%] px-[2%] relative z-10 space-y-[10%] h-full">
-						<Slide
-							delay={0.8}
-							className="text-center max-w-[600px] mx-auto mt-16">
+                    <Slide
+                        disabled={disableAnimations}
+                        delay={0.8}
+                        className="text-center max-w-[600px] mx-auto mt-16">
 							<p className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight tracking-tight text-white mb-2">
 								India’s Leading Award-Winning Dentists
 							</p>
@@ -91,9 +95,10 @@ export const HeroSlide6 = () => {
 								in Gurgaon.
 							</span> */}
 						</Slide>
-						<Slide
-							delay={1.2}
-							className="flex justify-center items-center mb-8">
+                    <Slide
+                        disabled={disableAnimations}
+                        delay={1.2}
+                        className="flex justify-center items-center mb-8">
 							<Link
 								href={"#formDiv"}
 								passHref>
@@ -124,9 +129,10 @@ export const HeroSlide6 = () => {
 					</div>
 
 					<div className="w-full flex flex-col justify-between items-center mb-8 xl:mb-0 px-6 xl:px-0 py-[2.8%] max-w-5xl min-h-[68dvh] mx-auto">
-						<Slide
-							delay={0.4}
-							className="z-[1] flex flex-col items-start justify-center">
+                    <Slide
+                        disabled={disableAnimations}
+                        delay={0.4}
+                        className="z-[1] flex flex-col items-start justify-center">
 							<h1 className="text-[18px] md:text-[20px] lg:text-[24px] xl:text-[42px] 2xl:text-6xl leading-tight tracking-tighter text-white mb-1 2xl:mb-3 xl:min-w-[600px] text-center w-full">
 								India’s Leading Award-Winning Dentists
 							</h1>
@@ -137,9 +143,10 @@ export const HeroSlide6 = () => {
 								in Gurgaon.
 							</p> */}
 						</Slide>
-						<Slide
-							delay={0.6}
-							className="mt-6 xl:mt-12 flex justify-center items-center pl-[6%] 2xl:pl-4 ">
+                    <Slide
+                        disabled={disableAnimations}
+                        delay={0.6}
+                        className="mt-6 xl:mt-12 flex justify-center items-center pl-[6%] 2xl:pl-4 ">
 							<Link href={"#formDiv"}>
 								<Button
 									variant={"defaultWhite"}

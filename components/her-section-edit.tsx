@@ -10,6 +10,7 @@ import { HeroSlide4 } from "./hero-slide-4-smiles";
 import { HeroSlide5 } from "./hero-slide-5";
 import { useState, useEffect } from "react";
 import { HeroSlide6 } from "./hero-slide-6-sneha";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 const ParallaxBanner = dynamic(
 	() => import("./ui/parallaxH").then((mod) => mod.ParallaxBanner),
@@ -36,6 +37,7 @@ export const HeroSectionEdit = () => {
 	const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 	const [isPreloaded, setIsPreloaded] = useState(false);
 	const [carouselReady, setCarouselReady] = useState(false);
+	const isMobile = useIsMobile();
 
 	const isHeroSlide1 = currentSlideIndex === 0;
 
@@ -149,17 +151,25 @@ export const HeroSectionEdit = () => {
 			/>
 
 			<div className={`relative w-full h-full xl:mb-0 z-10 `}>
-				<Carousel
-					className="min-h-[600px] md:min-h-screen"
-					duration={4}
-					onSlideChange={setCurrentSlideIndex}>
-					<HeroSlide6 />
-					<HeroSlide1 />
-					<HeroSlide2 />
-					<HeroSlide3Video />
-					<HeroSlide5 />
-					<HeroSlide4 />
-				</Carousel>
+				{isMobile && !carouselReady ? (
+					// Static mobile-first hero to stabilize LCP while carousel chunk/ assets load
+					<div className="min-h-[600px]">
+						<HeroSlide6 disableAnimations />
+					</div>
+				) : (
+					<Carousel
+						className="min-h-[600px] md:min-h-screen"
+						duration={4}
+						autoplay={!isMobile}
+						onSlideChange={setCurrentSlideIndex}>
+						<HeroSlide6 />
+						<HeroSlide1 />
+						<HeroSlide2 />
+						<HeroSlide3Video />
+						<HeroSlide5 />
+						<HeroSlide4 />
+					</Carousel>
+				)}
 			</div>
 			<div className="w-full mb-[1.1%] xl:mt-0 hidden sm:flex overflow-hidden absolute bottom-[15%] left-0 z-20">
 				<Slide>

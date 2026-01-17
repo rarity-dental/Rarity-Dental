@@ -36,13 +36,14 @@ export function ClientProvider({ children }: { children: React.ReactNode }) {
 		return <SplashScreen finishLoading={handleSplashComplete} />;
 	}
 
-	return (
-		<>
-			<Navbar />
-			<Toaster />
-			<Slide>
-				<FloatingWhatsAppButton />
-				{children}
+    return (
+        <>
+            <Navbar />
+            <Toaster />
+            {/* Disable global fade-in on home to avoid delaying LCP */}
+            <Slide disabled={isHome}>
+                <FloatingWhatsAppButton />
+                {children}
 				{/* <div className="absolute h-20 w-full bg-black top-[100vh] z-[1000000]">
 					<div className="w-full h-full flex justify-center items-center">
 						<div className="w-1/2 h-full text-center">
@@ -53,8 +54,8 @@ export function ClientProvider({ children }: { children: React.ReactNode }) {
 						</div>
 					</div>
 				</div> */}
-			</Slide>
-			<Footer />
-		</>
-	);
+            </Slide>
+            <Footer />
+        </>
+    );
 }
