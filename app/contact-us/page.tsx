@@ -11,6 +11,14 @@ import { ConsultationForm } from "@/components/forms/connect-form";
 
 export const metadata: Metadata = {
 	title: "Contact Us",
+	description:
+		"Get in touch with Rarity Dental Care Centres in Gurgaon. Book a free consultation, find our address on Golf Course Road, or call us for appointments.",
+	openGraph: {
+		title: "Contact Us | Rarity Dental",
+		description:
+			"Get in touch with Rarity Dental Care Centres in Gurgaon. Book a free consultation, find our address on Golf Course Road, or call us for appointments.",
+		url: "/contact-us",
+	},
 };
 
 const ParallaxBanner = dynamic(

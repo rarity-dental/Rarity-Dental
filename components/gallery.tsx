@@ -165,7 +165,7 @@ export const Gallery = ({
 						</h2>
 					</div>
 					<div className="flex w-full mx-auto h-[245px] justify-between items-center gap-[10px] relative mb-8">
-						<div className="absolute left-[49%] top-1/3 rounded-full w-[67px] h-[67px] bg-[#F7F2EC] flex justify-center items-center z-[100000000000000000]">
+						<div className="absolute left-[49%] top-1/3 rounded-full w-[67px] h-[67px] bg-[#F7F2EC] flex justify-center items-center z-10">
 							<img
 								src="/images/rotating-image.svg"
 								alt="rotating-text"
@@ -185,7 +185,7 @@ export const Gallery = ({
 						<div className="w-[195px] h-[245px] relative rounded-lg">
 							<img
 								src="/images/gallery/gallery-img-left-2.webp"
-								alt="gallery-img-left"
+								alt="Rarity Dental clinic interior"
 								fetchPriority="high"
 								sizes="50vw"
 								className=" object-cover  rounded-lg absolute inset-0 w-full h-full"
@@ -196,7 +196,7 @@ export const Gallery = ({
 							<div className="w-full h-[47.5%] relative rounded-lg">
 								<img
 									src="/images/gallery/gallery-img-right-top.webp"
-									alt="gallery-img-right-top"
+									alt="Dental treatment room at Rarity Dental"
 									fetchPriority="high"
 									sizes="25vw"
 									className="object-cover rounded-lg absolute inset-0 w-full h-full"
@@ -207,7 +207,7 @@ export const Gallery = ({
 							<div className="w-full h-[47.5%] relative rounded-lg">
 								<img
 									src="/images/gallery/gallery-img-left.webp"
-									alt="gallery-img-right-bottom"
+									alt="Patient care at Rarity Dental Gurgaon"
 									sizes="25vw"
 									className="object-cover rounded-lg absolute inset-0 w-full h-full"
 									fetchPriority="high"
@@ -246,7 +246,7 @@ export const Gallery = ({
 					</h2>
 					<div className="flex flex-col md:flex-row  gap-5 w-full justify-between items-start ">
 						<div className="w-[61%] flex justify-between gap-x-[25px] items-center relative">
-							<div className="absolute top-1/2 left-[57%] -translate-x-1/2 -translate-y-1/2 rounded-full w-[154px] h-[154px] bg-[#F7F2EC] flex justify-center items-center z-[100000000000000000]">
+							<div className="absolute top-1/2 left-[57%] -translate-x-1/2 -translate-y-1/2 rounded-full w-[154px] h-[154px] bg-[#F7F2EC] flex justify-center items-center z-10">
 								<img
 									src="/images/rotating-image.svg"
 									alt="rotating-text"
@@ -266,7 +266,7 @@ export const Gallery = ({
 							<div className="relative w-[60%] h-[544px]">
 								<img
 									src="/images/gallery/gallery-img-left-2.webp"
-									alt="gallery-img-left"
+									alt="Rarity Dental clinic interior"
 									fetchPriority="high"
 									sizes="(min-width: 1024px) 37vw"
 									className="object-cover rounded-lg absolute inset-0 w-full h-full"
@@ -277,7 +277,7 @@ export const Gallery = ({
 								<div className="relative w-full h-[47.5%]">
 									<img
 										src="/images/gallery/gallery-img-right-top.webp"
-										alt="gallery-img-right-top"
+										alt="Dental treatment room at Rarity Dental"
 										fetchPriority="high"
 										sizes="(min-width: 1024px) 25vw"
 										className="object-cover rounded-lg absolute inset-0 w-full h-full"
@@ -286,7 +286,7 @@ export const Gallery = ({
 								<div className="relative w-full h-[47.5%]">
 									<img
 										src="/images/gallery/gallery-img-left.webp"
-										alt="gallery-img-right-bottom"
+										alt="Patient care at Rarity Dental Gurgaon"
 										fetchPriority="high"
 										sizes="(min-width: 1024px) 25vw"
 										className="object-cover rounded-lg absolute inset-0 w-full h-full"

@@ -185,7 +185,7 @@ export default async function InvisalignPage() {
 			id="form-top">
 			<a
 				href="#form-top"
-				className="fixed top-[22%]  md:top-[60%] right-0 w-8 md:w-12 h-[14rem] md:h-[18rem] bg-[#86806c] z-[100000000000] cursor-pointer hover:bg-[#2a2424] transition-colors duration-300 group rounded-l-lg overflow-hidden ">
+				className="fixed top-[22%]  md:top-[60%] right-0 w-8 md:w-12 h-[14rem] md:h-[18rem] bg-[#86806c] z-30 cursor-pointer hover:bg-[#2a2424] transition-colors duration-300 group rounded-l-lg overflow-hidden ">
 				<div className="absolute w-[18rem] h-12 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
 					<div className="w-full h-full flex items-center justify-center -rotate-90 text-white font-bold tracking-[0.15em] text-lg md:text-2xl">
 						Talk To An Expert
@@ -197,7 +197,7 @@ export default async function InvisalignPage() {
 				download
 				rel="noreferrer noopener"
 				// href="https://firebasestorage.googleapis.com/v0/b/casamed-6ec79.appspot.com/o/beyond-dental%2FRarity%20Dental%20Brochure.pdf?alt=media&token=b12d59c2-aaf7-4831-903b-d7f4092652a2"
-				className="fixed top-[22%] left-0 md:left-auto md:top-[20%] md:right-0 w-8 md:w-12 h-[14rem] md:h-[18rem] bg-[#86806c] z-[100000000000] cursor-pointer hover:bg-[#2a2424] transition-colors duration-300 group rounded-r-lg md:rounded-l-lg md:rounded-r-none overflow-hidden">
+				className="fixed top-[22%] left-0 md:left-auto md:top-[20%] md:right-0 w-8 md:w-12 h-[14rem] md:h-[18rem] bg-[#86806c] z-30 cursor-pointer hover:bg-[#2a2424] transition-colors duration-300 group rounded-r-lg md:rounded-l-lg md:rounded-r-none overflow-hidden">
 				<div className="absolute w-[18rem] h-12 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
 					<div className="w-full h-full flex items-center justify-center -rotate-90 text-white font-bold tracking-[0.15em] text-lg md:text-2xl">
 						Download Brochure

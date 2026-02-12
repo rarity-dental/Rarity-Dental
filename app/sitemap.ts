@@ -1,111 +1,71 @@
+import { MetadataRoute } from "next";
+import { groq } from "next-sanity";
 import client from "@/sanity/sanity.client";
-import { type MetadataRoute } from "next";
 
-const baseUrl = process.env.SITE_URL; // replace with your actual domain
-const blogCategories = [
-	"single-day-dentistry",
-	"smile-designing",
-	"specialised-treatments",
-	"invisalign",
-	"international-patients",
-	"advanced-technology", // include if still relevant
-];
-
-const standaloneCategories = [
-	"single-day-dentistry",
-	"smile-designing",
-	"specialised-treatments",
-	"invisalign",
-	"international-patients",
-	"advanced-technology",
-];
+const SITE_URL = "https://www.raritydental.com";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-	const now = new Date().toISOString();
-
-	// --- BLOG ROUTES ---
-	const blogRoutes = await Promise.all(
-		blogCategories.map(async (category) => {
-			const slugs: { slug: { current: string } }[] = await client.fetch(
-				`*[_type == "blogtest" && defined(slug.current) && category == $category]{ slug }`,
-				{ category }
-			);
-
-			return slugs.map((item) => ({
-				url: `${baseUrl}/blog/${category}/${item.slug.current}`,
-				lastModified: now,
-			}));
-		})
-	);
-
-	// --- STANDALONE CATEGORY ROUTES ---
-	const categoryPages = await Promise.all(
-		standaloneCategories.map(async (category) => {
-			const exists = await client.fetch(
-				`count(*[_type == "categoryPage" && category == $category]) > 0`,
-				{ category }
-			);
-
-			return exists
-				? [{ url: `${baseUrl}/${category}`, lastModified: now }]
-				: [];
-		})
-	);
-
-	// --- STANDALONE DYNAMIC ROUTES ---
-	const dynamicStandaloneRoutes = await Promise.all(
-		standaloneCategories.map(async (category) => {
-			const slugs: { slug: { current: string } }[] = await client.fetch(
-				`*[_type == "standalonePage" && defined(slug.current) && category == $category]{ slug }`,
-				{ category }
-			);
-
-			return slugs.map((item) => ({
-				url: `${baseUrl}/${category}/${item.slug.current}`,
-				lastModified: now,
-			}));
-		})
-	);
-
-	// --- GURUGRAM LANDING PAGES ---
-
-	const gurugramSlugs: { slug: { current: string } }[] = await client.fetch(
-		`*[_type == "standalonePage" && defined(slug.current) && category == "landing-pages-gurgaon"]{ slug }`
-	);
-
-	const gurugramRoutes = gurugramSlugs.map((item) => ({
-		url: `${baseUrl}/gurugram/${item.slug.current}`,
-		lastModified: now,
-	}));
-
-	// Flatten arrays
-	const blogPages = blogRoutes.flat();
-	const standaloneCategoryPages = categoryPages.flat();
-	const standalonePages = dynamicStandaloneRoutes.flat();
-
-	// Static routes (home, blog)
-	const staticRoutes = [
-		{ url: `${baseUrl}`, lastModified: now },
-		{ url: `${baseUrl}/about`, lastModified: now },
-		{ url: `${baseUrl}/contact-us`, lastModified: now },
-		{ url: `${baseUrl}/disclaimer`, lastModified: now },
-		{ url: `${baseUrl}/empanelment-financing`, lastModified: now },
-		{ url: `${baseUrl}/blog`, lastModified: now },
-		{ url: `${baseUrl}/services`, lastModified: now },
-		{ url: `${baseUrl}/invisalign`, lastModified: now },
-		{ url: `${baseUrl}/international-patients`, lastModified: now },
-		{ url: `${baseUrl}/privacy-policy`, lastModified: now },
-		{ url: `${baseUrl}/warranty-details`, lastModified: now },
-		{ url: `${baseUrl}/team/dr-sneha-singh`, lastModified: now },
-		{ url: `${baseUrl}/team/dr-manreet-sidhu`, lastModified: now },
-		{ url: `${baseUrl}/team/dr-gaurav-malik`, lastModified: now },
+	// Static routes
+	const staticRoutes: MetadataRoute.Sitemap = [
+		{ url: SITE_URL, lastModified: new Date(), changeFrequency: "weekly", priority: 1 },
+		{ url: `${SITE_URL}/about`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+		{ url: `${SITE_URL}/services`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+		{ url: `${SITE_URL}/contact-us`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+		{ url: `${SITE_URL}/blog`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.7 },
+		{ url: `${SITE_URL}/invisalign`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
+		{ url: `${SITE_URL}/international-patients`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
+		{ url: `${SITE_URL}/smile-designing`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
+		{ url: `${SITE_URL}/advanced-technology`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
+		{ url: `${SITE_URL}/specialised-treatments`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
+		{ url: `${SITE_URL}/single-day-dentistry`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
+		{ url: `${SITE_URL}/patient-testimonials`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
+		{ url: `${SITE_URL}/empanelment-financing`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
+		{ url: `${SITE_URL}/warranty-details`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
+		{ url: `${SITE_URL}/disclaimer`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.3 },
+		{ url: `${SITE_URL}/privacy-policy`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.3 },
 	];
 
-	return [
-		...staticRoutes,
-		...standaloneCategoryPages,
-		...standalonePages,
-		...blogPages,
-		...gurugramRoutes,
+	// Team pages
+	const teamRoutes: MetadataRoute.Sitemap = [
+		{ url: `${SITE_URL}/team/dr-sneha-singh`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
+		{ url: `${SITE_URL}/team/dr-manreet-sidhu`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
 	];
+
+	// Dynamic blog pages from Sanity
+	let blogRoutes: MetadataRoute.Sitemap = [];
+	try {
+		const blogs: { slug: string; category: string }[] = await client.fetch(
+			groq`*[_type == "blogtest"]{ "slug": slug.current, category }`,
+			{},
+			{ next: { revalidate: 3600 } }
+		);
+		blogRoutes = blogs.map((blog) => ({
+			url: `${SITE_URL}/blog/${blog.category}/${blog.slug}`,
+			lastModified: new Date(),
+			changeFrequency: "monthly" as const,
+			priority: 0.6,
+		}));
+	} catch (e) {
+		console.error("Sitemap: failed to fetch blogs", e);
+	}
+
+	// Dynamic standalone pages from Sanity
+	let standaloneRoutes: MetadataRoute.Sitemap = [];
+	try {
+		const pages: { slug: string; category: string }[] = await client.fetch(
+			groq`*[_type == "standalonePage"]{ "slug": slug.current, category }`,
+			{},
+			{ next: { revalidate: 3600 } }
+		);
+		standaloneRoutes = pages.map((page) => ({
+			url: `${SITE_URL}/${page.category}/${page.slug}`,
+			lastModified: new Date(),
+			changeFrequency: "monthly" as const,
+			priority: 0.6,
+		}));
+	} catch (e) {
+		console.error("Sitemap: failed to fetch standalone pages", e);
+	}
+
+	return [...staticRoutes, ...teamRoutes, ...blogRoutes, ...standaloneRoutes];
 }

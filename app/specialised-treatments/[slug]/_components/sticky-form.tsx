@@ -64,7 +64,7 @@ export const StickyConsultationForm: React.FC<StickyConsultationFormProps> = ({
 	return (
 		<div
 			ref={formRef}
-			className="w-[370px] hidden md:block right-0 h-fit overflow-y-auto z-[1000000000]"
+			className="w-[370px] hidden md:block right-0 h-fit overflow-y-auto z-30"
 			style={style}>
 			<ConsultationForm
 				paraText={paraText}

@@ -51,7 +51,7 @@ export async function generateMetadata() {
 
 export default function Home() {
 	return (
-		<main className="flex flex-col items-center overflow-hidden justify-between z-[10000] relative">
+		<main className="flex flex-col items-center overflow-hidden justify-between z-10 relative">
 			<HeroSectionEdit />
 			<div className="w-full mb-[1.1%] xl:mt-0 bg-transparent flex overflow-hidden md:hidden  ">
 				<Slide>

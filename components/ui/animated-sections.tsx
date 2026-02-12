@@ -2,7 +2,6 @@
 
 import { cn } from "@/lib/utils";
 import { motion, useInView, useAnimation } from "framer-motion";
-import { exit } from "process";
 import { useRef, useEffect } from "react";
 
 type props = {

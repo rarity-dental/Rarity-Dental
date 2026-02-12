@@ -270,8 +270,8 @@ export default function TestimonialTestComponent() {
 						</CarouselContent>
 					)}
 
-					<CarouselPrevious className="absolute  transform -translate-x-1/2 w-12 h-12 z-[100000000000000000000] " />
-					<CarouselNext className="absolute   transform -translate-x-1/2 w-12 h-12 z-[100000000000000000000]" />
+					<CarouselPrevious className="absolute  transform -translate-x-1/2 w-12 h-12 z-10 " />
+					<CarouselNext className="absolute   transform -translate-x-1/2 w-12 h-12 z-10" />
 				</Carousel>
 			</div>
 

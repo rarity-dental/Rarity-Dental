@@ -134,7 +134,7 @@ const SkeletonOne = ({
 					className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] p-2 items-center space-x-2 bg-white dark:bg-black ">
 					<img
 						src={`/images/logo-light.png`}
-						alt="avatar"
+						alt="Rarity Dental logo"
 						height={24}
 						width={24}
 						className="rounded-full"
@@ -226,7 +226,7 @@ const SkeletonThree = ({ paramName }: { paramName: string }) => {
 			<motion.div className=" h-[300px] md:h-full w-full rounded-lg relative ">
 				<img
 					src={`${paramName === "dr-gaurav-malik" ? "/images/dr-gaurav-malik.jpg" : paramName === "dr-manreet-sidhu" ? "/images/dr-manreet-sidhu-op.webp" : "/images/dr-sneha-singh.webp"}`}
-					alt="avatar"
+					alt={`Portrait of ${paramName === "dr-gaurav-malik" ? "Dr. Gaurav Malik" : paramName === "dr-manreet-sidhu" ? "Dr. Manreet Sidhu" : "Dr. Sneha Singh"} – Rarity Dental Gurgaon`}
 					sizes="100%"
 					className="object-cover absolute inset-0 w-full h-full md:scale-[80%] rounded-lg"
 					loading="lazy"
@@ -344,7 +344,7 @@ const SkeletonFive = ({ doctor }: { doctor: (typeof doctorData)[0] }) => {
 					{index === 0 && (
 						<img
 							src={doctor.image}
-							alt="avatar"
+							alt={`${doctor.title} profile photo`}
 							height="100"
 							width="100"
 							className="rounded-full h-10 w-10 object-cover"

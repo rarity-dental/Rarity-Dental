@@ -54,6 +54,72 @@ export default function RootLayout({
 			{/* <TawkToScript /> */}
 			<body
 				className={`${belleza.variable} ${poppins.variable} font-belleza bg-[#F7F2EC] relative`}>
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{
+						__html: JSON.stringify({
+							"@context": "https://schema.org",
+							"@graph": [
+								{
+									"@type": "Dentist",
+									"@id": "https://www.raritydental.com/#dentist",
+									name: "Rarity Dental Care Centres",
+									alternateName: "Rarity Dental",
+									url: "https://www.raritydental.com",
+									logo: "https://www.raritydental.com/images/logo-copyColor-text.png",
+									image: "https://www.raritydental.com/images/og-img.jpg",
+									telephone: "+91-7899418483",
+									email: "info@raritydental.com",
+									address: {
+										"@type": "PostalAddress",
+										streetAddress: "42, Ashoka Crescent, Golf Course Road",
+										addressLocality: "Gurugram",
+										addressRegion: "Haryana",
+										postalCode: "122002",
+										addressCountry: "IN",
+									},
+									geo: {
+										"@type": "GeoCoordinates",
+										latitude: 28.4595,
+										longitude: 77.0266,
+									},
+									openingHoursSpecification: {
+										"@type": "OpeningHoursSpecification",
+										dayOfWeek: [
+											"Monday",
+											"Tuesday",
+											"Wednesday",
+											"Thursday",
+											"Friday",
+											"Saturday",
+										],
+										opens: "09:00",
+										closes: "19:00",
+									},
+									priceRange: "$$",
+									sameAs: [
+										"https://www.instagram.com/raritydentalofficial/",
+										"https://www.facebook.com/raritydental",
+										"https://www.youtube.com/@raritydentalofficial",
+									],
+								},
+								{
+									"@type": "Organization",
+									"@id": "https://www.raritydental.com/#organization",
+									name: "Rarity Dental Care Centres",
+									url: "https://www.raritydental.com",
+									logo: "https://www.raritydental.com/images/logo-copyColor-text.png",
+									contactPoint: {
+										"@type": "ContactPoint",
+										telephone: "+91-7899418483",
+										contactType: "customer service",
+										availableLanguage: ["English", "Hindi"],
+									},
+								},
+							],
+						}),
+					}}
+				/>
 				{/* Defer GTM load so it doesn't contend with LCP */}
 				<Script
 					src={`https://www.googletagmanager.com/gtm.js?id=GTM-WB6467W9`}

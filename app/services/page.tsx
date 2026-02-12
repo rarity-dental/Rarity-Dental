@@ -4,6 +4,14 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
 	title: "Services",
+	description:
+		"Explore our comprehensive dental services at Rarity Dental Gurgaon – smile makeovers, dental implants, Invisalign, cosmetic dentistry, root canal, and more.",
+	openGraph: {
+		title: "Services | Rarity Dental",
+		description:
+			"Explore our comprehensive dental services at Rarity Dental Gurgaon – smile makeovers, dental implants, Invisalign, cosmetic dentistry, root canal, and more.",
+		url: "/services",
+	},
 };
 
 export default async function AdvancedTechnologyPage() {

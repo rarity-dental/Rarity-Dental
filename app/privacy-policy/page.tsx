@@ -17,6 +17,8 @@ import React from "react";
 
 export const metadata: Metadata = {
 	title: "Privacy Policy",
+	description:
+		"Read the privacy policy of Rarity Dental Care Centres. Learn how we collect, use, and protect your personal information and dental health data.",
 };
 
 const ParallaxBanner = dynamic(

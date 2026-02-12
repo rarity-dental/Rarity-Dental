@@ -198,7 +198,7 @@ export const Footer = ({ hasEndDiv = true }: FooterProps) => {
 				<p className="text-[12px] text-white font-poppins text-opacity-[70%] font-medium min-w-fit">
 					© 2024 Rarity Dental | All Rights Reserved
 				</p>
-				<div className="min-w-fit flex flex-row  justify-center gap-4 md:gap-[40px] z-[100000000000]">
+				<div className="min-w-fit flex flex-row  justify-center gap-4 md:gap-[40px] z-10">
 					<a
 						href="/disclaimer"
 						className="text-[12px] text-white font-poppins text-opacity-[70%] font-medium transition-all duration-800 ease-in-out hover:scale-[1.03] active:scale-[0.98] cursor-pointer">

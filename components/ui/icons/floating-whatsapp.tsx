@@ -5,7 +5,7 @@ import React from "react";
 
 export const FloatingWhatsAppButton = () => {
 	return (
-		<div className=" fixed w-full h-[140px] bottom-0 flex flex-col items-center justify-center z-[100000000000000000000]">
+		<div className=" fixed w-full h-[140px] bottom-0 flex flex-col items-center justify-center z-40">
 			<div>
 				<a
 					href="https://api.whatsapp.com/send?phone=917899418483"

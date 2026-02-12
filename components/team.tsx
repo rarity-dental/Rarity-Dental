@@ -136,7 +136,7 @@ export const Team = ({ hasEndDiv = true }: TeamProps) => {
 
 							{/* Navigation buttons positioned at the sides of the card, aligned with "YEARS OF EXPERIENCE" */}
 							<div
-								className="absolute w-full flex justify-center gap-x-[63%] z-[1000000000000] items-center"
+								className="absolute w-full flex justify-center gap-x-[63%] z-10 items-center"
 								style={{ top: "400px" }}>
 								<button
 									type="button"

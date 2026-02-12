@@ -119,7 +119,7 @@ export const Card = ({
 								href={`/team/${slug}`}
 								rel="noopener noreferrer"
 								onClick={(e) => e.stopPropagation()}
-								className={`flex justify-center items-center px-4 py-1.5 bg-white  z-[10000] mt-[5%] bg-opacity-100 bg-blur-10 transition-all duration-300 ease-in-out gap-x-2 lg:hover:scale-105 lg:hover:bg-opacity-100 lg:hover:shadow-md rounded-md active:scale-95 cursor-pointer `}>
+								className={`flex justify-center items-center px-4 py-1.5 bg-white  z-10 mt-[5%] bg-opacity-100 bg-blur-10 transition-all duration-300 ease-in-out gap-x-2 lg:hover:scale-105 lg:hover:bg-opacity-100 lg:hover:shadow-md rounded-md active:scale-95 cursor-pointer `}>
 								<InfoIcon size={24} color="#73383E" />
 								<span className="text-[18px] text-[#73383E] font-semibold">Know more</span>
 							</Link>

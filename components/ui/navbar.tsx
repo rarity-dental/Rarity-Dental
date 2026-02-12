@@ -19,7 +19,7 @@ export const Navbar = () => {
 
 	return (
 		<nav
-			className={`fixed top-0 left-0 w-full z-[10000000]  h-26 flex flex-col justify-center duration-300 ease-in-out backdrop-blur-md bg-opacity-30 border-b border-gray-200`}
+			className={`fixed top-0 left-0 w-full z-50  h-26 flex flex-col justify-center duration-300 ease-in-out backdrop-blur-md bg-opacity-30 border-b border-gray-200`}
 			style={
 				{
 					["--navbar-height" as any]: "122px",

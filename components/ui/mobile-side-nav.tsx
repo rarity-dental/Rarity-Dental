@@ -79,7 +79,7 @@ export function MobileSideNav() {
 			</SheetTrigger>
 			<SheetContent
 				side="left"
-				className="w-full sm:w-[380px] z-[100000000000] pt-[18px] h-[100dvh] overflow-y-auto">
+				className="w-full sm:w-[380px] z-50 pt-[18px] h-[100dvh] overflow-y-auto">
 				<SheetHeader className="mb-6">
 					<SheetTitle>Menu</SheetTitle>
 					<SheetDescription>
