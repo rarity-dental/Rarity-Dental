@@ -46,28 +46,35 @@ export const ConsultationForm = ({
 		resolver: zodResolver(formSchema),
 	});
 
-	// Auto-detect country
+	// Auto-detect country (cached in sessionStorage to avoid redundant fetches)
 	useEffect(() => {
-		if (countryCode) {
-			fetch("/api/get-country")
-				.then((res) => {
-					if (!res.ok) {
-						throw new Error(`HTTP error! status: ${res.status}`);
-					}
-					return res.json();
-				})
-				.then((data) => {
-					if (data && data.country_calling_code) {
-						setPhoneNumber(""); // Let user type, don't prefill
-						setCountry(data.country_name);
-						setCountryIso(data.country_code || "IN");
-					}
-				})
-				.catch((error) => {
-					console.error("Error fetching country code:", error);
-					// Fallback to India on error (already set as default)
-				});
+		if (!countryCode) return;
+		const cached = sessionStorage.getItem("country-data");
+		if (cached) {
+			try {
+				const data = JSON.parse(cached);
+				setPhoneNumber("");
+				setCountry(data.country_name);
+				setCountryIso(data.country_code || "IN");
+			} catch {}
+			return;
 		}
+		fetch("/api/get-country")
+			.then((res) => {
+				if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+				return res.json();
+			})
+			.then((data) => {
+				if (data && data.country_calling_code) {
+					sessionStorage.setItem("country-data", JSON.stringify(data));
+					setPhoneNumber("");
+					setCountry(data.country_name);
+					setCountryIso(data.country_code || "IN");
+				}
+			})
+			.catch((error) => {
+				console.error("Error fetching country code:", error);
+			});
 	}, [countryCode]);
 
 	// Update phone number in form state

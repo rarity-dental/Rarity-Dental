@@ -3,7 +3,6 @@
 
 import { Star } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 
 import {
 	Carousel,
@@ -16,96 +15,94 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 import { useIsMobile } from "@/hooks/useIsMobile";
 
+const testimonials = [
+	{
+		id: 1,
+		author: "Lisa, Sweden",
+		quote: "I never knew dental care could be this luxurious! Rarity exceeded all my expectations.",
+		rating: 4.5,
+		image: "/images/testim1.webp",
+	},
+	{
+		id: 2,
+		author: "Sarah, Happy Client",
+		quote: "I was so nervous about my procedure, but the team made me feel so comfortable and at ease.",
+		rating: 4.5,
+		image: "/images/testim3.webp",
+	},
+	{
+		id: 3,
+		author: "Kimi, Loyal Customer",
+		quote: "I've been coming here for years and I've never had a bad experience. Highly recommend!",
+		rating: 5,
+		image: "/images/testim4.webp",
+	},
+	{
+		id: 4,
+		author: "Lisa, Sweden",
+		quote: "I never knew dental care could be this luxurious! Rarity exceeded all my expectations.",
+		rating: 4.5,
+		image: "/images/testim1.webp",
+	},
+	{
+		id: 5,
+		author: "Sarah, Happy Client",
+		quote: "I was so nervous about my procedure, but the team made me feel so comfortable and at ease.",
+		rating: 4.5,
+		image: "/images/testim3.webp",
+	},
+	{
+		id: 6,
+		author: "Kimi, Loyal Customer",
+		quote: "I've been coming here for years and I've never had a bad experience. Highly recommend!",
+		rating: 5,
+		image: "/images/testim4.webp",
+	},
+	{
+		id: 7,
+		author: "Lisa, Sweden",
+		quote: "I never knew dental care could be this luxurious! Rarity exceeded all my expectations.",
+		rating: 4.5,
+		image: "/images/testim1.webp",
+	},
+	{
+		id: 8,
+		author: "Sarah, Happy Client",
+		quote: "I was so nervous about my procedure, but the team made me feel so comfortable and at ease.",
+		rating: 4.5,
+		image: "/images/testim3.webp",
+	},
+	{
+		id: 9,
+		author: "Kimi, Loyal Customer",
+		quote: "I've been coming here for years and I've never had a bad experience. Highly recommend!",
+		rating: 5,
+		image: "/images/testim4.webp",
+	},
+	{
+		id: 10,
+		author: "Lisa, Sweden",
+		quote: "I never knew dental care could be this luxurious! Rarity exceeded all my expectations.",
+		rating: 4.5,
+		image: "/images/testim1.webp",
+	},
+	{
+		id: 11,
+		author: "Sarah, Happy Client",
+		quote: "I was so nervous about my procedure, but the team made me feel so comfortable and at ease.",
+		rating: 4.5,
+		image: "/images/testim3.webp",
+	},
+	{
+		id: 12,
+		author: "Kimi, Loyal Customer",
+		quote: "I've been coming here for years and I've never had a bad experience. Highly recommend!",
+		rating: 5,
+		image: "/images/testim4.webp",
+	},
+];
+
 export default function TestimonialTestComponent() {
-	const testimonials = [
-		{
-			id: 1,
-			author: "Lisa, Sweden",
-			quote: "I never knew dental care could be this luxurious! Rarity exceeded all my expectations.",
-			rating: 4.5,
-			image: "/images/testim1.webp", // Update with your image path
-		},
-		{
-			id: 2,
-			author: "Sarah, Happy Client",
-			quote: "I was so nervous about my procedure, but the team made me feel so comfortable and at ease.",
-			rating: 4.5,
-			image: "/images/testim3.webp", // Update with your image path
-		},
-		{
-			id: 3,
-			author: "Kimi, Loyal Customer",
-			quote: "I've been coming here for years and I've never had a bad experience. Highly recommend!",
-			rating: 5,
-			image: "/images/testim4.webp",
-		},
-		{
-			id: 4,
-			author: "Lisa, Sweden",
-			quote: "I never knew dental care could be this luxurious! Rarity exceeded all my expectations.",
-			rating: 4.5,
-			image: "/images/testim1.webp", // Update with your image path
-		},
-		{
-			id: 5,
-			author: "Sarah, Happy Client",
-			quote: "I was so nervous about my procedure, but the team made me feel so comfortable and at ease.",
-			rating: 4.5,
-			image: "/images/testim3.webp", // Update with your image path
-		},
-		{
-			id: 6,
-			author: "Kimi, Loyal Customer",
-			quote: "I've been coming here for years and I've never had a bad experience. Highly recommend!",
-			rating: 5,
-			image: "/images/testim4.webp",
-		},
-		{
-			id: 7,
-			author: "Lisa, Sweden",
-			quote: "I never knew dental care could be this luxurious! Rarity exceeded all my expectations.",
-			rating: 4.5,
-			image: "/images/testim1.webp", // Update with your image path
-		},
-		{
-			id: 8,
-			author: "Sarah, Happy Client",
-			quote: "I was so nervous about my procedure, but the team made me feel so comfortable and at ease.",
-			rating: 4.5,
-			image: "/images/testim3.webp", // Update with your image path
-		},
-		{
-			id: 9,
-			author: "Kimi, Loyal Customer",
-			quote: "I've been coming here for years and I've never had a bad experience. Highly recommend!",
-			rating: 5,
-			image: "/images/testim4.webp",
-		},
-		{
-			id: 10,
-			author: "Lisa, Sweden",
-			quote: "I never knew dental care could be this luxurious! Rarity exceeded all my expectations.",
-			rating: 4.5,
-			image: "/images/testim1.webp", // Update with your image path
-		},
-		{
-			id: 11,
-			author: "Sarah, Happy Client",
-			quote: "I was so nervous about my procedure, but the team made me feel so comfortable and at ease.",
-			rating: 4.5,
-			image: "/images/testim3.webp", // Update with your image path
-		},
-		{
-			id: 12,
-			author: "Kimi, Loyal Customer",
-			quote: "I've been coming here for years and I've never had a bad experience. Highly recommend!",
-			rating: 5,
-			image: "/images/testim4.webp",
-		},
-	];
-
-	// For manual navigation, call setCurrentIndex(idx) and setIsAnimating(true)
-
 	const renderStars = (rating: number) => {
 		const stars = [];
 		for (let i = 1; i <= 5; i++) {
@@ -174,7 +171,7 @@ export default function TestimonialTestComponent() {
 														"/placeholder.svg"
 													}
 													alt={`${testimonial.author} testimonial`}
-													fetchPriority="high"
+													loading="lazy"
 													className="absolute object-cover rounded-lg inset-0 w-full h-full"
 													sizes="70vw"
 												/>
@@ -232,7 +229,7 @@ export default function TestimonialTestComponent() {
 														"/placeholder.svg"
 													}
 													alt={`${testimonial.author} testimonial`}
-													fetchPriority="high"
+													loading="lazy"
 													className="object-cover absolute inset-0 w-full h-full rounded-lg"
 													sizes="70vw"
 												/>

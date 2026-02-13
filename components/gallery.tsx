@@ -169,6 +169,7 @@ export const Gallery = ({
 							<img
 								src="/images/rotating-image.svg"
 								alt="rotating-text"
+								loading="lazy"
 								width={57}
 								height={57}
 								className="absolute animate-spin-slow"
@@ -179,6 +180,7 @@ export const Gallery = ({
 									alt="arrow-right-gallery"
 									width={45}
 									height={45}
+									loading="lazy"
 								/>
 							</div>
 						</div>
@@ -186,7 +188,7 @@ export const Gallery = ({
 							<img
 								src="/images/gallery/gallery-img-left-2.webp"
 								alt="Rarity Dental clinic interior"
-								fetchPriority="high"
+								loading="lazy"
 								sizes="50vw"
 								className=" object-cover  rounded-lg absolute inset-0 w-full h-full"
 							/>
@@ -197,7 +199,7 @@ export const Gallery = ({
 								<img
 									src="/images/gallery/gallery-img-right-top.webp"
 									alt="Dental treatment room at Rarity Dental"
-									fetchPriority="high"
+									loading="lazy"
 									sizes="25vw"
 									className="object-cover rounded-lg absolute inset-0 w-full h-full"
 									// style={{ width: "133px", height: "114px" }}
@@ -210,7 +212,7 @@ export const Gallery = ({
 									alt="Patient care at Rarity Dental Gurgaon"
 									sizes="25vw"
 									className="object-cover rounded-lg absolute inset-0 w-full h-full"
-									fetchPriority="high"
+									loading="lazy"
 								/>
 							</div>
 						</div>
@@ -250,6 +252,7 @@ export const Gallery = ({
 								<img
 									src="/images/rotating-image.svg"
 									alt="rotating-text"
+									loading="lazy"
 									width={131}
 									height={131}
 									className="absolute animate-spin-slow"
@@ -267,7 +270,7 @@ export const Gallery = ({
 								<img
 									src="/images/gallery/gallery-img-left-2.webp"
 									alt="Rarity Dental clinic interior"
-									fetchPriority="high"
+									loading="lazy"
 									sizes="(min-width: 1024px) 37vw"
 									className="object-cover rounded-lg absolute inset-0 w-full h-full"
 								/>
@@ -278,7 +281,7 @@ export const Gallery = ({
 									<img
 										src="/images/gallery/gallery-img-right-top.webp"
 										alt="Dental treatment room at Rarity Dental"
-										fetchPriority="high"
+										loading="lazy"
 										sizes="(min-width: 1024px) 25vw"
 										className="object-cover rounded-lg absolute inset-0 w-full h-full"
 									/>
@@ -287,7 +290,7 @@ export const Gallery = ({
 									<img
 										src="/images/gallery/gallery-img-left.webp"
 										alt="Patient care at Rarity Dental Gurgaon"
-										fetchPriority="high"
+										loading="lazy"
 										sizes="(min-width: 1024px) 25vw"
 										className="object-cover rounded-lg absolute inset-0 w-full h-full"
 									/>

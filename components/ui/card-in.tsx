@@ -96,6 +96,8 @@ export const Card = ({
 					alt={alt || title}
 					width={400}
 					height={imageHeight}
+					loading="lazy"
+					fetchPriority="low"
 					className={`transition-transform duration-300 ease-in-out transform object-cover ${showOverlay ? "scale-105" : ""}`}
 					style={{
 						width: isMobile ? "300px" : "400px",

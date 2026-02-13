@@ -16,9 +16,7 @@ import {
 	CarouselApi,
 } from "@/components/ui/carousel";
 import { motion, useAnimation, useInView } from "framer-motion";
-import { Loader2 } from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
-import { UseEmblaCarouselType } from "embla-carousel-react";
 
 export const techData = [
 	{

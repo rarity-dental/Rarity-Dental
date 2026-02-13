@@ -51,12 +51,6 @@ export const HeroSlide4 = () => {
                             sizes="max(100vw, 700px)"
                             alt="Team Image"
                             className="object-contain object-bottom ml-[0%] absolute inset-0 w-full h-full"
-                            style={{
-                                transform: "translateZ(0)",
-                                backfaceVisibility: "hidden",
-                                perspective: "1000px",
-                                willChange: "transform",
-                            }}
                         />
 						</div>
 					</div>

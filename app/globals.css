@@ -2,8 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes parallax-scroll {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(-50%); }
+}
+
 :root {
 	font-family: var(--font-belleza);
+	--hero-wallpaper-color: #2f2321;
+	--hero-wallpaper-mobile: url("/images/hero-back-static-mobile-img.webp");
+	--hero-wallpaper-desktop: url("/images/hero-back-img-static.webp");
 }
 
 .scrollbar-hide::-webkit-scrollbar {
@@ -426,4 +434,35 @@ html {
 	background: white;
 	/* color: slategray; */
 	transform: rotateY(180deg);
+}
+
+/* Hard paint fallback for hero: ensures wallpaper tone/image is always painted first */
+.hero-paint-fallback {
+	background-color: var(--hero-wallpaper-color);
+	background-image: var(--hero-wallpaper-mobile);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+@media (min-width: 768px) {
+	.hero-paint-fallback {
+		background-image: var(--hero-wallpaper-desktop);
+	}
+}
+
+.hero-paint-layer {
+	background-color: var(--hero-wallpaper-color);
+	background-image: var(--hero-wallpaper-mobile);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	transform: translateZ(0);
+	will-change: opacity;
+}
+
+@media (min-width: 768px) {
+	.hero-paint-layer {
+		background-image: var(--hero-wallpaper-desktop);
+	}
 }

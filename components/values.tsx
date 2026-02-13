@@ -1,5 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
-
+import Image from "next/image";
 import { Button } from "./ui/button";
 
 export const ValuesSection = () => {
@@ -61,14 +60,13 @@ export const ValuesSection = () => {
 
 			{/* <div className="w-1/2 h-full bg-[url('/images/values-img.png')]"></div> */}
 			<div className="w-full md:w-1/2 h-[50vh] md:h-[70vh] 2xl:h-[50vh] relative flex justify-end items-end mt-[8%] md:ml-[10%]">
-				<img
+				<Image
 					src="/images/values-image.webp"
-					alt="Values Image"
+					alt="Rarity Dental clinic values and commitment to patient care"
+					fill
 					loading="lazy"
-					fetchPriority="low"
-					decoding="async"
-					sizes="90%"
-					className="object-cover rounded-lg absolute inset-0 w-full h-full"
+					sizes="(max-width: 768px) 100vw, 50vw"
+					className="object-cover rounded-lg"
 				/>
 			</div>
 		</div>

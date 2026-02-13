@@ -283,7 +283,7 @@ const SkeletonFour = ({ doctor }: { doctor: (typeof doctorData)[0] }) => {
 									? "Photo by Olga Guryanova"
 									: deg.title
 							}
-							fetchPriority="high"
+							loading="lazy"
 							sizes="100%"
 							className="object-cover absolute inset-0 w-full h-full rounded-t-2xl"
 						/>

@@ -71,6 +71,7 @@ const MobileCardWithNavigation = ({
 						alt="left-arrow"
 						width={40}
 						height={40}
+						loading="lazy"
 						className="hover:scale-105 transition-all duration-800 ease-in-out active:scale-95 cursor-pointer w-8 h-8"
 					/>
 				</button>
@@ -87,6 +88,7 @@ const MobileCardWithNavigation = ({
 						alt="right-arrow"
 						width={40}
 						height={40}
+						loading="lazy"
 						className="hover:scale-105 transition-all duration-800 ease-in-out active:scale-95 cursor-pointer w-8 h-8"
 					/>
 				</button>
@@ -321,9 +323,10 @@ export const Services = () => {
 					<img
 						src="/images/invisalign-logo.png"
 						alt="invisalign-logo"
-						width={250}
+						width={197}
 						height={49}
-						className="mb-4 lg:mb-6 w-[250px] h-[49px]"
+						loading="lazy"
+						className="mb-4 lg:mb-6"
 					/>
 				</div>
 

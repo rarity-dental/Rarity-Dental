@@ -4,7 +4,27 @@
       "Bash(dir:*)",
       "Bash(ls:*)",
       "Bash(npm install:*)",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "Bash(find:*)",
+      "Bash(sort:*)",
+      "Bash(wc:*)",
+      "Bash(du:*)",
+      "Bash(powershell -Command:*)",
+      "Bash(node:*)",
+      "Bash(timeout /t 5 /nobreak)",
+      "Bash(curl:*)",
+      "Bash(findstr:*)",
+      "Bash(powershell \"Start-Sleep 3; \\(Invoke-WebRequest ''http://localhost:3099'' -UseBasicParsing\\).Content\")",
+      "Bash(Get-ChildItem:*)",
+      "Bash(npx --yes image-size:*)",
+      "Bash(cd:*)",
+      "Bash(netstat:*)",
+      "Bash(del D:Rarity-Dentalparse-lh.js D:Rarity-Dentalparse-lh2.js D:Rarity-Dentalparse-lh3.js D:Rarity-Dentalparse-lh4.js D:Rarity-Dentalprod-html.txt D:Rarity-Dentalprod-html-after.txt D:Rarity-Dentalprod-html-v3.txt D:Rarity-Dentalprod-html-final.txt)",
+      "Bash(npx lighthouse:*)",
+      "Bash(taskkill:*)",
+      "Bash(cmd //c \"taskkill /PID 71140 /F\")",
+      "Bash(cmd //c \"taskkill /PID 51596 /F\")",
+      "Bash(cmd //c \"taskkill /PID 21292 /F\")"
     ]
   }
 }

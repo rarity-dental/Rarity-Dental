@@ -3,12 +3,11 @@ import "./globals.css";
 import { ClientProvider } from "@/providers/client-provider";
 import Script from "next/script";
 import { Metadata } from "next";
-// import { GoogleAnalytics } from "@next/third-parties/google";
 
 const belleza = Belleza({
 	weight: "400",
 	subsets: ["latin"],
-	display: "swap",
+	display: "optional",
 	preload: true,
 	adjustFontFallback: true,
 	variable: "--font-belleza",
@@ -16,8 +15,8 @@ const belleza = Belleza({
 
 const poppins = Poppins({
 	subsets: ["latin"],
-	weight: ["400", "500", "600", "700"],
-	display: "swap",
+	weight: ["400", "600"],
+	display: "optional",
 	preload: true,
 	adjustFontFallback: true,
 	variable: "--font-poppins",
@@ -44,14 +43,12 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<head>
-				{/* Optional: speed up DNS/TLS for GTM if used */}
 				<link
 					rel="preconnect"
 					href="https://www.googletagmanager.com"
 					crossOrigin=""
 				/>
 			</head>
-			{/* <TawkToScript /> */}
 			<body
 				className={`${belleza.variable} ${poppins.variable} font-belleza bg-[#F7F2EC] relative`}>
 				<script
@@ -120,31 +117,35 @@ export default function RootLayout({
 						}),
 					}}
 				/>
-				{/* Defer GTM load so it doesn't contend with LCP */}
+				{/* Defer all analytics until first user interaction to avoid blocking LCP/TBT */}
 				<Script
-					src={`https://www.googletagmanager.com/gtm.js?id=GTM-WB6467W9`}
-					strategy="lazyOnload"
-				/>
-				<Script
-					src={`https://www.googletagmanager.com/gtag.js?id=AW-16798877123`}
-					strategy="lazyOnload"
-				/>
-				<Script
-					src={`https://www.googletagmanager.com/gtag.js?id=G-7TVYNQX0E4`}
-					strategy="lazyOnload"
-				/>
-				{/* <GoogleAnalytics gaId="G-7TVYNQX0E4" /> */}
-				{/* Initialize gtag and provide required config to avoid deferred hits */}
-				<Script
-					id="gtag-init"
-					strategy="afterInteractive">{`
-				  window.dataLayer = window.dataLayer || [];
-				  function gtag(){window.dataLayer.push(arguments);}
-				  gtag('js', new Date());
-				  // GA4 measurement ID
-				  gtag('config', 'G-7TVYNQX0E4');
-				  // Google Ads conversion ID (optional but recommended if using AW)
-				  gtag('config', 'AW-16798877123');
+					id="analytics-on-interaction"
+					strategy="lazyOnload">{`
+				  (function(){
+				    var loaded=false;
+				    function loadAnalytics(){
+				      if(loaded)return;
+				      loaded=true;
+				      var g=document.createElement('script');
+				      g.src='https://www.googletagmanager.com/gtag/js?id=G-7TVYNQX0E4';
+				      g.async=true;
+				      document.head.appendChild(g);
+				      window.dataLayer=window.dataLayer||[];
+				      function gtag(){window.dataLayer.push(arguments);}
+				      gtag('js',new Date());
+				      gtag('config','G-7TVYNQX0E4');
+				      gtag('config','AW-16798877123');
+				      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+				      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+				      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+				      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+				      })(window,document,'script','dataLayer','GTM-WB6467W9');
+				    }
+				    ['scroll','click','touchstart'].forEach(function(e){
+				      window.addEventListener(e,loadAnalytics,{once:true,passive:true});
+				    });
+				    setTimeout(loadAnalytics,5000);
+				  })();
 				`}</Script>
 				<ClientProvider>{children}</ClientProvider>
 			</body>

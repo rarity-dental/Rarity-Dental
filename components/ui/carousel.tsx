@@ -257,6 +257,7 @@ const CarouselPreviousMod = React.forwardRef<
 		>
 			<img
 				src="/images/arrow-right-brown.svg"
+				loading="lazy"
 				alt="previous-button"
 				className=" scale-x-[-1] h-6 w-6"
 			/>
@@ -319,6 +320,7 @@ const CarouselNextMod = React.forwardRef<
 		>
 			<img
 				src="/images/arrow-right-brown.svg"
+				loading="lazy"
 				alt="next-button"
 				className=" h-6 w-6"
 			/>

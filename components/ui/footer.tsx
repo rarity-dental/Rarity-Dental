@@ -130,6 +130,7 @@ export const Footer = ({ hasEndDiv = true }: FooterProps) => {
 											alt={`link icon - ${index + 1}`}
 											width={16}
 											height={16}
+											loading="lazy"
 											style={{
 												width: "16px",
 												height: "16px",
@@ -163,6 +164,7 @@ export const Footer = ({ hasEndDiv = true }: FooterProps) => {
 									alt={link.name}
 									width={16}
 									height={16}
+									loading="lazy"
 									style={{
 										width: "16px",
 										height: "16px",

@@ -81,6 +81,8 @@ export const Navbar = () => {
 							alt="logo"
 							width={100}
 							height={48}
+							loading="lazy"
+							fetchPriority="low"
 						/>
 					</Link>
 

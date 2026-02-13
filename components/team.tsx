@@ -10,13 +10,34 @@ import Slide from "./ui/animated-sections";
 import { PageEndDiv } from "./ui/page-end-div";
 import { motion, AnimatePresence } from "framer-motion";
 
+// Framer Motion variants (defined outside component to avoid re-creation on every render)
+const cardVariants = {
+	enter: (direction: number) => ({
+		x: direction > 0 ? 300 : -300,
+		opacity: 0,
+	}),
+	center: {
+		x: 0,
+		opacity: 1,
+	},
+	exit: (direction: number) => ({
+		x: direction < 0 ? 300 : -300,
+		opacity: 0,
+	}),
+};
+
+const cardTransition = {
+	x: { type: "spring" as const, stiffness: 300, damping: 30 },
+	opacity: { duration: 0.2 },
+};
+
 interface TeamProps {
 	hasEndDiv?: boolean;
 }
 
 export const Team = ({ hasEndDiv = true }: TeamProps) => {
 	const [currentCard, setCurrentCard] = useState(0);
-	const [direction, setDirection] = useState(0); // -1 for left, 1 for right
+	const [direction, setDirection] = useState(0);
 	const [isOverlayVisible, setIsOverlayVisible] = useState(false);
 	const isMobile = useIsMobile();
 
@@ -38,32 +59,6 @@ export const Team = ({ hasEndDiv = true }: TeamProps) => {
 		if (isMobile) {
 			setIsOverlayVisible((prev) => !prev);
 		}
-	};
-
-	// Framer Motion variants
-	const variants = {
-		enter: (direction: number) => {
-			return {
-				x: direction > 0 ? 300 : -300,
-				opacity: 0,
-			};
-		},
-		center: {
-			x: 0,
-			opacity: 1,
-		},
-		exit: (direction: number) => {
-			return {
-				x: direction < 0 ? 300 : -300,
-				opacity: 0,
-			};
-		},
-	};
-
-	// Animation transition settings
-	const transition = {
-		x: { type: "spring", stiffness: 300, damping: 30 },
-		opacity: { duration: 0.2 },
 	};
 
 	return (
@@ -96,11 +91,11 @@ export const Team = ({ hasEndDiv = true }: TeamProps) => {
 								<motion.div
 									key={currentCard}
 									custom={direction}
-									variants={variants}
+									variants={cardVariants}
 									initial="enter"
 									animate="center"
 									exit="exit"
-									transition={transition}>
+									transition={cardTransition}>
 									<Card
 										slug={doctorData[currentCard].slug}
 										image={doctorData[currentCard].image}
@@ -147,6 +142,7 @@ export const Team = ({ hasEndDiv = true }: TeamProps) => {
 										alt="left-arrow"
 										width={40}
 										height={40}
+										loading="lazy"
 										className="hover:scale-105 transition-all duration-800 ease-in-out active:scale-95 cursor-pointer w-8 h-8"
 									/>
 								</button>
@@ -159,6 +155,7 @@ export const Team = ({ hasEndDiv = true }: TeamProps) => {
 										alt="right-arrow"
 										width={40}
 										height={40}
+										loading="lazy"
 										className="hover:scale-105 transition-all duration-800 ease-in-out active:scale-95 cursor-pointer w-8 h-8"
 									/>
 								</button>

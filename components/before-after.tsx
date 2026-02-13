@@ -134,16 +134,7 @@ export const BeforeAfter = () => {
           `}
 														sizes="(max-width: 768px) 100vw, 50vw"
 														alt={slide.alt1}
-														loading={
-															slide.id === 1
-																? "eager"
-																: "lazy"
-														}
-														fetchPriority={
-															slide.id === 1
-																? "high"
-																: "auto"
-														}
+														loading="lazy"
 														className="object-cover absolute inset-0 w-full h-full"
 													/>
 													<div className="absolute top-4 left-4 bg-white px-2 py-1 rounded text-sm font-semibold">
@@ -164,16 +155,7 @@ export const BeforeAfter = () => {
           `}
 														sizes="(max-width: 768px) 100vw, 50vw"
 														alt={slide.alt2}
-														loading={
-															slide.id === 1
-																? "eager"
-																: "lazy"
-														}
-														fetchPriority={
-															slide.id === 1
-																? "high"
-																: "auto"
-														}
+														loading="lazy"
 														className="object-cover absolute inset-0 w-full h-full"
 													/>
 													<div className="absolute top-4 right-4 bg-white px-2 py-1 rounded text-sm font-semibold">
@@ -194,15 +176,9 @@ export const BeforeAfter = () => {
 												`}
 												sizes="(max-width: 768px) 100vw, 80vw"
 												alt={slide.alt}
-												loading={
-													slide.id === 1
-														? "eager"
-														: "lazy"
-												}
+												loading="lazy"
 												fetchPriority={
-													slide.id === 1
-														? "high"
-														: "auto"
+													"auto"
 												}
 												className="object-cover absolute inset-0 w-full h-full"
 											/>

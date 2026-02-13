@@ -4,6 +4,12 @@ import { cn } from "@/lib/utils";
 import { motion, useInView, useAnimation } from "framer-motion";
 import { useRef, useEffect } from "react";
 
+const slideVariants = {
+	hidden: { opacity: 0 },
+	visible: { opacity: 1 },
+	exit: { opacity: 0 },
+};
+
 type props = {
 	children: React.ReactNode;
 	className?: string;
@@ -38,13 +44,7 @@ export default function Slide({
 	return (
 		<motion.div
 			ref={ref}
-			variants={{
-				hidden: { opacity: 0 },
-				visible: {
-					opacity: 1,
-				},
-				exit: { opacity: 0 },
-			}}
+			variants={slideVariants}
 			transition={{
 				type: "spring",
 				duration: 1,

@@ -108,7 +108,7 @@ const CarouselContent = ({ blogs, category }: CarouselContentProps) => {
 													}
 													className="object-cover absolute inset-0 w-full h-full"
 													sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-													fetchPriority="high"
+													loading="lazy"
 												/>
 											)}
 										</div>

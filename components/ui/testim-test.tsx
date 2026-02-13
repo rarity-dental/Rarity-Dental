@@ -193,6 +193,7 @@ export const TestimonialSection: React.FC = () => {
 											alt={testimonials[activeIndex].name}
 											width={250}
 											height={250}
+											loading="lazy"
 											className=" aspect-square  rounded-full absolute left-[2%] top-[6%] scale-[120%]"
 										/>
 									</div>
@@ -233,6 +234,7 @@ export const TestimonialSection: React.FC = () => {
 						alt="left-arrow"
 						width={60}
 						height={60}
+						loading="lazy"
 						className="hover:scale-105 transition-all duration-800 ease-in-out active:scale-95 cursor-pointer w-8 h-8 md:w-[60px] md:h-[60px]"
 					/>
 				</button>
@@ -245,6 +247,7 @@ export const TestimonialSection: React.FC = () => {
 						alt="right-arrow"
 						width={60}
 						height={60}
+						loading="lazy"
 						className="hover:scale-105 transition-all duration-800 ease-in-out active:scale-95 cursor-pointer w-8 h-8 md:w-[60px] md:h-[60px]"
 					/>
 				</button>

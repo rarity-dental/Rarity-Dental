@@ -40,8 +40,8 @@ export const CarouselComponent = ({
 						<div className="relative aspect-[16/9] w-full md:w-[80%] overflow-hidden rounded-lg">
 							<img
 								src={item.image}
-								alt={`Carousel Image ${index + 1}`}
-								fetchPriority="high"
+								alt={item.title || `Carousel Image ${index + 1}`}
+								loading="lazy"
 								sizes="(max-width: 768px) 100vw, 80vw"
 								className="object-cover absolute inset-0 w-full h-full"
 							/>

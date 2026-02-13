@@ -1,167 +1,50 @@
-/* eslint-disable @next/next/no-img-element */
 import Slide from "./ui/animated-sections";
 import { Button } from "./ui/button";
-
-import { useIsMobile, useIsTablet } from "@/hooks/useIsMobile";
 import Image from "next/image";
 import Link from "next/link";
 
 type HeroSlide6Props = { disableAnimations?: boolean };
-export const HeroSlide6 = ({ disableAnimations = false }: HeroSlide6Props) => {
-	const isMobile = useIsMobile();
-	const isTablet = useIsTablet();
 
+export const HeroSlide6 = ({ disableAnimations = false }: HeroSlide6Props) => {
 	return (
 		<div className="w-full min-h-[600px] md:min-h-screen flex flex-col justify-between relative">
-			{isMobile ? (
-				<div className="w-full min-h-[600px] flex flex-col relative">
-					<Image
-						src="/images/hero-6-sneha.webp"
-						alt="Team Background"
-						fill
-						priority
-						sizes="100vw"
-						className="object-cover object-center"
-						style={{
-							transform: "translateZ(0)",
-							backfaceVisibility: "hidden",
-							perspective: "1000px",
-							willChange: "transform",
-						}}
-					/>
-					<div className="flex-1 flex flex-col justify-between py-[8%] pb-[40%] px-[2%] relative z-10">
-                    <Slide
-                        disabled={disableAnimations}
-                        delay={0.4}
-                        className="text-center max-w-[380px] mx-auto">
-							<h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight tracking-tight text-white mb-2">
-								India’s Leading Award-Winning Dentists
-							</h1>
-							{/* <span className="text-base md:text-lg lg:text-xl xl:text-2xl leading-snug tracking-tight text-white">
-								Dr. Sneha Singh, India’s top Smile Design expert
-								and Full Mouth Rehabilitation specialist, is
-								trusted nationwide as the best Cosmetic Dentist
-								in Gurgaon.
-							</span> */}
-						</Slide>
-                    <Slide
-                        disabled={disableAnimations}
-                        delay={1.2}
-                        className="flex justify-center items-center mb-8">
-							<Link
-								href={"#formDiv"}
-								passHref>
-								<Button
-									variant={"defaultWhite"}
-									className="group relative px-[40px] py-[20px] gap-x-[16px] bg-white rounded-none h-auto md:h-[60px] z-10 w-[242px] md:w-auto overflow-hidden">
-									<span className="uppercase text-[12px] md:text-[14px] font-poppins font-semibold tracking-wide text-[#73383E] transition-colors duration-500 ease-out relative z-10 group-hover:text-white">
-										Book a Consultation
-									</span>
-									<div className="w-[20px] h-[20px] bg-[url('/images/arrow-right-brown.svg')] bg-cover transition-all duration-500 ease-out relative z-10 group-hover:bg-[url('/images/arrow-right-white.svg')]" />
-									<div className="absolute inset-0 bg-[#73383E] translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out" />
-								</Button>
-							</Link>
-						</Slide>
-					</div>
+			<div className="w-full min-h-[600px] xl:min-h-screen flex flex-col relative">
+				<Image
+					src="/images/hero-6-sneha.webp"
+					alt="Dr. Sneha Singh award-winning dentist"
+					fill
+					priority
+					fetchPriority="high"
+					sizes="(max-width: 640px) 640px, (max-width: 1280px) 1280px, 1920px"
+					className="object-cover object-center xl:object-right-top"
+				/>
+				<div className="flex-1 flex flex-col justify-between py-[8%] pb-[40%] sm:pt-[4%] sm:pb-[4%] sm:space-y-[10%] xl:space-y-0 xl:py-[2.8%] px-[2%] xl:px-0 relative z-10 xl:items-center xl:max-w-5xl xl:min-h-[68dvh] xl:mx-auto">
+					<Slide
+						disabled={disableAnimations}
+						delay={0.4}
+						className="text-center max-w-[380px] sm:max-w-[600px] xl:max-w-5xl mx-auto sm:mt-16 xl:mt-0">
+						<h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-[42px] 2xl:text-6xl leading-tight tracking-tight xl:tracking-tighter text-white mb-2 xl:mb-1 2xl:mb-3 xl:min-w-[600px] text-center w-full">
+							India&apos;s Leading Award-Winning Dentists
+						</h1>
+					</Slide>
+					<Slide
+						disabled={disableAnimations}
+						delay={0.6}
+						className="flex justify-center items-center mb-8 xl:mt-6 xl:pl-[6%] 2xl:pl-4">
+						<Link href={"#formDiv"} passHref>
+							<Button
+								variant={"defaultWhite"}
+								className="group relative px-[40px] py-[20px] gap-x-[16px] bg-white rounded-none h-auto md:h-[60px] z-10 w-[242px] md:w-auto overflow-hidden">
+								<span className="uppercase text-[12px] md:text-[14px] font-poppins font-semibold tracking-wide text-[#73383E] transition-colors duration-500 ease-out relative z-10 group-hover:text-white">
+									Book a Consultation
+								</span>
+								<div className="w-[20px] h-[20px] bg-[url('/images/arrow-right-brown.svg')] bg-cover transition-all duration-500 ease-out relative z-10 group-hover:bg-[url('/images/arrow-right-white.svg')]" />
+								<div className="absolute inset-0 bg-[#73383E] translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out" />
+							</Button>
+						</Link>
+					</Slide>
 				</div>
-			) : isTablet ? (
-				<div className="w-full min-h-[600px] relative h-full">
-					<Image
-						src="/images/hero-6-sneha.webp"
-						alt="Team Background"
-						fill
-						priority
-						sizes="100vw"
-						className="object-cover object-center"
-						style={{
-							transform: "translateZ(0)",
-							backfaceVisibility: "hidden",
-							perspective: "1000px",
-							willChange: "transform",
-						}}
-					/>
-					<div className="flex-1 flex flex-col justify-between pt-[4%] pb-[4%] px-[2%] relative z-10 space-y-[10%] h-full">
-                    <Slide
-                        disabled={disableAnimations}
-                        delay={0.8}
-                        className="text-center max-w-[600px] mx-auto mt-16">
-							<p className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight tracking-tight text-white mb-2">
-								India’s Leading Award-Winning Dentists
-							</p>
-							{/* <span className="text-base md:text-lg lg:text-xl xl:text-2xl leading-snug tracking-tight text-white">
-								Dr. Sneha Singh, India’s top Smile Design expert
-								and Full Mouth Rehabilitation specialist, is
-								trusted nationwide as the best Cosmetic Dentist
-								in Gurgaon.
-							</span> */}
-						</Slide>
-                    <Slide
-                        disabled={disableAnimations}
-                        delay={1.2}
-                        className="flex justify-center items-center mb-8">
-							<Link
-								href={"#formDiv"}
-								passHref>
-								<Button
-									variant={"defaultWhite"}
-									className="group relative px-[40px] py-[20px] gap-x-[16px] bg-white rounded-none h-auto md:h-[60px] z-10 w-[242px] md:w-auto overflow-hidden">
-									<span className="uppercase text-[12px] md:text-[14px] font-poppins font-semibold tracking-wide text-[#73383E] transition-colors duration-500 ease-out relative z-10 group-hover:text-white">
-										Book a Consultation
-									</span>
-									<div className="w-[20px] h-[20px] bg-[url('/images/arrow-right-brown.svg')] bg-cover transition-all duration-500 ease-out relative z-10 group-hover:bg-[url('/images/arrow-right-white.svg')]" />
-									<div className="absolute inset-0 bg-[#73383E] translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out" />
-								</Button>
-							</Link>
-						</Slide>
-					</div>
-				</div>
-			) : (
-				<div className="w-full min-h-screen relative overflow-visible">
-					<div className="absolute top-0 left-0 right-0 bottom-0">
-						<Image
-							src="/images/hero-6-sneha.webp"
-							alt="SNeha Award Image"
-							fill
-							priority
-							sizes="100vw"
-							className="object-cover object-right-top"
-						/>
-					</div>
-
-					<div className="w-full flex flex-col justify-between items-center mb-8 xl:mb-0 px-6 xl:px-0 py-[2.8%] max-w-5xl min-h-[68dvh] mx-auto">
-                    <Slide
-                        disabled={disableAnimations}
-                        delay={0.4}
-                        className="z-[1] flex flex-col items-start justify-center">
-							<h1 className="text-[18px] md:text-[20px] lg:text-[24px] xl:text-[42px] 2xl:text-6xl leading-tight tracking-tighter text-white mb-1 2xl:mb-3 xl:min-w-[600px] text-center w-full">
-								India’s Leading Award-Winning Dentists
-							</h1>
-							{/* <p className="text-white mb-6 xl:min-w-[600px] text-2xl text-center w-full">
-								Dr. Sneha Singh, India’s top Smile Design expert
-								and Full Mouth Rehabilitation specialist, is
-								trusted nationwide as the best Cosmetic Dentist
-								in Gurgaon.
-							</p> */}
-						</Slide>
-                    <Slide
-                        disabled={disableAnimations}
-                        delay={0.6}
-                        className="mt-6 xl:mt-12 flex justify-center items-center pl-[6%] 2xl:pl-4 ">
-							<Link href={"#formDiv"}>
-								<Button
-									variant={"defaultWhite"}
-									className="group relative px-[40px] py-[20px] gap-x-[16px] bg-white rounded-none h-auto md:h-[60px] z-10 w-[242px] md:w-auto overflow-hidden ">
-									<span className="uppercase text-[12px] md:text-[14px] font-poppins font-semibold tracking-wide text-[#73383E] transition-colors duration-500 ease-out relative z-10 group-hover:text-white">
-										Book a Consultation
-									</span>
-									<div className="w-[20px] h-[20px] bg-[url('/images/arrow-right-brown.svg')] bg-cover transition-all duration-500 ease-out relative z-10 group-hover:bg-[url('/images/arrow-right-white.svg')]" />
-									<div className="absolute inset-0 bg-[#73383E] translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out" />
-								</Button>
-							</Link>
-						</Slide>
-					</div>
-				</div>
-			)}
+			</div>
 		</div>
 	);
 };
