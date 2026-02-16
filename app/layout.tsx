@@ -24,6 +24,14 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
 	metadataBase: new URL("https://www.raritydental.com"),
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+		},
+	},
 	twitter: {
 		card: "summary_large_image",
 		images: ["/images/og-img.jpg"],
@@ -123,6 +131,7 @@ export default function RootLayout({
 					strategy="lazyOnload">{`
 				  (function(){
 				    var loaded=false;
+				    var isMobile = window.matchMedia && window.matchMedia('(max-width: 767px)').matches;
 				    function loadAnalytics(){
 				      if(loaded)return;
 				      loaded=true;
@@ -144,7 +153,9 @@ export default function RootLayout({
 				    ['scroll','click','touchstart'].forEach(function(e){
 				      window.addEventListener(e,loadAnalytics,{once:true,passive:true});
 				    });
-				    setTimeout(loadAnalytics,5000);
+				    if(!isMobile){
+				      setTimeout(loadAnalytics,5000);
+				    }
 				  })();
 				`}</Script>
 				<ClientProvider>{children}</ClientProvider>

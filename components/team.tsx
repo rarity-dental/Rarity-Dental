@@ -5,7 +5,6 @@ import { doctorData } from "@/lib/data";
 import { PageStartDiv } from "./ui/page-start-div";
 import { Card } from "./ui/card-in";
 
-import { useIsMobile } from "../hooks/useIsMobile";
 import Slide from "./ui/animated-sections";
 import { PageEndDiv } from "./ui/page-end-div";
 import { motion, AnimatePresence } from "framer-motion";
@@ -39,7 +38,6 @@ export const Team = ({ hasEndDiv = true }: TeamProps) => {
 	const [currentCard, setCurrentCard] = useState(0);
 	const [direction, setDirection] = useState(0);
 	const [isOverlayVisible, setIsOverlayVisible] = useState(false);
-	const isMobile = useIsMobile();
 
 	const handleNext = () => {
 		setDirection(1);
@@ -56,9 +54,7 @@ export const Team = ({ hasEndDiv = true }: TeamProps) => {
 	};
 
 	const handleCardClick = () => {
-		if (isMobile) {
-			setIsOverlayVisible((prev) => !prev);
-		}
+		setIsOverlayVisible((prev) => !prev);
 	};
 
 	return (
@@ -79,119 +75,101 @@ export const Team = ({ hasEndDiv = true }: TeamProps) => {
 					</p>
 				</div>
 
-				{isMobile ? (
-					// Mobile View with Framer Motion
-					<div className="w-full max-w-[342px] mx-auto flex flex-col items-center">
-						{/* Card Container with relative positioning */}
-						<div className="relative w-full">
-							<AnimatePresence
-								initial={false}
+				<div className="w-full max-w-[342px] mx-auto flex flex-col items-center md:hidden">
+					<div className="relative w-full">
+						<AnimatePresence
+							initial={false}
+							custom={direction}
+							mode="wait">
+							<motion.div
+								key={currentCard}
 								custom={direction}
-								mode="wait">
-								<motion.div
-									key={currentCard}
-									custom={direction}
-									variants={cardVariants}
-									initial="enter"
-									animate="center"
-									exit="exit"
-									transition={cardTransition}>
-									<Card
-										slug={doctorData[currentCard].slug}
-										image={doctorData[currentCard].image}
-										alt={doctorData[currentCard].alt}
-										title={doctorData[currentCard].title}
-										degree={doctorData[currentCard].degree}
-										experience={
-											doctorData[currentCard].experience
-										}
-										imageHeight={400}
-										hasOverlay={true}
-										className=""
-										isOverlayVisible={isOverlayVisible}
-										handleClick={handleCardClick}
-										textColor="white"
-										descriptionDoc={
-											doctorData[currentCard].description
-										}
-										descriptionCard={
-											doctorData[currentCard]
-												.descriptionCard
-										}
-										descriptionHover={
-											doctorData[currentCard]
-												.descriptionHover
-										}
-										hasButton={true}
-										buttonText="Book Appointment"
-										buttonLink="#formDiv"
-									/>
-								</motion.div>
-							</AnimatePresence>
-
-							{/* Navigation buttons positioned at the sides of the card, aligned with "YEARS OF EXPERIENCE" */}
-							<div
-								className="absolute w-full flex justify-center gap-x-[63%] z-10 items-center"
-								style={{ top: "400px" }}>
-								<button
-									type="button"
-									onClick={handlePrev}
-									aria-label="Previous Doctor">
-									<img
-										src="https://firebasestorage.googleapis.com/v0/b/casamed-6ec79.appspot.com/o/beyond-dental%2Fimages%2Fleft-circle-arrow-testim.svg?alt=media&token=b0d52c6a-a7f0-4056-b72d-aca5f0b1c626"
-										alt="left-arrow"
-										width={40}
-										height={40}
-										loading="lazy"
-										className="hover:scale-105 transition-all duration-800 ease-in-out active:scale-95 cursor-pointer w-8 h-8"
-									/>
-								</button>
-								<button
-									type="button"
-									onClick={handleNext}
-									aria-label="Next Doctor">
-									<img
-										src="/images/right-circle-arrow-testim.svg"
-										alt="right-arrow"
-										width={40}
-										height={40}
-										loading="lazy"
-										className="hover:scale-105 transition-all duration-800 ease-in-out active:scale-95 cursor-pointer w-8 h-8"
-									/>
-								</button>
-							</div>
-						</div>
-
-						{/* Add some bottom spacing */}
-						<div className="h-16"></div>
-					</div>
-				) : (
-					// Desktop View - Unchanged
-					<div className="flex justify-center flex-wrap gap-y-[64px] gap-x-[40px] pb-[180px] max-w-[1280px] mx-auto">
-						{doctorData.map((doctor) => (
-							<div key={doctor.id}>
+								variants={cardVariants}
+								initial="enter"
+								animate="center"
+								exit="exit"
+								transition={cardTransition}>
 								<Card
-									key={doctor.id}
-									slug={doctor.slug}
-									image={doctor.image}
-									alt={doctor.alt}
-									title={doctor.title}
-									degree={doctor.degree}
-									descriptionDoc={doctor.description}
-									descriptionCard={doctor.descriptionCard}
-									descriptionHover={doctor.descriptionHover}
-									experience={doctor.experience}
+									slug={doctorData[currentCard].slug}
+									image={doctorData[currentCard].image}
+									alt={doctorData[currentCard].alt}
+									title={doctorData[currentCard].title}
+									degree={doctorData[currentCard].degree}
+									experience={doctorData[currentCard].experience}
 									imageHeight={400}
 									hasOverlay={true}
 									className=""
-									isOverlayVisible={false}
-									handleClick={() => {}}
+									isOverlayVisible={isOverlayVisible}
+									handleClick={handleCardClick}
 									textColor="white"
+									descriptionDoc={doctorData[currentCard].description}
+									descriptionCard={doctorData[currentCard].descriptionCard}
+									descriptionHover={doctorData[currentCard].descriptionHover}
+									hasButton={true}
+									buttonText="Book Appointment"
+									buttonLink="#formDiv"
 								/>
-							</div>
-						))}
+							</motion.div>
+						</AnimatePresence>
+
+						<div
+							className="absolute w-full flex justify-center gap-x-[63%] z-10 items-center"
+							style={{ top: "400px" }}>
+							<button
+								type="button"
+								onClick={handlePrev}
+								aria-label="Previous Doctor">
+								<img
+									src="https://firebasestorage.googleapis.com/v0/b/casamed-6ec79.appspot.com/o/beyond-dental%2Fimages%2Fleft-circle-arrow-testim.svg?alt=media&token=b0d52c6a-a7f0-4056-b72d-aca5f0b1c626"
+									alt="left-arrow"
+									width={40}
+									height={40}
+									loading="lazy"
+									className="hover:scale-105 transition-all duration-800 ease-in-out active:scale-95 cursor-pointer w-8 h-8"
+								/>
+							</button>
+							<button
+								type="button"
+								onClick={handleNext}
+								aria-label="Next Doctor">
+								<img
+									src="/images/right-circle-arrow-testim.svg"
+									alt="right-arrow"
+									width={40}
+									height={40}
+									loading="lazy"
+									className="hover:scale-105 transition-all duration-800 ease-in-out active:scale-95 cursor-pointer w-8 h-8"
+								/>
+							</button>
+						</div>
 					</div>
-				)}
+
+					<div className="h-16"></div>
+				</div>
+
+				<div className="hidden md:flex justify-center flex-wrap gap-y-[64px] gap-x-[40px] pb-[180px] max-w-[1280px] mx-auto">
+					{doctorData.map((doctor) => (
+						<div key={doctor.id}>
+							<Card
+								key={doctor.id}
+								slug={doctor.slug}
+								image={doctor.image}
+								alt={doctor.alt}
+								title={doctor.title}
+								degree={doctor.degree}
+								descriptionDoc={doctor.description}
+								descriptionCard={doctor.descriptionCard}
+								descriptionHover={doctor.descriptionHover}
+								experience={doctor.experience}
+								imageHeight={400}
+								hasOverlay={true}
+								className=""
+								isOverlayVisible={false}
+								textColor="white"
+							/>
+						</div>
+					))}
+				</div>
 			</div>
 		</Slide>
 	);

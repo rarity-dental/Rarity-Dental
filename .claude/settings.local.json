@@ -24,7 +24,8 @@
       "Bash(taskkill:*)",
       "Bash(cmd //c \"taskkill /PID 71140 /F\")",
       "Bash(cmd //c \"taskkill /PID 51596 /F\")",
-      "Bash(cmd //c \"taskkill /PID 21292 /F\")"
+      "Bash(cmd //c \"taskkill /PID 21292 /F\")",
+      "mcp__ide__getDiagnostics"
     ]
   }
 }

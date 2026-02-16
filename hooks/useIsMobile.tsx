@@ -1,17 +1,29 @@
-import { useMediaQuery } from "react-responsive";
+import { useEffect, useState } from "react";
 
-export const useIsMobile = () => {
-	return useMediaQuery({ query: "(max-width: 647px)" });
-};
+function useMatchMedia(query: string) {
+	// Keep first client render equal to SSR output to avoid hydration mismatch.
+	const [matches, setMatches] = useState(false);
 
-export const useIsTablet = () => {
-	return useMediaQuery({
-		query: "(min-width: 648px) and (max-width: 1227px)",
-	});
-};
+	useEffect(() => {
+		const media = window.matchMedia(query);
+		const update = () => setMatches(media.matches);
+		update();
 
-export const useIslargeDevices = () => {
-	return useMediaQuery({
-		query: "(min-width: 1280px)",
-	});
-};
+		if (media.addEventListener) {
+			media.addEventListener("change", update);
+			return () => media.removeEventListener("change", update);
+		}
+
+		media.addListener(update);
+		return () => media.removeListener(update);
+	}, [query]);
+
+	return matches;
+}
+
+export const useIsMobile = () => useMatchMedia("(max-width: 647px)");
+
+export const useIsTablet = () =>
+	useMatchMedia("(min-width: 648px) and (max-width: 1227px)");
+
+export const useIslargeDevices = () => useMatchMedia("(min-width: 1280px)");

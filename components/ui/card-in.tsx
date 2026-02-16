@@ -4,7 +4,6 @@
 import React, { useState } from "react";
 
 import { Button } from "./button";
-import { useIsMobile } from "@/hooks/useIsMobile";
 import Link from "next/link";
 import { doctorData } from "@/lib/data";
 import { InfoIcon } from "lucide-react";
@@ -53,29 +52,20 @@ export const Card = ({
 	handleClick,
 	textColor,
 }: CardProps) => {
-	const isMobile = useIsMobile();
 	const [isHovered, setIsHovered] = useState(false);
 
 	const handleInteraction = (e: React.MouseEvent | React.TouchEvent) => {
 		e.preventDefault();
-		if (isMobile && handleClick) {
+		if (handleClick) {
 			handleClick();
 		}
 	};
 
-	const handleMouseEnter = () => {
-		if (!isMobile) {
-			setIsHovered(true);
-		}
-	};
+	const handleMouseEnter = () => setIsHovered(true);
 
-	const handleMouseLeave = () => {
-		if (!isMobile) {
-			setIsHovered(false);
-		}
-	};
+	const handleMouseLeave = () => setIsHovered(false);
 
-	const showOverlay = isMobile ? isOverlayVisible : isHovered;
+	const showOverlay = Boolean(isOverlayVisible) || isHovered;
 
 	return (
 		<div
@@ -83,7 +73,9 @@ export const Card = ({
 			onMouseEnter={handleMouseEnter}
 			onMouseLeave={handleMouseLeave}
 			onClick={handleInteraction}>
-			<div className="relative group overflow-hidden">
+			<div
+				className="relative group overflow-hidden w-[300px] h-[300px] md:w-[400px] md:h-[var(--card-desktop-height)]"
+				style={{ ["--card-desktop-height" as string]: `${imageHeight}px` }}>
 				<img
 					src={image}
 					srcSet={`
@@ -100,8 +92,8 @@ export const Card = ({
 					fetchPriority="low"
 					className={`transition-transform duration-300 ease-in-out transform object-cover ${showOverlay ? "scale-105" : ""}`}
 					style={{
-						width: isMobile ? "300px" : "400px",
-						height: isMobile ? "300px" : `${imageHeight}px`,
+						width: "100%",
+						height: "100%",
 					}}
 				/>
 

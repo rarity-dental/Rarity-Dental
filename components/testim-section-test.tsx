@@ -13,7 +13,6 @@ import {
 } from "./ui/carousel";
 
 import Autoplay from "embla-carousel-autoplay";
-import { useIsMobile } from "@/hooks/useIsMobile";
 
 const testimonials = [
 	{
@@ -116,8 +115,6 @@ export default function TestimonialTestComponent() {
 		return stars;
 	};
 
-	const isMobile = useIsMobile();
-
 	return (
 		<section
 			className="pt-4 pb-16  md:py-16"
@@ -149,123 +146,46 @@ export default function TestimonialTestComponent() {
 					]}
 					testim
 					className="w-full md:w-[90%] pb-[15%] md:pb-0">
-					{isMobile ? (
-						<CarouselContent className="-ml-1 w-[100vw] lg:w-[72vw] xl:w-[60vw] 2xl:w-[42vw] gap-[5%] ">
-							{testimonials.map((testimonial, id) => (
-								<CarouselItem
-									key={testimonial.id}
-									className="pl-1 flex justify-center items-center basis-[100vw] ">
-									<div className="relative h-[300px] md:h-[600px] lg:max-w-3xl  xl:max-w-5xl 2xl:max-w-7xl  overflow-visible flex items-center rounded-lg">
-										<div
-											className="relative flex-shrink-0 rounded-lg"
-											style={{
-												width: "100vw",
-												maxWidth: "340px",
-												minWidth: "200px",
-											}}>
-											{/* Video Container */}
-											<div className="relative  h-[250px] md:h-[450px] w-full aspect-[4/3] rounded-lg overflow-visible  md:overflow-hidden bg-gray-900">
-												<img
-													src={
-														testimonial.image ||
-														"/placeholder.svg"
-													}
-													alt={`${testimonial.author} testimonial`}
-													loading="lazy"
-													className="absolute object-cover rounded-lg inset-0 w-full h-full"
-													sizes="70vw"
-												/>
-											</div>
+					<CarouselContent className="-ml-1 w-[100vw] lg:w-[72vw] xl:w-[60vw] 2xl:w-[42vw] gap-[5%] ">
+						{testimonials.map((testimonial) => (
+							<CarouselItem
+								key={testimonial.id}
+								className="pl-1 flex justify-center items-center basis-[100vw] md:basis-[70vw] md:max-w-[800px] md:min-w-[600px]">
+								<div className="relative h-[300px] md:h-[600px] lg:max-w-3xl xl:max-w-5xl 2xl:max-w-7xl overflow-visible flex items-center rounded-lg">
+									<div className="relative flex-shrink-0 rounded-lg w-[100vw] max-w-[340px] min-w-[200px] md:w-[70vw] md:max-w-[800px] md:min-w-[600px]">
+										<div className="relative h-[250px] md:h-[450px] w-full aspect-[4/3] rounded-lg overflow-visible md:overflow-hidden bg-gray-900">
+											<img
+												src={testimonial.image || "/placeholder.svg"}
+												alt={`${testimonial.author} testimonial`}
+												loading="lazy"
+												className="absolute object-cover rounded-lg inset-0 w-full h-full"
+												sizes="70vw"
+											/>
+										</div>
 
-											{/* Floating Review Card */}
-											<div className="absolute -bottom-[50%] md:-bottom-16 left-1/2 md:left-[35%] transform -translate-x-1/2 w-11/12 max-w-md ">
-												<div className="bg-white rounded-lg shadow-lg p-6">
-													<blockquote className="text-gray-700 text-sm leading-relaxed mb-4">
-														&quot;
-														{testimonial.quote}
-														&quot;
-													</blockquote>
-													<p className="font-medium text-gray-900 text-sm mb-3">
-														-{testimonial.author}
-													</p>
-													<div className="flex items-center gap-2">
-														<div className="flex items-center gap-1">
-															{renderStars(
-																testimonial.rating
-															)}
-														</div>
-														<span className="text-sm text-gray-600">
-															(
-															{testimonial.rating}{" "}
-															/ 5)
-														</span>
+										<div className="absolute -bottom-[50%] md:-bottom-16 left-1/2 md:left-[40%] lg:left-[35%] transform -translate-x-1/2 w-11/12 max-w-md ">
+											<div className="bg-white rounded-lg shadow-lg p-6">
+												<blockquote className="text-gray-700 text-sm leading-relaxed mb-4">
+													&quot;{testimonial.quote}&quot;
+												</blockquote>
+												<p className="font-medium text-gray-900 text-sm mb-3">
+													-{testimonial.author}
+												</p>
+												<div className="flex items-center gap-2">
+													<div className="flex items-center gap-1">
+														{renderStars(testimonial.rating)}
 													</div>
+													<span className="text-sm text-gray-600">
+														({testimonial.rating} / 5)
+													</span>
 												</div>
 											</div>
 										</div>
 									</div>
-								</CarouselItem>
-							))}
-						</CarouselContent>
-					) : (
-						<CarouselContent className="-ml-1 w-[100vw] lg:w-[72vw] xl:w-[60vw] 2xl:w-[42vw] gap-[5%] ">
-							{testimonials.map((testimonial, id) => (
-								<CarouselItem
-									key={testimonial.id}
-									className="pl-1 flex justify-center items-center basis-[70vw] max-w-[800px] min-w-[600px]">
-									<div className="relative h-[350px] md:h-[600px] lg:max-w-3xl  xl:max-w-5xl 2xl:max-w-7xl  overflow-visible flex items-center">
-										<div
-											className="relative flex-shrink-0"
-											style={{
-												width: "70vw",
-												maxWidth: "800px",
-												minWidth: "600px",
-											}}>
-											{/* Video Container */}
-											<div className="relative  h-[250px] md:h-[450px] w-full aspect-[4/3] rounded-lg overflow-visible  md:overflow-hidden bg-gray-900">
-												<img
-													src={
-														testimonial.image ||
-														"/placeholder.svg"
-													}
-													alt={`${testimonial.author} testimonial`}
-													loading="lazy"
-													className="object-cover absolute inset-0 w-full h-full rounded-lg"
-													sizes="70vw"
-												/>
-											</div>
-
-											{/* Floating Review Card */}
-											<div className="absolute -bottom-[50%] md:-bottom-16 left-[40%] lg:left-[35%] transform -translate-x-1/2 w-11/12 max-w-md ">
-												<div className="bg-white rounded-lg shadow-lg p-6">
-													<blockquote className="text-gray-700 text-sm leading-relaxed mb-4">
-														&quot;
-														{testimonial.quote}
-														&quot;
-													</blockquote>
-													<p className="font-medium text-gray-900 text-sm mb-3">
-														-{testimonial.author}
-													</p>
-													<div className="flex items-center gap-2">
-														<div className="flex items-center gap-1">
-															{renderStars(
-																testimonial.rating
-															)}
-														</div>
-														<span className="text-sm text-gray-600">
-															(
-															{testimonial.rating}{" "}
-															/ 5)
-														</span>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</CarouselItem>
-							))}
-						</CarouselContent>
-					)}
+								</div>
+							</CarouselItem>
+						))}
+					</CarouselContent>
 
 					<CarouselPrevious className="absolute  transform -translate-x-1/2 w-12 h-12 z-10 " />
 					<CarouselNext className="absolute   transform -translate-x-1/2 w-12 h-12 z-10" />

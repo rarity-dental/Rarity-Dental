@@ -69,12 +69,16 @@ export const Carousel: React.FC<Props> = ({
     const [isAnimationLayerReady, setIsAnimationLayerReady] = useState(false);
     const containerRef = useRef<HTMLDivElement>(null);
     const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-    const previousIndexRef = useRef(0);
+    const touchStartXRef = useRef<number | null>(null);
+    const touchEndXRef = useRef<number | null>(null);
 
     const isInView = useInView(containerRef, { amount: 0.1 });
 
-    // Keep first paint as plain DOM for LCP, then enable animated layer on next frame.
+    // Keep first paint as plain DOM for LCP, then enable framer-motion transitions.
     useEffect(() => {
+        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (prefersReducedMotion) return;
+
         const rafId = requestAnimationFrame(() => {
             setIsAnimationLayerReady(true);
         });
@@ -146,20 +150,45 @@ export const Carousel: React.FC<Props> = ({
         startAutoplayTimer();
     };
 
-    useEffect(() => {
-        previousIndexRef.current = state.currentIndex;
-    }, [state.currentIndex]);
+    const minSwipeDistance = 40;
+    const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
+        touchEndXRef.current = null;
+        touchStartXRef.current = event.targetTouches[0].clientX;
+    };
+
+    const handleTouchMove = (event: React.TouchEvent<HTMLDivElement>) => {
+        touchEndXRef.current = event.targetTouches[0].clientX;
+    };
+
+    const handleTouchEnd = () => {
+        if (touchStartXRef.current === null || touchEndXRef.current === null) {
+            return;
+        }
+
+        const distance = touchStartXRef.current - touchEndXRef.current;
+        const isLeftSwipe = distance > minSwipeDistance;
+        const isRightSwipe = distance < -minSwipeDistance;
+
+        if (isLeftSwipe) {
+            handleManualControl("next");
+        } else if (isRightSwipe) {
+            handleManualControl("prev");
+        }
+    };
 
     return (
         <div
             ref={containerRef}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
             className={cn(
                 "w-full h-full overflow-visible relative",
                 className
             )}>
             <button
                 onClick={() => handleManualControl("prev")}
-                className="active:scale-[95%] rounded-full p-2 transition-all duration-500 ease-in-out focus:outline-none z-10 absolute top-[300px] lg:top-[340px] 2xl:top-[540px] transform -translate-y-[1/2] left-[1%]"
+                className="active:scale-[95%] rounded-full p-2 transition-all duration-500 ease-in-out focus:outline-none z-30 absolute top-1/2 -translate-y-1/2 left-[1%] pointer-events-auto"
                 aria-label="Previous slide">
                 <img
                     width={48}
@@ -172,7 +201,7 @@ export const Carousel: React.FC<Props> = ({
             </button>
             <button
                 onClick={() => handleManualControl("next")}
-                className="active:scale-[95%] rounded-full p-2 transition-all duration-500 ease-in-out focus:outline-none z-10 top-[300px] lg:top-[340px] 2xl:top-[540px] transform -translate-y-[1/2] absolute right-[1%]"
+                className="active:scale-[95%] rounded-full p-2 transition-all duration-500 ease-in-out focus:outline-none z-30 top-1/2 -translate-y-1/2 absolute right-[1%] pointer-events-auto"
                 aria-label="Next slide">
                 <img
                     width={48}
@@ -185,7 +214,9 @@ export const Carousel: React.FC<Props> = ({
             </button>
 
             {!isAnimationLayerReady ? (
-                <div className="h-full">{children[state.currentIndex]}</div>
+                <div className="h-full">
+                    {children[state.currentIndex]}
+                </div>
             ) : (
                 <AnimatePresence initial={false} mode="wait">
                     <motion.div
