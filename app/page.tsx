@@ -7,7 +7,10 @@ const ValuesSection = dynamic(() =>
 	import("@/components/values").then((mod) => mod.ValuesSection)
 );
 
-import { fetchHomePageMetadata } from "@/sanity/sanity.query";
+import {
+	fetchHomePageData,
+	fetchHomePageMetadata,
+} from "@/sanity/sanity.query";
 
 // Cache and revalidate the homepage to reduce TTFB
 export const revalidate = 3600; // seconds
@@ -67,7 +70,9 @@ export async function generateMetadata() {
 	};
 }
 
-export default function Home() {
+export default async function Home() {
+	const homePageData = await fetchHomePageData();
+
 	return (
 		<main className="flex flex-col items-center overflow-hidden justify-between z-10 relative">
 			<HeroSectionEdit />
@@ -93,7 +98,9 @@ export default function Home() {
 			<Team />
 			<BeforeAfter />
 			<Services />
-			<TechAdvantageSection />
+			<TechAdvantageSection
+				sectionData={homePageData?.techAdvantage}
+			/>
 			<ValuesSection />
 			<Gallery />
 		</main>

@@ -16,95 +16,65 @@ import {
 	CarouselApi,
 } from "@/components/ui/carousel";
 import { motion, useAnimation, useInView } from "framer-motion";
+import type {
+	TechAdvantageIcon,
+	TechAdvantageItem,
+	TechAdvantageSection as TechAdvantageSectionData,
+} from "@/types";
 
-export const techData = [
-	{
-		id: 1,
-		icon: <PrintIcon />,
-		title: "3D CT Scan",
-		description:
-			"Our 3D Cone Beam CT Scanner provides 360-degree imaging of teeth, jaw, nerves, and sinuses with low radiation, aiding precise implants, root canals, wisdom tooth evaluation, and pathology diagnosis.",
-		video: "https://firebasestorage.googleapis.com/v0/b/casamed-6ec79.appspot.com/o/beyond-dental%2Fvideos%2F3D%20CBCT%20Video.mp4?alt=media&token=dc67c55a-d24c-4e57-80ce-29417d8422b9",
-	},
+type TechAdvantageCard = TechAdvantageItem & {
+	id: number;
+	iconKey?: TechAdvantageIcon;
+};
 
-	{
-		id: 2,
-		icon: <DSDIcon />,
-		title: "Digital Smile Design (DSD)",
-		description:
-			"Uses facial photography, video, and software to create a virtual preview of your smile, allowing evaluation and refinement for personalized, harmonious treatment results.",
-		video: "https://firebasestorage.googleapis.com/v0/b/casamed-6ec79.appspot.com/o/beyond-dental%2Fvideos%2FInvisalign-Video.mp4?alt=media&token=651b5901-3f03-430c-a970-9b4330a58fb8",
-	},
-	{
-		id: 3,
-		icon: <LaserIcon />,
-		title: "BIOLASE Dentistry",
-		description:
-			"BIOLASE lasers enable minimally invasive procedures with reduced pain, faster healing, and improved precision for various dental treatments.",
-		video: "https://firebasestorage.googleapis.com/v0/b/casamed-6ec79.appspot.com/o/beyond-dental%2Fvideos%2FLaser-Dentistry.mp4?alt=media&token=c9be53e1-4b77-4468-b5cd-7c18598c7a7b",
-	},
-	{
-		id: 4,
-		icon: <ARIcon />,
-		title: "Tek-Scan Analysis",
-		description:
-			"Uses advanced digital sensors to measure bite force and contact points in real time, helping diagnose imbalances and guide precise, comfortable bite adjustments for optimal function.",
-		video: "https://firebasestorage.googleapis.com/v0/b/casamed-6ec79.appspot.com/o/beyond-dental%2Fvideos%2FTek%20Scan%20Bite%20Assessment.mp4?alt=media&token=682bb44d-790b-4b44-bad7-d6bc4353a9a2",
-	},
-	{
-		id: 5,
-		icon: <DSDIcon />,
-		title: "Joint Vibration Analysis",
-		description:
-			"JVA is a non-invasive tool detecting TMJ disorders early by analyzing jaw joint sounds and movements for personalized treatment plans.",
-		video: "https://firebasestorage.googleapis.com/v0/b/casamed-6ec79.appspot.com/o/beyond-dental%2Fvideos%2FJOINT%20VIBRATION%20ANALYSIS.mp4?alt=media&token=b8bd314a-48d0-4b25-a6c3-619703957bc9",
-	},
-	{
-		id: 6,
-		icon: <DSDIcon />,
-		title: "Microscope Assisted Dentistry",
-		description:
-			"Microscope-assisted dentistry utilizes a high-resolution 3D model of the teeth to provide precise and detailed treatment planning.",
-		video: "https://firebasestorage.googleapis.com/v0/b/casamed-6ec79.appspot.com/o/beyond-dental%2Fvideos%2FMicroscope%20Dentistry.mp4?alt=media&token=4a69791c-e3af-4403-b9b2-742a59065462",
-	},
-	{
-		id: 7,
-		icon: <DSDIcon />,
-		title: "ZOOM Teeth Whitening",
-		description:
-			"ZOOM Teeth Whitening is a high-tech teeth whitening device that uses a high-resolution 3D model of the teeth to provide precise and detailed treatment planning.",
-		video: "https://firebasestorage.googleapis.com/v0/b/casamed-6ec79.appspot.com/o/beyond-dental%2Fvideos%2FPhilips%20Zoom%20Teeth%20Whitening.mp4?alt=media&token=0abc5dc3-baf7-495e-9b3d-622b3472d12c",
-	},
-	{
-		id: 8,
-		icon: <DSDIcon />,
-		title: "Anti Snoring Device",
-		description:
-			"Anti Snoring Device is a high-tech teeth whitening device that uses a high-resolution 3D model of the teeth to provide precise and detailed treatment planning.",
-		video: "https://firebasestorage.googleapis.com/v0/b/casamed-6ec79.appspot.com/o/beyond-dental%2Fvideos%2FAnti%20Snoring%20Device.mp4?alt=media&token=688243af-9186-4fbe-bf09-b18da39532df",
-	},
-	{
-		id: 9,
-		icon: <DSDIcon />,
-		title: "TENS Therapy",
-		description:
-			"Uses gentle electrical impulses to relax jaw muscles, helping specialists identify optimal bite position for TMJ diagnosis, rehabilitation planning, and long-term comfort after restorations.",
-		video: "https://firebasestorage.googleapis.com/v0/b/casamed-6ec79.appspot.com/o/beyond-dental%2Fvideos%2FLaser-Dentistry.mp4?alt=media&token=c9be53e1-4b77-4468-b5cd-7c18598c7a7b",
-	},
-	{
-		id: 10,
-		icon: <DSDIcon />,
-		title: "Conscious Sedation Dentistry",
-		description:
-			"Enables complex dental procedures in deep relaxation while remaining responsive, ensuring comfort for treatments like implants, full mouth rehabilitation, and smile makeovers.",
-		video: "https://firebasestorage.googleapis.com/v0/b/casamed-6ec79.appspot.com/o/beyond-dental%2Fvideos%2FInvisalign-Video.mp4?alt=media&token=651b5901-3f03-430c-a970-9b4330a58fb8",
-	},
-];
+const iconMap: Record<TechAdvantageIcon, React.ReactNode> = {
+	print: <PrintIcon />,
+	dsd: <DSDIcon />,
+	laser: <LaserIcon />,
+	ar: <ARIcon />,
+};
 
-export const TechAdvantageSection = () => {
+type Props = {
+	sectionData?: TechAdvantageSectionData;
+};
+
+export const TechAdvantageSection = ({ sectionData }: Props) => {
+	const techData = React.useMemo<TechAdvantageCard[]>(() => {
+		if (!sectionData?.items?.length) {
+			return [];
+		}
+
+		const items = sectionData.items;
+
+		return items.map((item, index) => ({
+			id: index + 1,
+			title: item.title,
+			icon: item.icon,
+			fallbackIcon: item.fallbackIcon,
+			iconKey: item.fallbackIcon || "dsd",
+			description: item.description,
+			video: item.video,
+		}));
+	}, [sectionData]);
+
+	const renderIcon = (tech: TechAdvantageCard) => {
+		if (tech.icon) {
+			return (
+				<img
+					src={tech.icon}
+					alt={`${tech.title} icon`}
+					className="h-16 w-16 object-contain md:h-20 md:w-20"
+				/>
+			);
+		}
+
+		const iconKey = tech.iconKey || tech.fallbackIcon || "dsd";
+		return iconMap[iconKey] ?? iconMap.dsd;
+	};
+
 	const [api, setApi] = React.useState<CarouselApi>();
-	const [currentVideo, setCurrentVideo] = useState(techData[0].video);
-	const [activeCardId, setActiveCardId] = useState(techData[0].id);
+	const [currentVideo, setCurrentVideo] = useState(techData[0]?.video ?? "");
+	const [activeCardId, setActiveCardId] = useState(techData[0]?.id ?? 0);
 	const videoRef = useRef<HTMLVideoElement>(null);
 	const controls = useAnimation();
 	const [currentIndex, setCurrentIndex] = useState(0);
@@ -113,13 +83,12 @@ export const TechAdvantageSection = () => {
 	const containerRef = useRef<HTMLDivElement>(null);
 	const isInView = useInView(containerRef, { once: false, amount: 0.5 });
 
-
 	const goToNextSlide = useCallback(() => {
 		if (api) {
 			const nextIndex = (currentIndex + 1) % techData.length;
 			api.scrollTo(nextIndex);
 		}
-	}, [api, currentIndex]);
+	}, [api, currentIndex, techData.length]);
 
 	const attemptPlay = async (videoElement: HTMLVideoElement) => {
 		try {
@@ -161,7 +130,18 @@ export const TechAdvantageSection = () => {
 		return () => {
 			api.off("select", handleSelect);
 		};
-	}, [api]);
+	}, [api, techData]);
+
+	useEffect(() => {
+		if (!techData.length) {
+			return;
+		}
+
+		setCurrentIndex(0);
+		setCurrentVideo(techData[0].video);
+		setActiveCardId(techData[0].id);
+		api?.scrollTo(0);
+	}, [api, techData]);
 
 	useEffect(() => {
 		const videoElement = videoRef.current;
@@ -181,7 +161,7 @@ export const TechAdvantageSection = () => {
 	useEffect(() => {
 		const videoElement = videoRef.current;
 
-		if (videoElement && isInView) {
+		if (videoElement && isInView && currentVideo) {
 			attemptPlay(videoElement);
 		} else {
 			videoElement?.pause();
@@ -209,67 +189,73 @@ export const TechAdvantageSection = () => {
 			<PageStartDiv />
 			<div className="flex flex-col justify-center items-center gap-[24px] pt-20 pb-16 max-w-[342px] md:max-w-[1280px] mx-auto px-4 md:px-6 xl:px-0">
 				<h2 className="text-center text-[14px] tracking-widest leading-relaxed font-semibold uppercase text-[#73383E] font-poppins">
-					Technological Advantage
+					{sectionData?.eyebrow || "Technological Advantage"}
 				</h2>
 				<p className="text-center text-[24px] font-normal leading-tight text-copyColor md:text-[48px]">
-					Pioneering Dental Excellence with Cutting-Edge Innovations
+					{sectionData?.heading ||
+						"Pioneering Dental Excellence with Cutting-Edge Innovations"}
 				</p>
 			</div>
 			<div className="max-w-[80%] 2xl:max-w-[65%] mx-auto px-4 md:px-0">
-				<Carousel
-					opts={{
-						align: "start",
-						loop: true,
-					}}
-					className="w-full"
-					setApi={setApi}>
-					<CarouselContent className="-ml-1 items-stretch">
-						{techData.map((tech) => (
-							<CarouselItem
-								key={tech.id}
-								className="flex pl-1 sm:basis-1/2 2md:basis-1/3 xl:basis-1/4">
-								<div className="h-full w-full p-1">
-									<Card
-										className={` ${
-											activeCardId === tech.id
-												? "bg-[#73383E]"
-												: "bg-white"
-										} flex h-full w-full min-h-[360px] flex-col items-start justify-start overflow-hidden pt-10 transition-colors duration-300 md:min-h-[423px] md:pt-14`}>
-										<CardContent className="flex h-full w-full flex-col items-center justify-start p-6 md:p-8">
-											<div
-												className={`mb-6 md:mb-8 text-[#73383E] 
-						  ${
-								activeCardId === tech.id
-									? "text-white"
-									: "text-[#73383E]"
-							} transition-colors duration-300`}>
-												{tech.icon}
-											</div>
-											<h3
-												className={`mb-4 text-center text-2xl font-semibold leading-tight tracking-tighter text-balance ${
-													activeCardId === tech.id
-														? "text-white"
-														: "text-[#73383E]"
-												} transition-colors duration-300`}>
-												{tech.title}
-											</h3>
-											<p
-												className={`text-center font-poppins text-sm font-normal leading-relaxed text-pretty ${
-													activeCardId === tech.id
-														? "text-white"
-														: "text-[#1f0f11]"
-												} transition-colors duration-300 md:text-base`}>
-												{tech.description}
-											</p>
-										</CardContent>
-									</Card>
-								</div>
-							</CarouselItem>
-						))}
-					</CarouselContent>
-					<CarouselPrevious className="left-2 top-1/2 z-20 -translate-y-1/2 border-[#73383E] bg-white text-[#73383E] hover:bg-white md:-left-12" />
-					<CarouselNext className="right-2 top-1/2 z-20 -translate-y-1/2 border-[#73383E] bg-white text-[#73383E] hover:bg-white md:-right-12" />
-				</Carousel>
+				{techData.length > 0 ? (
+					<Carousel
+						opts={{
+							align: "start",
+							loop: true,
+						}}
+						className="w-full"
+						setApi={setApi}>
+						<CarouselContent className="-ml-1 items-stretch">
+							{techData.map((tech) => (
+								<CarouselItem
+									key={tech.id}
+									className="flex pl-1 sm:basis-1/2 2md:basis-1/3 xl:basis-1/4">
+									<div className="h-full w-full p-1">
+										<Card
+											className={` ${
+												activeCardId === tech.id
+													? "bg-[#73383E]"
+													: "bg-white"
+											} flex h-full w-full min-h-[360px] flex-col items-start justify-start overflow-hidden pt-10 transition-colors duration-300 md:min-h-[423px] md:pt-14`}>
+											<CardContent className="flex h-full w-full flex-col items-center justify-start p-6 md:p-8">
+												<div
+													className={`mb-6 md:mb-8 text-[#73383E] ${
+														activeCardId === tech.id
+															? "text-white"
+															: "text-[#73383E]"
+													} transition-colors duration-300`}>
+													{renderIcon(tech)}
+												</div>
+												<h3
+													className={`mb-4 text-center text-2xl font-semibold leading-tight tracking-tighter text-balance ${
+														activeCardId === tech.id
+															? "text-white"
+															: "text-[#73383E]"
+													} transition-colors duration-300`}>
+													{tech.title}
+												</h3>
+												<p
+													className={`text-center font-poppins text-sm font-normal leading-relaxed text-pretty ${
+														activeCardId === tech.id
+															? "text-white"
+															: "text-[#1f0f11]"
+													} transition-colors duration-300 md:text-base`}>
+													{tech.description}
+												</p>
+											</CardContent>
+										</Card>
+									</div>
+								</CarouselItem>
+							))}
+						</CarouselContent>
+						<CarouselPrevious className="left-2 top-1/2 z-20 -translate-y-1/2 border-[#73383E] bg-white text-[#73383E] hover:bg-white md:-left-12" />
+						<CarouselNext className="right-2 top-1/2 z-20 -translate-y-1/2 border-[#73383E] bg-white text-[#73383E] hover:bg-white md:-right-12" />
+					</Carousel>
+				) : (
+					<div className="rounded-lg border border-dashed border-[#73383E]/40 bg-white/60 px-6 py-10 text-center text-[#73383E]">
+						No Tech Advantage cards found in Sanity.
+					</div>
+				)}
 			</div>
 			<div className="mt-10 max-w-[90%] 2xl:max-w-[65%] mx-auto px-4 md:px-0">
 				<motion.div
@@ -279,21 +265,27 @@ export const TechAdvantageSection = () => {
 					transition={{ duration: 0.3 }}
 					whileInView={{ opacity: 1 }}
 					ref={containerRef}>
-					<video
-						key={currentVideo}
-						src={currentVideo}
-						className="aspect-video w-full rounded-lg object-cover"
-						ref={videoRef}
-						muted
-						playsInline
-						controls
-					/>
-					{showPlayButton && isInView && (
-						<button
-							onClick={() => videoRef.current?.play()}
-							className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-copyColor bg-opacity-50 rounded-full p-4">
-							Play
-						</button>
+					{currentVideo ? (
+						<>
+							<video
+								key={currentVideo}
+								src={currentVideo}
+								className="aspect-video w-full rounded-lg object-cover"
+								ref={videoRef}
+								muted
+								playsInline
+								controls
+							/>
+							{showPlayButton && isInView && (
+								<button
+									onClick={() => videoRef.current?.play()}
+									className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-copyColor bg-opacity-50 rounded-full p-4">
+									Play
+								</button>
+							)}
+						</>
+					) : (
+						<div className="aspect-video w-full rounded-lg border border-dashed border-[#73383E]/40 bg-white/60" />
 					)}
 				</motion.div>
 			</div>

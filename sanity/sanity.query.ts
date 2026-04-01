@@ -4,6 +4,7 @@ import {
 	BlogPreviewT,
 	BlogT,
 	CategoryPage,
+	HomepageData,
 	HomepageMetadata,
 	InternationalPatientsPage,
 	InvisalignPage,
@@ -787,5 +788,28 @@ export async function fetchHomePageMetadata(): Promise<HomepageMetadata> {
     ogDescription,
     "ogImage": ogImage.asset->url
   }`;
+	return client.fetch(query, {}, { next: { revalidate: 3600 } });
+}
+
+export async function fetchHomePageData(): Promise<HomepageData> {
+	const query = groq`*[_type == "homepageMetadata"][0]{
+		title,
+		description,
+		ogTitle,
+		ogDescription,
+		"ogImage": ogImage.asset->url,
+		techAdvantage {
+			eyebrow,
+			heading,
+			items[] {
+				title,
+				"icon": icon.asset->url,
+				fallbackIcon,
+				description,
+				video
+			}
+		}
+	}`;
+
 	return client.fetch(query, {}, { next: { revalidate: 3600 } });
 }

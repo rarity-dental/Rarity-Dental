@@ -11,6 +11,8 @@ import section from "./section";
 import invisalign from "./invisalign";
 import section2 from "./section2";
 import blog from "./blog";
+import techAdvantageItem from "./techAdvantageItem";
+import techAdvantageSection from "./techAdvantageSection";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
 	types: [
@@ -21,6 +23,8 @@ export const schema: { types: SchemaTypeDefinition[] } = {
 		// blog,
 		internationalPatients,
 		homepageMetadata,
+		techAdvantageItem,
+		techAdvantageSection,
 		blogtest,
 		section,
 		// section2,

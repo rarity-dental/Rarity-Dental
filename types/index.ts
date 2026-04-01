@@ -8,6 +8,26 @@ export interface HomepageMetadata {
 	ogImage: string;
 }
 
+export type TechAdvantageIcon = "print" | "dsd" | "laser" | "ar";
+
+export interface TechAdvantageItem {
+	title: string;
+	icon?: string;
+	fallbackIcon?: TechAdvantageIcon;
+	description: string;
+	video: string;
+}
+
+export interface TechAdvantageSection {
+	eyebrow?: string;
+	heading: string;
+	items: TechAdvantageItem[];
+}
+
+export interface HomepageData extends HomepageMetadata {
+	techAdvantage?: TechAdvantageSection;
+}
+
 export type BlogCategory =
 	| "smile-designing"
 	| "advanced-technology"

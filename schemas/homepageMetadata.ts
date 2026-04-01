@@ -32,5 +32,10 @@ export default defineType({
 			type: "image",
 			options: { hotspot: true },
 		}),
+		defineField({
+			name: "techAdvantage",
+			title: "Tech Advantage Section",
+			type: "techAdvantageSection",
+		}),
 	],
 });
