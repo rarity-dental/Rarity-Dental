@@ -24,7 +24,7 @@ export const techData = [
 		icon: <PrintIcon />,
 		title: "3D CT Scan",
 		description:
-			"Rarity uses advanced 3D printing for precise dental prosthetics, ensuring optimal fit and aesthetics.",
+			"Our 3D Cone Beam CT Scanner provides 360-degree imaging of teeth, jaw, nerves, and sinuses with low radiation, aiding precise implants, root canals, wisdom tooth evaluation, and pathology diagnosis.",
 		video: "https://firebasestorage.googleapis.com/v0/b/casamed-6ec79.appspot.com/o/beyond-dental%2Fvideos%2F3D%20CBCT%20Video.mp4?alt=media&token=dc67c55a-d24c-4e57-80ce-29417d8422b9",
 	},
 
@@ -33,7 +33,7 @@ export const techData = [
 		icon: <DSDIcon />,
 		title: "Digital Smile Design (DSD)",
 		description:
-			"Our intraoral scanner creates accurate 3D models of teeth and gums, eliminating messy impressions and ensuring precise treatment planning.",
+			"Uses facial photography, video, and software to create a virtual preview of your smile, allowing evaluation and refinement for personalized, harmonious treatment results.",
 		video: "https://firebasestorage.googleapis.com/v0/b/casamed-6ec79.appspot.com/o/beyond-dental%2Fvideos%2FInvisalign-Video.mp4?alt=media&token=651b5901-3f03-430c-a970-9b4330a58fb8",
 	},
 	{
@@ -89,7 +89,7 @@ export const techData = [
 		icon: <DSDIcon />,
 		title: "TENS Therapy",
 		description:
-			"TENS Therapy is a high-tech teeth whitening device that uses a high-resolution 3D model of the teeth to provide precise and detailed treatment planning.",
+			"Uses gentle electrical impulses to relax jaw muscles, helping specialists identify optimal bite position for TMJ diagnosis, rehabilitation planning, and long-term comfort after restorations.",
 		video: "https://firebasestorage.googleapis.com/v0/b/casamed-6ec79.appspot.com/o/beyond-dental%2Fvideos%2FLaser-Dentistry.mp4?alt=media&token=c9be53e1-4b77-4468-b5cd-7c18598c7a7b",
 	},
 	{
@@ -97,7 +97,7 @@ export const techData = [
 		icon: <DSDIcon />,
 		title: "Conscious Sedation Dentistry",
 		description:
-			"This is a high-tech teeth whitening device that uses a high-resolution 3D model of the teeth to provide precise and detailed treatment planning.",
+			"Enables complex dental procedures in deep relaxation while remaining responsive, ensuring comfort for treatments like implants, full mouth rehabilitation, and smile makeovers.",
 		video: "https://firebasestorage.googleapis.com/v0/b/casamed-6ec79.appspot.com/o/beyond-dental%2Fvideos%2FInvisalign-Video.mp4?alt=media&token=651b5901-3f03-430c-a970-9b4330a58fb8",
 	},
 ];
