@@ -83,37 +83,45 @@ export const TechAdvantageSection = ({ sectionData }: Props) => {
 	const containerRef = useRef<HTMLDivElement>(null);
 	const isInView = useInView(containerRef, { once: false, amount: 0.5 });
 
+	const attemptPlay = useCallback(
+		async (videoElement: HTMLVideoElement) => {
+			if (!currentVideo) {
+				return;
+			}
+
+			try {
+				await videoElement.play();
+				setShowPlayButton(false);
+			} catch (error) {
+				if (
+					error instanceof DOMException &&
+					error.name === "AbortError"
+				) {
+					setShowPlayButton(true);
+					return;
+				}
+				if (
+					error instanceof DOMException &&
+					error.name === "NotAllowedError"
+				) {
+					console.log(
+						"Autoplay prevented due to browser policy. User interaction may be required."
+					);
+				} else {
+					console.error("Autoplay failed:", error);
+				}
+				setShowPlayButton(true);
+			}
+		},
+		[currentVideo]
+	);
+
 	const goToNextSlide = useCallback(() => {
 		if (api) {
 			const nextIndex = (currentIndex + 1) % techData.length;
 			api.scrollTo(nextIndex);
 		}
 	}, [api, currentIndex, techData.length]);
-
-	const attemptPlay = async (videoElement: HTMLVideoElement) => {
-		try {
-			await videoElement.play();
-			setShowPlayButton(false);
-		} catch (error) {
-			if (
-				error instanceof DOMException &&
-				error.name === "AbortError"
-			) {
-				return;
-			}
-			if (
-				error instanceof DOMException &&
-				error.name === "NotAllowedError"
-			) {
-				console.log(
-					"Autoplay prevented due to browser policy. User interaction may be required."
-				);
-			} else {
-				console.error("Autoplay failed:", error);
-			}
-			setShowPlayButton(true);
-		}
-	};
 
 	useEffect(() => {
 		if (!api) return;
@@ -166,23 +174,34 @@ export const TechAdvantageSection = ({ sectionData }: Props) => {
 		} else {
 			videoElement?.pause();
 		}
-	}, [currentVideo, isInView]);
+	}, [attemptPlay, currentVideo, isInView]);
 
 	useEffect(() => {
 		const videoElement = videoRef.current;
 		if (!videoElement) return;
 
 		const handlePlay = () => setShowPlayButton(false);
-		const handlePause = () => setShowPlayButton(true);
+		const handlePause = () => {
+			if (isInView) {
+				setShowPlayButton(true);
+			}
+		};
+		const handleCanPlay = () => {
+			if (isInView) {
+				void attemptPlay(videoElement);
+			}
+		};
 
 		videoElement.addEventListener("play", handlePlay);
 		videoElement.addEventListener("pause", handlePause);
+		videoElement.addEventListener("canplay", handleCanPlay);
 
 		return () => {
 			videoElement.removeEventListener("play", handlePlay);
 			videoElement.removeEventListener("pause", handlePause);
+			videoElement.removeEventListener("canplay", handleCanPlay);
 		};
-	}, []);
+	}, [attemptPlay, currentVideo, isInView]);
 
 	return (
 		<div className="bg-[#73383E] bg-opacity-10 relative w-full py-10 md:py-20">
@@ -272,13 +291,21 @@ export const TechAdvantageSection = ({ sectionData }: Props) => {
 								src={currentVideo}
 								className="aspect-video w-full rounded-lg object-cover"
 								ref={videoRef}
+								autoPlay
 								muted
 								playsInline
 								controls
+								preload="metadata"
 							/>
 							{showPlayButton && isInView && (
 								<button
-									onClick={() => videoRef.current?.play()}
+									onClick={() => {
+										const videoElement =
+											videoRef.current;
+										if (videoElement) {
+											void attemptPlay(videoElement);
+										}
+									}}
 									className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-copyColor bg-opacity-50 rounded-full p-4">
 									Play
 								</button>
