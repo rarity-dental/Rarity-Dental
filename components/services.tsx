@@ -112,6 +112,12 @@ export const Services = () => {
 
 			if (isInView) {
 				videoElement.play().catch((error) => {
+					if (
+						error instanceof DOMException &&
+						error.name === "AbortError"
+					) {
+						return;
+					}
 					console.error("Video playback failed:", error);
 					setError("Video playback failed. Click to play.");
 				});
@@ -193,7 +199,7 @@ export const Services = () => {
 			className="pt-8 md:mt-0 min-h-screen w-full relative flex flex-col justify-center items-center ">
 			<PageStartDiv />
 			<PageEndDiv />
-			<div className="pt-[10%] md:pt-[12%] xl:pt-[8%] pb-16  flex flex-col justify-center items-center max-w-[342px] md:max-w-[600px] 2md:max-w-[680px] xl:max-w-[1064px] mx-auto ">
+			<div className="pt-[10%] md:pt-[12%] xl:pt-[8%] pb-16 px-4 md:px-6 xl:px-8 2xl:px-0 flex flex-col justify-center items-center max-w-[342px] md:max-w-[600px] 2md:max-w-[680px] xl:max-w-[1064px] mx-auto ">
 				<h2 className="text-center text-[14px] tracking-widest leading-relaxed font-semibold mb-6 uppercase text-[#73383E] font-poppins">
 					Advanced Procedures
 				</h2>
@@ -237,7 +243,7 @@ export const Services = () => {
 								delay: 2000,
 							}),
 						]}
-						className="w-full relative max-w-[1280px] mx-auto pb-[5%]">
+						className="w-full relative max-w-[1280px] mx-auto px-4 md:px-10 xl:px-12 2xl:px-0 pb-[5%]">
 						<CarouselContent className="-ml-1">
 							{serviceData
 								.filter((service) => service.id < 10)
@@ -260,8 +266,8 @@ export const Services = () => {
 									</CarouselItem>
 								))}
 						</CarouselContent>
-						<CarouselPreviousMod className="absolute left-[-3.4%]" />
-						<CarouselNextMod className="absolute right-[-3.4%] " />
+						<CarouselPreviousMod className="absolute left-2 md:left-4 xl:-left-6 top-1/4 z-20 bg-[#F7F2EC]" />
+						<CarouselNextMod className="absolute right-2 md:right-4 xl:-right-6 top-1/4 z-20 bg-[#F7F2EC]" />
 					</Carousel>
 					<Carousel
 						opts={{
@@ -273,7 +279,7 @@ export const Services = () => {
 								delay: 2000,
 							}),
 						]}
-						className="w-full relative max-w-[1280px] mx-auto pb-[5%]">
+						className="w-full relative max-w-[1280px] mx-auto px-4 md:px-10 xl:px-12 2xl:px-0 pb-[5%]">
 						<CarouselContent className="-ml-1">
 							{serviceData
 								.filter((service) => service.id > 9)
@@ -296,14 +302,14 @@ export const Services = () => {
 									</CarouselItem>
 								))}
 						</CarouselContent>
-						<CarouselPreviousMod className="absolute left-[-3.4%]" />
-						<CarouselNextMod className="absolute right-[-3.4%] " />
+						<CarouselPreviousMod className="absolute left-2 md:left-4 xl:-left-6 top-1/4 z-20 bg-[#F7F2EC]" />
+						<CarouselNextMod className="absolute right-2 md:right-4 xl:-right-6 top-1/4 z-20 bg-[#F7F2EC]" />
 					</Carousel>
 				</>
 			)}
 
 			<div className="min-h-screen bg-[#73383E] w-full pb-[10%]">
-				<div className="flex flex-col items-center max-w-[342px] md:max-w-[600px] xl:max-w-[1064px] mx-auto pt-32 pb-8">
+				<div className="flex flex-col items-center max-w-[342px] md:max-w-[600px] xl:max-w-[1064px] mx-auto px-4 md:px-6 xl:px-8 2xl:px-0 pt-32 pb-8">
 					<h2 className="text-[14px] tracking-widest leading-relaxed font-semibold uppercase text-[#F7F3F1] font-poppins mb-6">
 						Elevate your smile
 					</h2>
@@ -319,7 +325,7 @@ export const Services = () => {
 					</p>
 				</div>
 
-				<div className="flex flex-col items-center max-w-[342px] md:max-w-[600px] xl:max-w-[1064px] mx-auto">
+				<div className="flex flex-col items-center max-w-[342px] md:max-w-[600px] xl:max-w-[1064px] mx-auto px-4 md:px-6 xl:px-8 2xl:px-0">
 					<img
 						src="/images/invisalign-logo.png"
 						alt="invisalign-logo"
@@ -331,7 +337,7 @@ export const Services = () => {
 				</div>
 
 				<div
-					className="flex flex-col-reverse xl:flex-row justify-center items-start max-w-[342px] md:max-w-[600px] xl:max-w-[1200px] mx-auto gap-[5%]"
+					className="flex flex-col-reverse xl:flex-row justify-center items-start max-w-[342px] md:max-w-[600px] xl:max-w-[1200px] mx-auto px-4 md:px-6 xl:px-8 2xl:px-0 gap-[5%]"
 					ref={containerRef}>
 					<video
 						ref={videoRef}

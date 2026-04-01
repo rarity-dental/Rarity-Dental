@@ -153,14 +153,14 @@ export const Gallery = ({
 	return (
 		<>
 			{isMobile ? (
-				<div className="w-full flex flex-col justify-center items-center  relative pt-20 pb-16 max-w-[342px] md:max-w-[600px] xl:max-w-[1080px] mx-auto">
+				<div className="w-full flex flex-col justify-center items-center relative pt-20 pb-16 max-w-[342px] md:max-w-[600px] xl:max-w-[1080px] mx-auto px-4 md:px-6 xl:px-8 2xl:px-0">
 					{end && <PageEndDiv />}
 					{start && <PageStartDiv />}
-					<div className="max-w-[300px] mx-auto mb-8">
+					<div className="mx-auto mb-8 max-w-[300px]">
 						<h2 className="text-[14px] text-center tracking-widest leading-relaxed font-semibold uppercase text-[#73383E] font-poppins mb-6">
 							Gallery
 						</h2>
-						<h2 className="text-[28px] text-center font-normal text-copyColor leading-tight ">
+						<h2 className="text-[28px] text-center font-normal leading-tight text-copyColor text-balance">
 							Your journey to a flawless smile begins here.
 						</h2>
 					</div>
@@ -190,11 +190,11 @@ export const Gallery = ({
 								alt="Rarity Dental clinic interior"
 								loading="lazy"
 								sizes="50vw"
-								className=" object-cover  rounded-lg absolute inset-0 w-full h-full"
+								className=" object-cover rounded-lg absolute inset-0 w-full h-full"
 							/>
 						</div>
 
-						<div className="w-[43%] h-[245px] flex-col justify-between  items-center ">
+						<div className="w-[43%] h-[245px] flex-col justify-between items-center">
 							<div className="w-full h-[47.5%] relative rounded-lg">
 								<img
 									src="/images/gallery/gallery-img-right-top.webp"
@@ -202,7 +202,6 @@ export const Gallery = ({
 									loading="lazy"
 									sizes="25vw"
 									className="object-cover rounded-lg absolute inset-0 w-full h-full"
-									// style={{ width: "133px", height: "114px" }}
 								/>
 							</div>
 							<div className="w-full h-[5%]"></div>
@@ -237,7 +236,7 @@ export const Gallery = ({
 			) : (
 				<div
 					id="formDiv"
-					className="w-full relative flex flex-col justify-center items-start max-w-[1280px] mx-auto pt-16 pb-[150px]">
+					className="w-full relative flex flex-col justify-center items-start max-w-[1280px] mx-auto pt-16 pb-[150px] px-4 md:px-6 xl:px-8 2xl:px-0">
 					{end && <PageEndDiv />}
 					{start && <PageStartDiv />}
 					<h2 className="text-[14px] tracking-widest leading-relaxed font-semibold uppercase text-[#73383E] font-poppins mb-6">
@@ -246,8 +245,8 @@ export const Gallery = ({
 					<h2 className="text-[48px] font-normal text-copyColor leading-tight max-w-[540px] mb-8">
 						Your journey to a flawless smile begins here.
 					</h2>
-					<div className="flex flex-col md:flex-row  gap-5 w-full justify-between items-start ">
-						<div className="w-[61%] flex justify-between gap-x-[25px] items-center relative">
+					<div className="flex flex-col md:flex-row gap-5 w-full justify-between items-start">
+						<div className="w-full md:w-[54%] xl:w-[56%] flex justify-between gap-x-[25px] items-center relative min-w-0">
 							<div className="absolute top-1/2 left-[57%] -translate-x-1/2 -translate-y-1/2 rounded-full w-[154px] h-[154px] bg-[#F7F2EC] flex justify-center items-center z-10">
 								<img
 									src="/images/rotating-image.svg"
@@ -297,12 +296,12 @@ export const Gallery = ({
 								</div>
 							</div>
 						</div>
-						<div className="w-[45%] h-[539px] px-8 flex flex-col gap-10 bg-[#73383E]">
+						<div className="w-full md:w-[40%] xl:w-[38%] min-w-0 bg-[#73383E]">
 							<ConsultationForm
 								buttonText="Get in Touch"
 								paraText={paraText}
 								countryCode
-								className="h-full w-auto"
+								className="h-full min-h-[539px] w-full"
 							/>
 							{/* {renderForm()} */}
 						</div>

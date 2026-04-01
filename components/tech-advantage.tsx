@@ -16,7 +16,6 @@ import {
 	CarouselApi,
 } from "@/components/ui/carousel";
 import { motion, useAnimation, useInView } from "framer-motion";
-import Autoplay from "embla-carousel-autoplay";
 
 export const techData = [
 	{
@@ -129,6 +128,12 @@ export const TechAdvantageSection = () => {
 		} catch (error) {
 			if (
 				error instanceof DOMException &&
+				error.name === "AbortError"
+			) {
+				return;
+			}
+			if (
+				error instanceof DOMException &&
 				error.name === "NotAllowedError"
 			) {
 				console.log(
@@ -202,15 +207,15 @@ export const TechAdvantageSection = () => {
 	return (
 		<div className="bg-[#73383E] bg-opacity-10 relative w-full py-10 md:py-20">
 			<PageStartDiv />
-			<div className="flex flex-col justify-center items-center gap-[24px] pt-20 pb-16 max-w-[342px] md:max-w-[1280px] mx-auto">
+			<div className="flex flex-col justify-center items-center gap-[24px] pt-20 pb-16 max-w-[342px] md:max-w-[1280px] mx-auto px-4 md:px-6 xl:px-0">
 				<h2 className="text-center text-[14px] tracking-widest leading-relaxed font-semibold uppercase text-[#73383E] font-poppins">
 					Technological Advantage
 				</h2>
-				<p className="text-center text-[24px] md:text-[48px] font-normal text-copyColor">
+				<p className="text-center text-[24px] font-normal leading-tight text-copyColor md:text-[48px]">
 					Pioneering Dental Excellence with Cutting-Edge Innovations
 				</p>
 			</div>
-			<div className="max-w-[80%] 2xl:max-w-[65%] mx-auto">
+			<div className="max-w-[80%] 2xl:max-w-[65%] mx-auto px-4 md:px-0">
 				<Carousel
 					opts={{
 						align: "start",
@@ -218,19 +223,19 @@ export const TechAdvantageSection = () => {
 					}}
 					className="w-full"
 					setApi={setApi}>
-					<CarouselContent className="-ml-1">
+					<CarouselContent className="-ml-1 items-stretch">
 						{techData.map((tech) => (
 							<CarouselItem
 								key={tech.id}
-								className="pl-1 sm:basis-1/2 2md:basis-1/3 xl:basis-1/4">
-								<div className="p-1 ">
+								className="flex pl-1 sm:basis-1/2 2md:basis-1/3 xl:basis-1/4">
+								<div className="h-full w-full p-1">
 									<Card
 										className={` ${
 											activeCardId === tech.id
 												? "bg-[#73383E]"
 												: "bg-white"
-										} transition-colors duration-300 h-[360px] md:h-[423px] my-auto max-w-[342px] lg:max-w-[308px] object-center flex flex-col justify-start items-start group pt-[18%]`}>
-										<CardContent className="flex flex-col justify-center items-center p-6 ">
+										} flex h-full w-full min-h-[360px] flex-col items-start justify-start overflow-hidden pt-10 transition-colors duration-300 md:min-h-[423px] md:pt-14`}>
+										<CardContent className="flex h-full w-full flex-col items-center justify-start p-6 md:p-8">
 											<div
 												className={`mb-6 md:mb-8 text-[#73383E] 
 						  ${
@@ -241,19 +246,19 @@ export const TechAdvantageSection = () => {
 												{tech.icon}
 											</div>
 											<h3
-												className={`text-2xl font-semibold mb-4 text-center ${
+												className={`mb-4 text-center text-2xl font-semibold leading-tight tracking-tighter text-balance ${
 													activeCardId === tech.id
 														? "text-white"
 														: "text-[#73383E]"
-												} transition-colors duration-300 tracking-tighter`}>
+												} transition-colors duration-300`}>
 												{tech.title}
 											</h3>
 											<p
-												className={`text-sm md:text-base text-center font-poppins font-normal ${
+												className={`text-center font-poppins text-sm font-normal leading-relaxed text-pretty ${
 													activeCardId === tech.id
 														? "text-white"
 														: "text-[#1f0f11]"
-												}  transition-colors duration-300`}>
+												} transition-colors duration-300 md:text-base`}>
 												{tech.description}
 											</p>
 										</CardContent>
@@ -262,11 +267,11 @@ export const TechAdvantageSection = () => {
 							</CarouselItem>
 						))}
 					</CarouselContent>
-					<CarouselPrevious className="-left-[10%] top-1/2 -translate-y-1/2" />
-					<CarouselNext className="-right-[10%] top-1/2 -translate-y-1/2" />
+					<CarouselPrevious className="left-2 top-1/2 z-20 -translate-y-1/2 border-[#73383E] bg-white text-[#73383E] hover:bg-white md:-left-12" />
+					<CarouselNext className="right-2 top-1/2 z-20 -translate-y-1/2 border-[#73383E] bg-white text-[#73383E] hover:bg-white md:-right-12" />
 				</Carousel>
 			</div>
-			<div className="mt-10 max-w-[90%] 2xl:max-w-[65%] mx-auto">
+			<div className="mt-10 max-w-[90%] 2xl:max-w-[65%] mx-auto px-4 md:px-0">
 				<motion.div
 					initial={{ opacity: 0 }}
 					animate={controls}
@@ -277,7 +282,7 @@ export const TechAdvantageSection = () => {
 					<video
 						key={currentVideo}
 						src={currentVideo}
-						className="w-full rounded-lg"
+						className="aspect-video w-full rounded-lg object-cover"
 						ref={videoRef}
 						muted
 						playsInline
