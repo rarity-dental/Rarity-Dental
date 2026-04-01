@@ -248,8 +248,8 @@ export const TechAdvantageSection = ({ sectionData }: Props) => {
 								</CarouselItem>
 							))}
 						</CarouselContent>
-						<CarouselPrevious className="left-2 top-1/2 z-20 -translate-y-1/2 border-[#73383E] bg-white text-[#73383E] hover:bg-white md:-left-12" />
-						<CarouselNext className="right-2 top-1/2 z-20 -translate-y-1/2 border-[#73383E] bg-white text-[#73383E] hover:bg-white md:-right-12" />
+						<CarouselPrevious className="-left-5 top-1/2 z-20 -translate-y-1/2 border-[#73383E] bg-white text-[#73383E] hover:bg-white md:-left-12" />
+						<CarouselNext className="-right-5 top-1/2 z-20 -translate-y-1/2 border-[#73383E] bg-white text-[#73383E] hover:bg-white md:-right-12" />
 					</Carousel>
 				) : (
 					<div className="rounded-lg border border-dashed border-[#73383E]/40 bg-white/60 px-6 py-10 text-center text-[#73383E]">

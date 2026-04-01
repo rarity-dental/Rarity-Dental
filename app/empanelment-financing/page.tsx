@@ -9,6 +9,8 @@ import {
 import { Team } from "@/components/team";
 import { Gallery } from "@/components/gallery";
 import { Metadata } from "next";
+import Slide from "@/components/ui/animated-sections";
+import TestimonialTestComponent from "@/components/testim-section-test";
 
 export const metadata: Metadata = {
 	title: "Empanelment & Financing",
@@ -69,7 +71,7 @@ const EmpanelmentFinancePage = () => {
 	];
 
 	return (
-		<div className="min-h-screen  pt-[140px] md:pt-[160px] pb-[5%]">
+		<div className="min-h-screen  pt-[140px] md:pt-[160px] pb-[5%] overflow-hidden">
 			<div className="max-w-[340px] md:max-w-[80%] lg:max-w-[70%] 2xl:max-w-[65%]  mx-auto">
 				<div className="text-center mb-12">
 					<h1 className="text-4xl font-bold text-gray-900 mb-4">
@@ -201,6 +203,9 @@ const EmpanelmentFinancePage = () => {
 						a healthier, brighter smile.
 					</p>
 				</div>
+				<Slide className="flex justify-center md:block">
+					<TestimonialTestComponent/>		
+				</Slide>
 				<Team />
 				<Gallery end={false} />
 			</div>

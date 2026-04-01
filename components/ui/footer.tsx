@@ -40,13 +40,16 @@ export const socialLinks = [
 	// },
 ];
 
+const googleMapsLink =
+	"https://maps.app.goo.gl/Gop3pHTokWnsqfVz5";
+
 interface FooterProps {
 	hasEndDiv?: boolean;
 }
 
 export const Footer = ({ hasEndDiv = true }: FooterProps) => {
 	return (
-		<div className="bg-[#322D29] pt-16 md:pt-48 lg:pt-36 pb-[40px] w-full flex flex-col gap-y-[44px] justify-center items-center relative footer-start">
+		<div className="bg-[#322D29] pt-16 md:pt-48 lg:pt-36 pb-[152px] md:pb-10 w-full flex flex-col gap-y-[44px] justify-center items-center relative footer-start">
 			{hasEndDiv && <PageStartDiv />}
 
 			<div className="flex flex-col xl:flex-row gap-[50px] items-start md:items-center max-w-[300px] md:max-w-2xl lg:max-w-[1280px] mx-auto h-auto lg:h-[282px] justify-center px-4">
@@ -178,6 +181,14 @@ export const Footer = ({ hasEndDiv = true }: FooterProps) => {
 								</a>
 							</div>
 						))}
+						<a
+							href={googleMapsLink}
+							target="_blank"
+							rel="noreferrer"
+							referrerPolicy="no-referrer"
+							className="ml-8 inline-flex w-fit items-center gap-2 text-[13px] font-poppins font-semibold uppercase tracking-[0.14em] text-[#9A887B] transition-all duration-800 ease-in-out hover:text-white active:scale-[0.98]">
+							Get Directions
+						</a>
 						<div className="pt-[86px] flex gap-4 ">
 							{socialLinks.map((link) => (
 								<a
@@ -196,7 +207,7 @@ export const Footer = ({ hasEndDiv = true }: FooterProps) => {
 				</div>
 			</div>
 			<div className="w-full lg:w-[82%] h-[1px] bg-white bg-opacity-[18%]" />
-			<div className="flex flex-col md:flex-row w-full max-w-[342px] md:max-w-[1180px] md:justify-between pb-[40%] md:pb-0 mx-auto items-center justify-between	 px-4 md:px-2 xl:px-0">
+			<div className="flex flex-col gap-3 md:flex-row w-full max-w-[342px] md:max-w-[1180px] md:justify-between mx-auto items-center justify-between px-4 md:px-2 xl:px-0">
 				<p className="text-[12px] text-white font-poppins text-opacity-[70%] font-medium min-w-fit">
 					© 2024 Rarity Dental | All Rights Reserved
 				</p>

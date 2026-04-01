@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { Gallery } from "@/components/gallery";
-import { TestimonialsSection } from "@/components/testim-section";
+import TestimonialTestComponent from "@/components/testim-section-test";
 import {
 	Accordion,
 	AccordionContent,
@@ -33,7 +33,7 @@ const ParallaxBanner = dynamic(
 
 export default function PrivacyPolicyPage() {
 	return (
-		<div className=" px-4 pt-[140px] md:pt-[160px]">
+		<div className=" px-4 pt-[140px] md:pt-[160px] overflow-hidden">
 			<div className="max-w-[340px] md:max-w-[80%] lg:max-w-[70%] 2xl:max-w-[65%] mx-auto">
 				<h1 className="text-3xl font-bold mb-6">
 					Privacy Policy for Rarity Dental Care Centres
@@ -104,9 +104,9 @@ export default function PrivacyPolicyPage() {
 				</section>
 			</div>
 
-			<div className="overflow-hidden">
-				<TestimonialsSection />
-			</div>
+			<Slide className="flex justify-center md:block">
+				<TestimonialTestComponent />
+			</Slide>
 
 			<div className="w-full mb-[1.1%] xl:mt-0 hidden sm:flex overflow-hidden">
 				<Slide>

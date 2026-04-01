@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { Gallery } from "@/components/gallery";
-import { TestimonialsSection } from "@/components/testim-section";
+import TestimonialTestComponent from "@/components/testim-section-test";
 import {
 	Accordion,
 	AccordionContent,
@@ -207,8 +207,8 @@ export default function PrivacyPolicyPage() {
 				</section>
 			</div>
 
-			<div className="overflow-hidden">
-				<TestimonialsSection />
+			<div className="overflow-hidden flex justify-center md:block">
+				<TestimonialTestComponent />
 			</div>
 
 			<div className="w-full mb-[1.1%] xl:mt-0 hidden sm:flex overflow-hidden border-b">

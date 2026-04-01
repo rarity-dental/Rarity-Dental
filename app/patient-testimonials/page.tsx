@@ -1,7 +1,7 @@
 import { Team } from "@/components/team";
 import { Gallery } from "@/components/gallery";
 import { Metadata } from "next";
-import { TestimonialsSection } from "@/components/testim-section";
+import TestimonialTestComponent from "@/components/testim-section-test";
 
 export const metadata: Metadata = {
 	title: "Patient Testimonials",
@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 
 const EmpanelmentFinancePage = () => {
 	return (
-		<div className="min-h-screen pt-[140px] md:pt-[120px] pb-[5%]">
-			<TestimonialsSection />
+		<div className="min-h-screen pt-[140px] md:pt-[120px] pb-[5%] overflow-hidden">
+			<TestimonialTestComponent />
 			<Team />
 			<Gallery end={false} />
 		</div>

@@ -1,23 +1,27 @@
+"use client";
+
 import { IconBrandWhatsapp } from "@tabler/icons-react";
 import { Calendar, PhoneIcon } from "lucide-react";
-import Link from "next/link";
 import React from "react";
 
 export const FloatingWhatsAppButton = () => {
 	return (
-		<div className=" fixed w-full h-[140px] bottom-0 flex flex-col items-center justify-center z-40">
-			<div>
+		<div
+			className="pointer-events-none fixed bottom-0 right-0 z-40 flex h-[140px] w-full flex-col items-center justify-center transition-transform duration-300 md:bottom-6 md:left-1/2 md:right-auto md:h-auto md:w-auto md:-translate-x-1/2 md:items-center">
+			<div className="pointer-events-auto flex flex-col items-center">
 				<a
 					href="https://api.whatsapp.com/send?phone=917899418483"
-					aria-label="phone"
+					aria-label="WhatsApp"
 					className="decoration-transparent">
 					<div className="contact_icon">
-						<IconBrandWhatsapp className="w-8 h-8" />
+						<IconBrandWhatsapp className="h-8 w-8" />
 					</div>
 				</a>
+				<p className="mt-2 text-title font-bold text-center">
+					Talk to us?
+				</p>
 			</div>
-			<p className="text-title font-bold">Talk to us?</p>
-			<div className="h-[60px] w-full bg-black flex justify-center items-center md:hidden">
+			<div className="pointer-events-auto h-[60px] w-full bg-black flex justify-center items-center md:hidden">
 				<a
 					href="tel:+917899418483"
 					className="w-1/2 flex justify-center gap-[5%] items-center h-full text-center border border-slate-300 text-white">
