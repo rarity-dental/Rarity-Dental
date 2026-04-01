@@ -49,7 +49,7 @@ export const techData = [
 		icon: <ARIcon />,
 		title: "Tek-Scan Analysis",
 		description:
-			"JVA is a non-invasive tool detecting TMJ disorders early by analyzing jaw joint sounds and movements for personalized treatment plans.",
+			"Uses advanced digital sensors to measure bite force and contact points in real time, helping diagnose imbalances and guide precise, comfortable bite adjustments for optimal function.",
 		video: "https://firebasestorage.googleapis.com/v0/b/casamed-6ec79.appspot.com/o/beyond-dental%2Fvideos%2FTek%20Scan%20Bite%20Assessment.mp4?alt=media&token=682bb44d-790b-4b44-bad7-d6bc4353a9a2",
 	},
 	{
@@ -114,7 +114,7 @@ export const TechAdvantageSection = () => {
 	const containerRef = useRef<HTMLDivElement>(null);
 	const isInView = useInView(containerRef, { once: false, amount: 0.5 });
 
-	
+
 	const goToNextSlide = useCallback(() => {
 		if (api) {
 			const nextIndex = (currentIndex + 1) % techData.length;
