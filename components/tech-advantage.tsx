@@ -114,6 +114,7 @@ export const TechAdvantageSection = () => {
 	const containerRef = useRef<HTMLDivElement>(null);
 	const isInView = useInView(containerRef, { once: false, amount: 0.5 });
 
+	
 	const goToNextSlide = useCallback(() => {
 		if (api) {
 			const nextIndex = (currentIndex + 1) % techData.length;
