@@ -10,7 +10,7 @@ export const FloatingWhatsAppButton = () => {
 			className="pointer-events-none fixed bottom-0 right-0 z-40 flex h-[140px] w-full flex-col items-center justify-center transition-transform duration-300 md:bottom-6 md:left-1/2 md:right-auto md:h-auto md:w-auto md:-translate-x-1/2 md:items-center">
 			<div className="pointer-events-auto flex flex-col items-center">
 				<a
-					href="https://api.whatsapp.com/send?phone=917899418483"
+					href="https://api.whatsapp.com/send?phone=918796319927"
 					aria-label="WhatsApp"
 					className="decoration-transparent">
 					<div className="contact_icon">
