@@ -8,7 +8,7 @@ export const FloatingWhatsAppButton = () => {
 		<div className=" fixed w-full h-[140px] bottom-0 flex flex-col items-center justify-center z-[100000000000000000000]">
 			<div>
 				<a
-					href="https://api.whatsapp.com/send?phone=917899418483"
+					href="https://api.whatsapp.com/send?phone=918796319927"
 					aria-label="phone"
 					className="decoration-transparent">
 					<div className="contact_icon">
