@@ -17,7 +17,7 @@ export const PreviousButton = React.forwardRef<SVGSVGElement, IconProps>(
 		>
 			<path
 				d="M0 0H16C33.6731 0 48 14.3269 48 32C48 49.6731 33.6731 64 16 64H0V0Z"
-				fill="#73383E"
+				fill="#64503C"
 				fill-opacity="0.3"
 			/>
 			<path

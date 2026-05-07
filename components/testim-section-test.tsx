@@ -122,7 +122,7 @@ export default function TestimonialTestComponent() {
 			<div className="flex flex-col justify-center items-center md:items-end">
 				{/* Header */}
 				<div className="text-center max-w-[340px] sm:max-w-[85%] lg:max-w-[90%] xl:max-w-[95%] 2xl:max-w-7xl mx-auto px-4">
-					<h6 className="text-center text-[14px] tracking-widest leading-relaxed font-semibold mb-6 uppercase text-[#73383E] font-poppins max-w-[300px] md:max-w-[600px] xl:max-w-[1080px] mx-auto">
+					<h6 className="text-center text-[14px] tracking-widest leading-relaxed font-semibold mb-6 uppercase text-[#64503C] font-poppins max-w-[300px] md:max-w-[600px] xl:max-w-[1080px] mx-auto">
 						Hear What Our Patients Are Saying
 					</h6>
 					<h2 className="text-3xl md:text-5xl font-light text-copyColor max-w-4xl mx-auto leading-none md:leading-relaxed">

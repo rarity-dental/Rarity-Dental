@@ -33,11 +33,11 @@ export const HeroSlide4 = () => {
 									<Button
 										variant={"defaultWhite"}
 										className="group relative px-[40px] py-[20px] gap-x-[16px] bg-white rounded-none h-auto md:h-[60px] z-10 w-[242px] md:w-auto overflow-hidden">
-										<span className="uppercase text-[12px] md:text-[14px] font-poppins font-semibold tracking-wide text-[#73383E] transition-colors duration-500 ease-out relative z-10 group-hover:text-white">
+										<span className="uppercase text-[12px] md:text-[14px] font-poppins font-semibold tracking-wide text-[#64503C] transition-colors duration-500 ease-out relative z-10 group-hover:text-white">
 											Book a Consultation
 										</span>
 										<div className="w-[20px] h-[20px] bg-[url('/images/arrow-right-brown.svg')] bg-cover transition-all duration-500 ease-out relative z-10 group-hover:bg-[url('/images/arrow-right-white.svg')]" />
-										<div className="absolute inset-0 bg-[#73383E] translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out" />
+										<div className="absolute inset-0 bg-[#64503C] translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out" />
 									</Button>
 								</Link>
 							</Slide>
@@ -77,11 +77,11 @@ export const HeroSlide4 = () => {
 									<Button
 										variant={"defaultWhite"}
 										className="group relative px-[40px] py-[20px] gap-x-[16px] bg-white rounded-none h-auto md:h-[60px] z-10 w-[242px] md:w-auto overflow-hidden">
-										<span className="uppercase text-[12px] md:text-[14px] font-poppins font-semibold tracking-wide text-[#73383E] transition-colors duration-500 ease-out relative z-10 group-hover:text-white">
+										<span className="uppercase text-[12px] md:text-[14px] font-poppins font-semibold tracking-wide text-[#64503C] transition-colors duration-500 ease-out relative z-10 group-hover:text-white">
 											Book a Consultation
 										</span>
 										<div className="w-[20px] h-[20px] bg-[url('/images/arrow-right-brown.svg')] bg-cover transition-all duration-500 ease-out relative z-10 group-hover:bg-[url('/images/arrow-right-white.svg')]" />
-										<div className="absolute inset-0 bg-[#73383E] translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out" />
+										<div className="absolute inset-0 bg-[#64503C] translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out" />
 									</Button>
 								</Link>
 							</Slide>
@@ -140,11 +140,11 @@ export const HeroSlide4 = () => {
 									<Button
 										variant={"defaultWhite"}
 										className="group relative px-[40px] py-[20px] gap-x-[16px] bg-white rounded-none h-auto md:h-[60px] z-10 w-[242px] md:w-auto overflow-hidden">
-										<span className="uppercase text-[12px] md:text-[14px] font-poppins font-semibold tracking-wide text-[#73383E] transition-colors duration-500 ease-out relative z-10 group-hover:text-white">
+										<span className="uppercase text-[12px] md:text-[14px] font-poppins font-semibold tracking-wide text-[#64503C] transition-colors duration-500 ease-out relative z-10 group-hover:text-white">
 											Book a Consultation
 										</span>
 										<div className="w-[20px] h-[20px] bg-[url('/images/arrow-right-brown.svg')] bg-cover transition-all duration-500 ease-out relative z-10 group-hover:bg-[url('/images/arrow-right-white.svg')]" />
-										<div className="absolute inset-0 bg-[#73383E] translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out" />
+										<div className="absolute inset-0 bg-[#64503C] translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out" />
 									</Button>
 								</Link>
 							</Slide>

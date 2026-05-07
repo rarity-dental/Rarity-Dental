@@ -88,11 +88,11 @@ export const BeforeAfter = () => {
 	];
 
 	return (
-		<div className="w-full relative flex flex-col justify-center items-center bg-[#73383E] bg-opacity-10 py-16 md:py-20">
+		<div className="w-full relative flex flex-col justify-center items-center bg-[#64503C] bg-opacity-10 py-16 md:py-20">
 			<PageStartDiv />
 			<PageEndDiv />
 			<div className="flex flex-col justify-center items-center max-w-[342px] md:max-w-[600px] xl:max-w-[1064px] mx-auto px-4 md:px-6 xl:px-0">
-				<h6 className="text-center text-[14px] tracking-widest leading-relaxed font-semibold mb-6 uppercase text-[#73383E] font-poppins">
+				<h6 className="text-center text-[14px] tracking-widest leading-relaxed font-semibold mb-6 uppercase text-[#64503C] font-poppins">
 					transform your smile, transform your life
 				</h6>
 				<h2 className="text-center text-[28px] md:text-[48px] font-normal text-copyColor tracking-tight leading-[1.2em] 4xl:leading-snug ">

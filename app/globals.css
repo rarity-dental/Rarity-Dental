@@ -9,7 +9,8 @@
 
 :root {
 	font-family: var(--font-belleza);
-	--hero-wallpaper-color: #2f2321;
+	--color-obsidian: #1A1614; --color-deep-walnut: #3D3028; --color-rich-brown: #64503C; --color-deep-taupe: #8C7864; --color-warm-taupe: #B4A08C; --color-gold: #C9A96E; --color-champagne: #D8CCBA; --color-muted-rose: #C8B4B4; --color-cream: #EDE8DF; --color-warm-ivory: #F7F4EF; --hero-wallpaper-color: #1A1614;
+	--hero-wallpaper-color: #1A1614;
 	--hero-wallpaper-mobile: url("/images/hero-back-static-mobile-img.webp");
 	--hero-wallpaper-desktop: url("/images/hero-back-img-static.webp");
 }
@@ -32,7 +33,7 @@
 }
 
 .PhoneInputInput {
-	background-color: #ece3db !important;
+	background-color: #EDE8DF !important;
 	flex: 1;
 	/* The phone number input should shrink
 	   to make room for the extension input */
@@ -125,7 +126,7 @@
 	width: 100px;
 	height: 30px;
 	display: flex;
-	background: linear-gradient(to left, #73383e 50%, white 50%);
+	background: linear-gradient(to left, #64503C 50%, white 50%);
 	background-size: 200% 100%;
 	background-position: left bottom;
 	transition: all 0.5s ease-out;
@@ -136,7 +137,7 @@
 }
 
 .button-text {
-	color: #73383e; /* or your md:text-copyColor value */
+	color: #64503C; /* or your md:text-copyColor value */
 	transition: color 0.5s ease-out;
 }
 
@@ -244,7 +245,7 @@
 	}
 
 	.underline-effect {
-		@apply bg-gradient-to-r from-[#d49998] to-[#e4bfbd] bg-[length:0px_10px] bg-left-bottom
+		@apply bg-gradient-to-r from-[#C8B4B4] to-[#C8B4B4] bg-[length:0px_10px] bg-left-bottom
       bg-no-repeat
       transition-[background-size]
       duration-500

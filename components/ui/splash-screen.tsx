@@ -146,7 +146,7 @@ const SplashScreen = ({ finishLoading }: SplashScreenProps) => {
 
 	return (
 		<motion.div
-			className="fixed inset-0 flex flex-col items-center justify-center bg-[#fbf6f5] z-50"
+			className="fixed inset-0 flex flex-col items-center justify-center bg-[#F7F4EF] z-50"
 			initial={{ opacity: 1 }}
 			animate={{ opacity: 1 }}
 			exit={{ opacity: 0, transition: { duration: 0.5 } }}>
@@ -158,14 +158,14 @@ const SplashScreen = ({ finishLoading }: SplashScreenProps) => {
 
 			<div className="w-64 h-4 bg-[#ddd] rounded-full overflow-hidden mb-4">
 				<motion.div
-					className="h-full bg-[#73383E]"
+					className="h-full bg-[#64503C]"
 					initial={{ width: "0%" }}
 					animate={controls}
 					transition={{ ease: "easeInOut", duration: 0.5 }}
 				/>
 			</div>
 
-			<div className="text-[#73383E] text-lg font-semibold">
+			<div className="text-[#64503C] text-lg font-semibold">
 				{displayedProgress}%
 			</div>
 		</motion.div>

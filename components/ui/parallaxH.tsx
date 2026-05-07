@@ -24,7 +24,7 @@ export function ParallaxBanner({
 			style={{ height: "112px" }}
 		>
 			{hasOverlay && (
-				<div className="absolute bg-[#f7f2ec] bg-opacity-50 w-full h-full top-0 left-0 overflow-hidden" />
+				<div className="absolute bg-[#F7F4EF] bg-opacity-50 w-full h-full top-0 left-0 overflow-hidden" />
 			)}
 			<div
 				className="flex"

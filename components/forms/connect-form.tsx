@@ -118,7 +118,7 @@ export const ConsultationForm = ({
 
 	return (
 		<div
-			className={`w-full h-full py-8 px-8 flex flex-col justify-center gap-10 bg-[#73383E] ${className}`}>
+			className={`w-full h-full py-8 px-8 flex flex-col justify-center gap-10 bg-[#64503C] ${className}`}>
 			<div className="flex flex-col gap-y-4">
 				<h2 className="text-white text-[32px] font-normal tracking-tight leading-tight">
 					Fill the form for enquiries and consultation requests
@@ -137,7 +137,7 @@ export const ConsultationForm = ({
 							{...register("firstName")}
 							type="text"
 							placeholder="First Name"
-							className="w-full py-3 px-4 bg-[#ECE3DB] border-none placeholder-[#646A69]"
+							className="w-full py-3 px-4 bg-[#EDE8DF] border-none placeholder-[#646A69]"
 						/>
 						{errors.firstName && (
 							<span className="text-red-500 absolute top-[-20px] left-0">
@@ -150,7 +150,7 @@ export const ConsultationForm = ({
 							{...register("lastName")}
 							type="text"
 							placeholder="Last Name"
-							className="w-full py-3 px-4 bg-[#ECE3DB] border-none placeholder-[#646A69]"
+							className="w-full py-3 px-4 bg-[#EDE8DF] border-none placeholder-[#646A69]"
 						/>
 						{errors.lastName && (
 							<span className="text-red-500 absolute top-[-20px] right-0">
@@ -167,14 +167,14 @@ export const ConsultationForm = ({
 							defaultCountry={countryIso as any}
 							value={phoneNumber}
 							onChange={(value) => setPhoneNumber(value || "")}
-							className="w-full py-3 px-4 bg-[#ECE3DB] border-none placeholder-[#646A69] !important"
+							className="w-full py-3 px-4 bg-[#EDE8DF] border-none placeholder-[#646A69] !important"
 						/>
 					) : (
 						<input
 							{...register("contactNumber")}
 							type="tel"
 							placeholder="Mobile Number"
-							className="w-full py-3 px-4 bg-[#ECE3DB] border-none placeholder-[#646A69] input-bg"
+							className="w-full py-3 px-4 bg-[#EDE8DF] border-none placeholder-[#646A69] input-bg"
 						/>
 					)}
 					{errors.contactNumber && (
@@ -189,7 +189,7 @@ export const ConsultationForm = ({
 						{...register("email")}
 						type="email"
 						placeholder="Email Address"
-						className="w-full py-3 px-4 bg-[#ECE3DB] border-none placeholder-[#646A69]"
+						className="w-full py-3 px-4 bg-[#EDE8DF] border-none placeholder-[#646A69]"
 					/>
 					{errors.email && (
 						<span className="text-red-500 absolute top-[-20px] left-0">
@@ -201,7 +201,7 @@ export const ConsultationForm = ({
 				<button
 					type="submit"
 					disabled={isSubmitting}
-					className="bg-[#47413c] text-[#ECE3DB] py-3 rounded-none hover:bg-[#86806c] active:scale-95 transition-all duration-500 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed">
+					className="bg-[#47413c] text-[#EDE8DF] py-3 rounded-none hover:bg-[#8C7864] active:scale-95 transition-all duration-500 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed">
 					{isSubmitting ? "Submitting..." : buttonText}
 				</button>
 			</form>

@@ -52,7 +52,7 @@ export default async function DoctorProfilePage({ params }: Props) {
 			<PageEndDiv />
 			<DoctorBento paramName={name} />
 
-			<div className="w-full hidden sm:flex overflow-hidden bg-[#73383E] bg-opacity-50 mt-[2%]">
+			<div className="w-full hidden sm:flex overflow-hidden bg-[#64503C] bg-opacity-50 mt-[2%]">
 				<Slide>
 					<ParallaxBanner
 						baseVelocity={50}

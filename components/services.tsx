@@ -51,7 +51,7 @@ const MobileCardWithNavigation = ({
 				buttonText="ENQUIRE"
 				imageHeight={260}
 				className="w-full"
-				textColor="#73383E"
+				textColor="#64503C"
 			/>
 
 			{/* Navigation buttons positioned at the title level */}
@@ -200,7 +200,7 @@ export const Services = () => {
 			<PageStartDiv />
 			<PageEndDiv />
 			<div className="pt-[10%] md:pt-[12%] xl:pt-[8%] pb-16 px-4 md:px-6 xl:px-8 2xl:px-0 flex flex-col justify-center items-center max-w-[342px] md:max-w-[600px] 2md:max-w-[680px] xl:max-w-[1064px] mx-auto ">
-				<h2 className="text-center text-[14px] tracking-widest leading-relaxed font-semibold mb-6 uppercase text-[#73383E] font-poppins">
+				<h2 className="text-center text-[14px] tracking-widest leading-relaxed font-semibold mb-6 uppercase text-[#64503C] font-poppins">
 					Advanced Procedures
 				</h2>
 				<p className="text-center text-[28px] md:text-[48px] font-normal text-copyColor leading-snug tracking-tight ">
@@ -261,13 +261,13 @@ export const Services = () => {
 											buttonText="ENQUIRE"
 											imageHeight={260}
 											className="scroll-snap-align-start"
-											textColor="#73383E"
+											textColor="#64503C"
 										/>
 									</CarouselItem>
 								))}
 						</CarouselContent>
-						<CarouselPreviousMod className="absolute left-2 md:left-4 xl:-left-6 top-1/4 z-20 bg-[#F7F2EC]" />
-						<CarouselNextMod className="absolute right-2 md:right-4 xl:-right-6 top-1/4 z-20 bg-[#F7F2EC]" />
+						<CarouselPreviousMod className="absolute left-2 md:left-4 xl:-left-6 top-1/4 z-20 bg-[#F7F4EF]" />
+						<CarouselNextMod className="absolute right-2 md:right-4 xl:-right-6 top-1/4 z-20 bg-[#F7F4EF]" />
 					</Carousel>
 					<Carousel
 						opts={{
@@ -297,18 +297,18 @@ export const Services = () => {
 											buttonText="ENQUIRE"
 											imageHeight={260}
 											className="scroll-snap-align-start"
-											textColor="#73383E"
+											textColor="#64503C"
 										/>
 									</CarouselItem>
 								))}
 						</CarouselContent>
-						<CarouselPreviousMod className="absolute left-2 md:left-4 xl:-left-6 top-1/4 z-20 bg-[#F7F2EC]" />
-						<CarouselNextMod className="absolute right-2 md:right-4 xl:-right-6 top-1/4 z-20 bg-[#F7F2EC]" />
+						<CarouselPreviousMod className="absolute left-2 md:left-4 xl:-left-6 top-1/4 z-20 bg-[#F7F4EF]" />
+						<CarouselNextMod className="absolute right-2 md:right-4 xl:-right-6 top-1/4 z-20 bg-[#F7F4EF]" />
 					</Carousel>
 				</>
 			)}
 
-			<div className="min-h-screen bg-[#73383E] w-full pb-[10%]">
+			<div className="min-h-screen bg-[#64503C] w-full pb-[10%]">
 				<div className="flex flex-col items-center max-w-[342px] md:max-w-[600px] xl:max-w-[1064px] mx-auto px-4 md:px-6 xl:px-8 2xl:px-0 pt-32 pb-8">
 					<h2 className="text-[14px] tracking-widest leading-relaxed font-semibold uppercase text-[#F7F3F1] font-poppins mb-6">
 						Elevate your smile
@@ -395,7 +395,7 @@ export const Services = () => {
 						<Link href={"#formDiv"}>
 							<Button
 								variant={"outline"}
-								className="bg-[#322D29] transparent uppercase text-[14px] font-poppins font-semibold text-white tracking-wider w-fit py-4 px-8 border border-[#73383E] rounded-none border-opacity-70 h-[44px] hover:bg-white hover:text-[#73383E] hover:border-transparent transition-all duration-300 ease-in-out">
+								className="bg-[#3D3028] transparent uppercase text-[14px] font-poppins font-semibold text-white tracking-wider w-fit py-4 px-8 border border-[#64503C] rounded-none border-opacity-70 h-[44px] hover:bg-white hover:text-[#64503C] hover:border-transparent transition-all duration-300 ease-in-out">
 								Schedule a consultation
 							</Button>
 						</Link>

@@ -93,7 +93,7 @@ export const Gallery = ({
 					{...register("firstName")}
 					type="text"
 					placeholder="First Name"
-					className="w-full py-3 px-4 mb-3 md:mb-0 bg-[#ECE3DB] border-none placeholder-[#646A69] "
+					className="w-full py-3 px-4 mb-3 md:mb-0 bg-[#EDE8DF] border-none placeholder-[#646A69] "
 				/>
 				{errors.firstName && !isMobile ? (
 					<span className="text-red-500 absolute top-[-60%] left-[2%] w-full h-full">
@@ -108,7 +108,7 @@ export const Gallery = ({
 					{...register("lastName")}
 					type="text"
 					placeholder="Last Name"
-					className="w-full py-3 px-4 bg-[#ECE3DB] border-none placeholder-[#646A69]"
+					className="w-full py-3 px-4 bg-[#EDE8DF] border-none placeholder-[#646A69]"
 				/>
 				{errors.lastName && !isMobile && (
 					<span className="text-red-500 absolute top-[-60%] right-[15%] ">
@@ -125,7 +125,7 @@ export const Gallery = ({
 				{...register("contactNumber")}
 				type="tel"
 				placeholder="Mobile Number"
-				className="w-full py-3 px-4 bg-[#ECE3DB] border-none placeholder-[#646A69]"
+				className="w-full py-3 px-4 bg-[#EDE8DF] border-none placeholder-[#646A69]"
 			/>
 			{errors.contactNumber && (
 				<span className="text-red-500">
@@ -136,7 +136,7 @@ export const Gallery = ({
 				{...register("email")}
 				type="email"
 				placeholder="Email Address"
-				className="w-full py-3 px-4 bg-[#ECE3DB] border-none placeholder-[#646A69]"
+				className="w-full py-3 px-4 bg-[#EDE8DF] border-none placeholder-[#646A69]"
 			/>
 			{errors.email && (
 				<span className="text-red-500">{errors.email.message}</span>
@@ -144,7 +144,7 @@ export const Gallery = ({
 			<Button
 				type="submit"
 				disabled={isSubmitting}
-				className="bg-[#47413c] text-[#ECE3DB] py-3 rounded-none hover:bg-[#86806c] active:scale-95 transition-all duration-500 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed">
+				className="bg-[#47413c] text-[#EDE8DF] py-3 rounded-none hover:bg-[#8C7864] active:scale-95 transition-all duration-500 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed">
 				{isSubmitting ? "Submitting..." : buttonText}
 			</Button>
 		</form>
@@ -157,7 +157,7 @@ export const Gallery = ({
 					{end && <PageEndDiv />}
 					{start && <PageStartDiv />}
 					<div className="mx-auto mb-8 max-w-[300px]">
-						<h2 className="text-[14px] text-center tracking-widest leading-relaxed font-semibold uppercase text-[#73383E] font-poppins mb-6">
+						<h2 className="text-[14px] text-center tracking-widest leading-relaxed font-semibold uppercase text-[#64503C] font-poppins mb-6">
 							Gallery
 						</h2>
 						<h2 className="text-[28px] text-center font-normal leading-tight text-copyColor text-balance">
@@ -165,7 +165,7 @@ export const Gallery = ({
 						</h2>
 					</div>
 					<div className="flex w-full mx-auto h-[245px] justify-between items-center gap-[10px] relative mb-8">
-						<div className="absolute left-[49%] top-1/3 rounded-full w-[67px] h-[67px] bg-[#F7F2EC] flex justify-center items-center z-10">
+						<div className="absolute left-[49%] top-1/3 rounded-full w-[67px] h-[67px] bg-[#F7F4EF] flex justify-center items-center z-10">
 							<img
 								src="/images/rotating-image.svg"
 								alt="rotating-text"
@@ -218,7 +218,7 @@ export const Gallery = ({
 					</div>
 					<div
 						id="formDiv"
-						className="max-w-[342px] mx-auto py-16 px-8 flex flex-col gap-10 bg-[#73383E]">
+						className="max-w-[342px] mx-auto py-16 px-8 flex flex-col gap-10 bg-[#64503C]">
 						<div className="flex flex-col gap-y-4">
 							<h2 className="text-white text-[32px] font-normal tracking-tight leading-tight">
 								Fill the form for enquiries and consultation
@@ -239,7 +239,7 @@ export const Gallery = ({
 					className="w-full relative flex flex-col justify-center items-start max-w-[1280px] mx-auto pt-16 pb-[150px] px-4 md:px-6 xl:px-8 2xl:px-0">
 					{end && <PageEndDiv />}
 					{start && <PageStartDiv />}
-					<h2 className="text-[14px] tracking-widest leading-relaxed font-semibold uppercase text-[#73383E] font-poppins mb-6">
+					<h2 className="text-[14px] tracking-widest leading-relaxed font-semibold uppercase text-[#64503C] font-poppins mb-6">
 						Gallery
 					</h2>
 					<h2 className="text-[48px] font-normal text-copyColor leading-tight max-w-[540px] mb-8">
@@ -247,7 +247,7 @@ export const Gallery = ({
 					</h2>
 					<div className="flex flex-col md:flex-row gap-5 w-full justify-between items-start">
 						<div className="w-full md:w-[54%] xl:w-[56%] flex justify-between gap-x-[25px] items-center relative min-w-0">
-							<div className="absolute top-1/2 left-[57%] -translate-x-1/2 -translate-y-1/2 rounded-full w-[154px] h-[154px] bg-[#F7F2EC] flex justify-center items-center z-10">
+							<div className="absolute top-1/2 left-[57%] -translate-x-1/2 -translate-y-1/2 rounded-full w-[154px] h-[154px] bg-[#F7F4EF] flex justify-center items-center z-10">
 								<img
 									src="/images/rotating-image.svg"
 									alt="rotating-text"
@@ -296,7 +296,7 @@ export const Gallery = ({
 								</div>
 							</div>
 						</div>
-						<div className="w-full md:w-[40%] xl:w-[38%] min-w-0 bg-[#73383E]">
+						<div className="w-full md:w-[40%] xl:w-[38%] min-w-0 bg-[#64503C]">
 							<ConsultationForm
 								buttonText="Get in Touch"
 								paraText={paraText}

@@ -204,10 +204,10 @@ export const TechAdvantageSection = ({ sectionData }: Props) => {
 	}, [attemptPlay, currentVideo, isInView]);
 
 	return (
-		<div className="bg-[#73383E] bg-opacity-10 relative w-full py-10 md:py-20">
+		<div className="bg-[#64503C] bg-opacity-10 relative w-full py-10 md:py-20">
 			<PageStartDiv />
 			<div className="flex flex-col justify-center items-center gap-[24px] pt-20 pb-16 max-w-[342px] md:max-w-[1280px] mx-auto px-4 md:px-6 xl:px-0">
-				<h2 className="text-center text-[14px] tracking-widest leading-relaxed font-semibold uppercase text-[#73383E] font-poppins">
+				<h2 className="text-center text-[14px] tracking-widest leading-relaxed font-semibold uppercase text-[#64503C] font-poppins">
 					{sectionData?.eyebrow || "Technological Advantage"}
 				</h2>
 				<p className="text-center text-[24px] font-normal leading-tight text-copyColor md:text-[48px]">
@@ -233,15 +233,15 @@ export const TechAdvantageSection = ({ sectionData }: Props) => {
 										<Card
 											className={` ${
 												activeCardId === tech.id
-													? "bg-[#73383E]"
+													? "bg-[#64503C]"
 													: "bg-white"
 											} flex h-full w-full min-h-[360px] flex-col items-start justify-start overflow-hidden pt-10 transition-colors duration-300 md:min-h-[423px] md:pt-14`}>
 											<CardContent className="flex h-full w-full flex-col items-center justify-start p-6 md:p-8">
 												<div
-													className={`mb-6 md:mb-8 text-[#73383E] ${
+													className={`mb-6 md:mb-8 text-[#64503C] ${
 														activeCardId === tech.id
 															? "text-white"
-															: "text-[#73383E]"
+															: "text-[#64503C]"
 													} transition-colors duration-300`}>
 													{renderIcon(tech)}
 												</div>
@@ -249,7 +249,7 @@ export const TechAdvantageSection = ({ sectionData }: Props) => {
 													className={`mb-4 text-center text-2xl font-semibold leading-tight tracking-tighter text-balance ${
 														activeCardId === tech.id
 															? "text-white"
-															: "text-[#73383E]"
+															: "text-[#64503C]"
 													} transition-colors duration-300`}>
 													{tech.title}
 												</h3>
@@ -267,11 +267,11 @@ export const TechAdvantageSection = ({ sectionData }: Props) => {
 								</CarouselItem>
 							))}
 						</CarouselContent>
-						<CarouselPrevious className="-left-5 top-1/2 z-20 -translate-y-1/2 border-[#73383E] bg-white text-[#73383E] hover:bg-white md:-left-12" />
-						<CarouselNext className="-right-5 top-1/2 z-20 -translate-y-1/2 border-[#73383E] bg-white text-[#73383E] hover:bg-white md:-right-12" />
+						<CarouselPrevious className="-left-5 top-1/2 z-20 -translate-y-1/2 border-[#64503C] bg-white text-[#64503C] hover:bg-white md:-left-12" />
+						<CarouselNext className="-right-5 top-1/2 z-20 -translate-y-1/2 border-[#64503C] bg-white text-[#64503C] hover:bg-white md:-right-12" />
 					</Carousel>
 				) : (
-					<div className="rounded-lg border border-dashed border-[#73383E]/40 bg-white/60 px-6 py-10 text-center text-[#73383E]">
+					<div className="rounded-lg border border-dashed border-[#64503C]/40 bg-white/60 px-6 py-10 text-center text-[#64503C]">
 						No Tech Advantage cards found in Sanity.
 					</div>
 				)}
@@ -312,7 +312,7 @@ export const TechAdvantageSection = ({ sectionData }: Props) => {
 							)}
 						</>
 					) : (
-						<div className="aspect-video w-full rounded-lg border border-dashed border-[#73383E]/40 bg-white/60" />
+						<div className="aspect-video w-full rounded-lg border border-dashed border-[#64503C]/40 bg-white/60" />
 					)}
 				</motion.div>
 			</div>

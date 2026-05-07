@@ -5,8 +5,8 @@ export default function Loading() {
 		<div className="w-full h-screen flex items-center justify-center animate-spin ">
 			<Loader2
 				size={40}
-				color="#73383E"
-				className="text-[#73383E]"
+				color="#64503C"
+				className="text-[#64503C]"
 			/>
 		</div>
 	);
