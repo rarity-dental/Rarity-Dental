@@ -23,11 +23,11 @@ export const FloatingWhatsAppButton = () => {
 			</div>
 			<div className="pointer-events-auto h-[60px] w-full bg-black flex justify-center items-center md:hidden">
 				<a
-					href="tel:+917899418483"
+					href="tel:+918796319927"
 					className="w-1/2 flex justify-center gap-[5%] items-center h-full text-center border border-slate-300 text-white">
 					<PhoneIcon />
 					<p className="text-white font-poppins text-sm">
-						+91-7899418483
+						+91-8796319927
 					</p>
 				</a>
 				<a

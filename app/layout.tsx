@@ -73,7 +73,7 @@ export default function RootLayout({
 									url: "https://www.raritydental.com",
 									logo: "https://www.raritydental.com/images/logo-copyColor-text.png",
 									image: "https://www.raritydental.com/images/og-img.jpg",
-									telephone: "+91-7899418483",
+									telephone: "+91-8796319927",
 									email: "info@raritydental.com",
 									address: {
 										"@type": "PostalAddress",
@@ -116,7 +116,7 @@ export default function RootLayout({
 									logo: "https://www.raritydental.com/images/logo-copyColor-text.png",
 									contactPoint: {
 										"@type": "ContactPoint",
-										telephone: "+91-7899418483",
+										telephone: "+91-8796319927",
 										contactType: "customer service",
 										availableLanguage: ["English", "Hindi"],
 									},

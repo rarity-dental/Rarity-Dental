@@ -54,7 +54,7 @@ export const Navbar = () => {
 							122002 | Timings: 9-7 pm Mon - Sat
 						</p>
 						<Link
-							href="tel:+917899418483"
+							href="tel:+918796319927"
 							aria-label="phone"
 							className="flex md:hidden transition-all duration-8000 ease-in-out gap-x-2 justify-center items-center  cursor-pointer ">
 							<PhoneIcon
@@ -63,7 +63,7 @@ export const Navbar = () => {
 								className=" text-white"
 							/>
 							<p className="text-sm font-bold text-white tracking wider font-dmSans md:font-poppins">
-								+91-7899418483
+								+91-8796319927
 							</p>
 						</Link>
 					</div>

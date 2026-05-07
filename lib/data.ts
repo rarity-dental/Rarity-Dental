@@ -971,8 +971,8 @@ export const contactLinks = [
 		icon: "https://firebasestorage.googleapis.com/v0/b/casamed-6ec79.appspot.com/o/beyond-dental%2Fimages%2Fmail-icon.svg?alt=media&token=a0d0db7c-3311-4b52-a133-9a8a4c4d7921",
 	},
 	{
-		name: "(+91) 789-9418-483",
-		link: "tel:+917899418483",
+		name: "(+91) 879-6319-927",
+		link: "tel:+918796319927",
 		icon: "https://firebasestorage.googleapis.com/v0/b/casamed-6ec79.appspot.com/o/beyond-dental%2Fimages%2Fcall-icon.svg?alt=media&token=561d81e3-1131-4de3-a0a5-e76b2e3cb264",
 	},
 	{
@@ -984,7 +984,7 @@ export const contactLinks = [
 
 export const addressLinks = [
 	{
-		name: "MON-SAT / 9 AM - 7 PM",
+		name: "MON-SAT / 9 AM - 8 PM",
 		link: "#",
 		icon: "https://firebasestorage.googleapis.com/v0/b/casamed-6ec79.appspot.com/o/beyond-dental%2Fimages%2Ftimings-icon.svg?alt=media&token=7b25765b-454a-4463-9848-095425fec008",
 	},

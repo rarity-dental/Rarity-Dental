@@ -188,7 +188,7 @@ export default function PrivacyPolicyPage() {
 							<strong className="text-copyColor font-poppins">
 								Phone:
 							</strong>{" "}
-							+91-7899418483
+							+91-8796319927
 						</li>
 						<li>
 							<strong className="text-copyColor">Address:</strong>{" "}

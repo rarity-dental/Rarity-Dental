@@ -165,7 +165,7 @@ export function NavigationMenuItems() {
 					))}
 				<NavigationMenuItem className="pl-4">
 					<Link
-						href="tel:+917899418483"
+						href="tel:+918796319927"
 						className="transition-all duration-8000 ease-in-out flex gap-x-2 justify-center items-center  cursor-pointer ">
 						<PhoneIcon
 							width={20}
@@ -173,7 +173,7 @@ export function NavigationMenuItems() {
 							className="text-base text-white"
 						/>
 						<span className="text-sm text-white font-poppins">
-							+91-7899418483
+							+91-8796319927
 						</span>
 					</Link>
 				</NavigationMenuItem>
