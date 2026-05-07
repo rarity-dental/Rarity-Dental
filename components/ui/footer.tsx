@@ -49,7 +49,7 @@ interface FooterProps {
 
 export const Footer = ({ hasEndDiv = true }: FooterProps) => {
 	return (
-		<div className="bg-[#322D29] pt-16 md:pt-48 lg:pt-36 pb-[152px] md:pb-10 w-full flex flex-col gap-y-[44px] justify-center items-center relative footer-start">
+		<div className="bg-[#3D3028] pt-16 md:pt-48 lg:pt-36 pb-[152px] md:pb-10 w-full flex flex-col gap-y-[44px] justify-center items-center relative footer-start">
 			{hasEndDiv && <PageStartDiv />}
 
 			<div className="flex flex-col xl:flex-row gap-[50px] items-start md:items-center max-w-[300px] md:max-w-2xl lg:max-w-[1280px] mx-auto h-auto lg:h-[282px] justify-center px-4">

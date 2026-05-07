@@ -48,42 +48,42 @@ const trustReasons = [
 		title: "Globally Trained Experts",
 		description:
 			"Our doctors are trained in the US, UK, and Germany, bringing international expertise directly to you.",
-		color: "bg-[#73383E]/10 text-[#73383E]",
+		color: "bg-[#64503C]/10 text-[#64503C]",
 	},
 	{
 		icon: Heart,
 		title: "Personal Touch",
 		description:
 			"We take time to listen, understand your story, and craft treatment plans that feel right for you.",
-		color: "bg-[#73383E]/10 text-[#73383E]",
+		color: "bg-[#64503C]/10 text-[#64503C]",
 	},
 	{
 		icon: ShieldCheck,
 		title: "International Standards",
 		description:
 			"From sterilisation to aftercare, we follow the strictest global hygiene protocols.",
-		color: "bg-[#73383E]/10 text-[#73383E]",
+		color: "bg-[#64503C]/10 text-[#64503C]",
 	},
 	{
 		icon: Sparkles,
 		title: "State-of-the-Art",
 		description:
 			"CBCT scans, digital smile design, and AI-based planning tools ensure precision.",
-		color: "bg-[#73383E]/10 text-[#73383E]",
+		color: "bg-[#64503C]/10 text-[#64503C]",
 	},
 	{
 		icon: Users,
 		title: "Seamless Experience",
 		description:
 			"For international patients, we manage everything—transfers, accommodation, treatment, aftercare.",
-		color: "bg-[#73383E]/10 text-[#73383E]",
+		color: "bg-[#64503C]/10 text-[#64503C]",
 	},
 	{
 		icon: Award,
 		title: "Proven Trust",
 		description:
 			"Over 15,000 patients from 32+ countries have trusted us for life-changing dental journeys.",
-		color: "bg-[#73383E]/10 text-[#73383E]",
+		color: "bg-[#64503C]/10 text-[#64503C]",
 	},
 ];
 
@@ -99,7 +99,7 @@ export default function AboutUsPage() {
 			{/* Hero Section */}
 
 			{/* Hero with Overlay */}
-			<header className="relative bg-[#73383E] to-accent text-primary-foreground py-32 overflow-hidden">
+			<header className="relative bg-[#64503C] to-accent text-primary-foreground py-32 overflow-hidden">
 				<div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(115,56,62,0.1),transparent)]"></div>
 				<div
 					className={`container mx-auto px-6 text-center relative z-10 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
@@ -114,10 +114,10 @@ export default function AboutUsPage() {
 						Where World-Class Expertise Meets Warmth
 					</p>
 				</div>
-				<div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-[#73383E] to-transparent"></div>
+				<div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-[#64503C] to-transparent"></div>
 			</header>
 
-			{/* <section className="bg-[url('/images/herobg_about_mobile.webp')] bg-contain bg-no-repeat bg-[#73383E]/90 w-full bg-center h-[80vh]"></section> */}
+			{/* <section className="bg-[url('/images/herobg_about_mobile.webp')] bg-contain bg-no-repeat bg-[#64503C]/90 w-full bg-center h-[80vh]"></section> */}
 			{/* Stats Section - Animated */}
 			<section className="py-16  relative z-20 px-4">
 				<div className="container mx-auto px-6">
@@ -132,11 +132,11 @@ export default function AboutUsPage() {
 										animationDelay: `${index * 100}ms`,
 									}}>
 									<div className="mb-3 flex justify-center">
-										<div className="p-3 rounded-full bg-[#73383E]/10 group-hover:bg-[#73383E]/20 transition-colors">
-											<Icon className="w-6 h-6 text-[#73383E]" />
+										<div className="p-3 rounded-full bg-[#64503C]/10 group-hover:bg-[#64503C]/20 transition-colors">
+											<Icon className="w-6 h-6 text-[#64503C]" />
 										</div>
 									</div>
-									<div className="text-3xl md:text-4xl font-bold text-[#73383E] mb-2">
+									<div className="text-3xl md:text-4xl font-bold text-[#64503C] mb-2">
 										{stat.number}
 									</div>
 									<div className="text-sm text-muted-foreground uppercase tracking-wide">
@@ -155,12 +155,12 @@ export default function AboutUsPage() {
 					<div className="grid md:grid-cols-2 gap-16 items-center">
 						<div className="order-2 md:order-1 animate-slide-in-left">
 							<div className="relative">
-								<div className="absolute -top-8 -left-8 w-32 h-32 bg-[#73383E]/5 rounded-full blur-3xl"></div>
-								<div className="relative bg-gradient-to-br from-[#73383E]/5 to-accent/5 p-12 rounded-2xl border border-border/50">
+								<div className="absolute -top-8 -left-8 w-32 h-32 bg-[#64503C]/5 rounded-full blur-3xl"></div>
+								<div className="relative bg-gradient-to-br from-[#64503C]/5 to-accent/5 p-12 rounded-2xl border border-border/50">
 									<div className="space-y-6">
 										<div className="flex items-center gap-4">
-											<div className="p-3 rounded-full bg-[#73383E]/10">
-												<Sparkles className="w-8 h-8 text-[#73383E]" />
+											<div className="p-3 rounded-full bg-[#64503C]/10">
+												<Sparkles className="w-8 h-8 text-[#64503C]" />
 											</div>
 											<h3 className="text-2xl font-bold">
 												Rare Excellence
@@ -173,8 +173,8 @@ export default function AboutUsPage() {
 											warmth and empathy.
 										</p>
 										<div className="flex items-center gap-4 pt-4">
-											<div className="p-3 rounded-full bg-[#73383E]/10">
-												<Heart className="w-8 h-8 text-[#73383E]" />
+											<div className="p-3 rounded-full bg-[#64503C]/10">
+												<Heart className="w-8 h-8 text-[#64503C]" />
 											</div>
 											<h3 className="text-2xl font-bold">
 												Premium Care
@@ -196,7 +196,7 @@ export default function AboutUsPage() {
 							</p>
 							<h2 className="text-5xl md:text-6xl font-bold text-foreground mb-8 leading-tight">
 								What Makes Us a <br />
-								<span className="text-[#73383E]">Rarity</span>
+								<span className="text-[#64503C]">Rarity</span>
 							</h2>
 							<div className="space-y-6">
 								<p className="text-lg leading-relaxed text-foreground/90">
@@ -225,8 +225,8 @@ export default function AboutUsPage() {
 
 				{/* Who We're For - with Background */}
 				<section className="mb-32">
-					<div className="relative bg-[#73383E]/5 rounded-3xl p-12 md:p-16 border border-border/50">
-						<div className="absolute top-0 right-0 w-64 h-64 bg-[#73383E]/5 rounded-full blur-3xl -z-10"></div>
+					<div className="relative bg-[#64503C]/5 rounded-3xl p-12 md:p-16 border border-border/50">
+						<div className="absolute top-0 right-0 w-64 h-64 bg-[#64503C]/5 rounded-full blur-3xl -z-10"></div>
 						<div className="text-center mb-12">
 							<p className="text-xs uppercase tracking-widest text-muted-foreground mb-4 font-medium">
 								FOR YOU
@@ -234,32 +234,32 @@ export default function AboutUsPage() {
 							<h2 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
 								Who We&apos;re For
 							</h2>
-							<SeparatorHorizontal className="w-24 mx-auto bg-[#73383E] h-0.5" />
+							<SeparatorHorizontal className="w-24 mx-auto bg-[#64503C] h-0.5" />
 						</div>
 
 						<div className="prose prose-lg max-w-4xl mx-auto text-center space-y-6">
 							<p className="text-lg leading-relaxed text-foreground/90">
 								Rarity Dental is for anyone who wants the very
 								best for their smile. Whether you are from{" "}
-								<span className="font-semibold text-[#73383E]">
+								<span className="font-semibold text-[#64503C]">
 									New Delhi, Gurgaon, Mumbai, Indore, Pune,
 									Bangalore, Surat
 								</span>
 								, or any other part of India—or traveling from
 								abroad such as{" "}
-								<span className="font-semibold text-[#73383E]">
+								<span className="font-semibold text-[#64503C]">
 									Australia, New Zealand, the United States,
 									Canada, the UK, Europe, or the Middle East
 								</span>
 								—we welcome you like family.
 							</p>
-							<p className="text-lg leading-relaxed text-[#73383E]/90">
+							<p className="text-lg leading-relaxed text-[#64503C]/90">
 								We provide world-class dental care at a fraction
 								of global costs, without ever compromising on
 								safety, quality, or comfort.
 							</p>
 							<div className="pt-8">
-								<Card className="inline-block px-8 py-4 bg-[#73383E] text-primary-foreground border-0 shadow-lg group cursor-pointer hover:shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95">
+								<Card className="inline-block px-8 py-4 bg-[#64503C] text-primary-foreground border-0 shadow-lg group cursor-pointer hover:shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95">
 									<a
 										href="#formDiv"
 										className="text-xl font-semibold ">
@@ -281,7 +281,7 @@ export default function AboutUsPage() {
 						<h2 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
 							Why Patients Trust Us
 						</h2>
-						<SeparatorHorizontal className="w-24 mx-auto bg-[#73383E] h-0.5" />
+						<SeparatorHorizontal className="w-24 mx-auto bg-[#64503C] h-0.5" />
 					</div>
 
 					<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -290,8 +290,8 @@ export default function AboutUsPage() {
 							return (
 								<Card
 									key={index}
-									className="p-8 bg-card border-border hover:border-[#73383E]/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group cursor-pointer relative overflow-hidden">
-									<div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#73383E]/5 to-transparent rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
+									className="p-8 bg-card border-border hover:border-[#64503C]/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group cursor-pointer relative overflow-hidden">
+									<div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#64503C]/5 to-transparent rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
 									<div className="relative z-10">
 										<div
 											className={`w-16 h-16 rounded-xl ${reason.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
@@ -314,7 +314,7 @@ export default function AboutUsPage() {
 				<section className="mb-32">
 					<div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
 						{/* Mission */}
-						<Card className="p-10 bg-[#73383E] text-primary-foreground border-0 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
+						<Card className="p-10 bg-[#64503C] text-primary-foreground border-0 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
 							<div className="text-center">
 								<div className="mb-6">
 									<div className="w-16 h-16 bg-primary-foreground/20 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -338,7 +338,7 @@ export default function AboutUsPage() {
 						</Card>
 
 						{/* Vision */}
-						<Card className="p-10 bg-[#73383E] text-primary-foreground border-0 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
+						<Card className="p-10 bg-[#64503C] text-primary-foreground border-0 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
 							<div className="text-center">
 								<div className="mb-6">
 									<div className="w-16 h-16 bg-primary-foreground/20 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -362,10 +362,10 @@ export default function AboutUsPage() {
 						</Card>
 
 						{/* Goals */}
-						<Card className="p-10 bg-[#73383E] to-accent text-primary-foreground border-0 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
+						<Card className="p-10 bg-[#64503C] to-accent text-primary-foreground border-0 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
 							<div className="text-center">
 								<div className="mb-6">
-									<div className="w-16 h-16 bg-[#73383E]/20 rounded-full flex items-center justify-center mx-auto mb-4">
+									<div className="w-16 h-16 bg-[#64503C]/20 rounded-full flex items-center justify-center mx-auto mb-4">
 										<Award className="w-8 h-8" />
 									</div>
 									<p className="text-xs uppercase tracking-widest opacity-90 mb-2 font-medium">
@@ -411,11 +411,11 @@ export default function AboutUsPage() {
 
 				{/* Why Choose - Final CTA */}
 				<section className="mb-20">
-					<div className="relative bg-[#73383E] text-primary-foreground rounded-3xl p-16 md:p-20 text-center shadow-2xl overflow-hidden">
+					<div className="relative bg-[#64503C] text-primary-foreground rounded-3xl p-16 md:p-20 text-center shadow-2xl overflow-hidden">
 						{/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(115,56,62,0.1),transparent)]"></div> */}
 						<div className="relative z-10">
 							<div className="mb-6 flex justify-center">
-								<div className="p-4 bg-[#73383E]/20 rounded-full animate-float">
+								<div className="p-4 bg-[#64503C]/20 rounded-full animate-float">
 									<Sparkles className="w-12 h-12" />
 								</div>
 							</div>

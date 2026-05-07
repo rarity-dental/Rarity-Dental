@@ -26,7 +26,8 @@ const config = {
 			},
 			colors: {
 				border: "hsl(var(--border))",
-				copyColor: "#73383E",
+				//Palette Block obsidian: "#1A1614", // hero, nav, footer "deep-walnut": "#3D3028", // dark sections "rich-brown": "#64503C", // feature accents "deep-taupe": "#8C7864", // borders, secondary text "warm-taupe": "#B4A08C", // dividers, texture gold: "#C9A96E", // CTAs, hover accents champagne: "#D8CCBA", // body text on dark bg "muted-rose": "#C8B4B4", // soft highlights cream: "#EDE8DF", // alternating section bg "warm-ivory": "#F7F4EF", // primary light bg copyColor: "#64503C",
+				copyColor: "#64503C",
 				input: "hsl(var(--input))",
 				ring: "hsl(var(--ring))",
 				background: "hsl(var(--background))",

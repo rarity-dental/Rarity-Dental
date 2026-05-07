@@ -10,7 +10,7 @@ export const ValuesSection = () => {
 				containIntrinsicSize: "800px",
 			}}>
 			<div className="flex flex-col w-full md:w-1/2 justify-center  items-center md:items-start">
-				<h2 className="text-[14px] tracking-widest leading-relaxed font-semibold uppercase text-[#73383E] font-poppins mb-[12px]">
+				<h2 className="text-[14px] tracking-widest leading-relaxed font-semibold uppercase text-[#64503C] font-poppins mb-[12px]">
 					OUR VALUES
 				</h2>
 				<h2 className="text-[24px] md:text-[32px] font-normal text-copyColor mb-[20px] leading-[1.1em] text-center md:text-left 4xl:leading-snug">

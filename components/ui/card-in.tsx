@@ -99,7 +99,7 @@ export const Card = ({
 
 				{hasOverlay && (
 					<div
-						className={`absolute top-0 left-0 bg-[#73383E] w-full h-full transition-opacity duration-500 ease-in-out flex flex-col justify-center items-center z-0 ${
+						className={`absolute top-0 left-0 bg-[#64503C] w-full h-full transition-opacity duration-500 ease-in-out flex flex-col justify-center items-center z-0 ${
 							showOverlay
 								? "opacity-80"
 								: "opacity-0 pointer-events-none"
@@ -114,8 +114,8 @@ export const Card = ({
 								rel="noopener noreferrer"
 								onClick={(e) => e.stopPropagation()}
 								className={`flex justify-center items-center px-4 py-1.5 bg-white  z-10 mt-[5%] bg-opacity-100 bg-blur-10 transition-all duration-300 ease-in-out gap-x-2 lg:hover:scale-105 lg:hover:bg-opacity-100 lg:hover:shadow-md rounded-md active:scale-95 cursor-pointer `}>
-								<InfoIcon size={24} color="#73383E" />
-								<span className="text-[18px] text-[#73383E] font-semibold">Know more</span>
+								<InfoIcon size={24} color="#64503C" />
+								<span className="text-[18px] text-[#64503C] font-semibold">Know more</span>
 							</Link>
 						</Button>
 					</div>
@@ -124,7 +124,7 @@ export const Card = ({
 
 			<h3
 				className={`text-[18px] md:text-[24px] py-1.5 font-semibold text-center ${
-					hasOverlay ? "bg-[#73383E]" : ""
+					hasOverlay ? "bg-[#64503C]" : ""
 				}  `}
 				style={{ color: textColor }}>
 				{title}
@@ -165,7 +165,7 @@ export const Card = ({
 					<Button
 						asChild
 						variant={"outline"}
-						className={` bg-transparent min-w-[128px] h-[44px] text-[#73383E] text-[14px] py-2 px-4 border border-[#73383E] rounded-none font-poppins font-semibold hover:bg-[#73383E] hover:text-white hover:border-transparent transition-all duration-300 ease-in-out`}>
+						className={` bg-transparent min-w-[128px] h-[44px] text-[#64503C] text-[14px] py-2 px-4 border border-[#64503C] rounded-none font-poppins font-semibold hover:bg-[#64503C] hover:text-white hover:border-transparent transition-all duration-300 ease-in-out`}>
 						<Link href={"#formDiv"}>{buttonText}</Link>
 					</Button>
 				</div>

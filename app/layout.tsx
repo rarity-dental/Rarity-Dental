@@ -58,7 +58,7 @@ export default function RootLayout({
 				/>
 			</head>
 			<body
-				className={`${belleza.variable} ${poppins.variable} font-belleza bg-[#F7F2EC] relative`}>
+				className={`${belleza.variable} ${poppins.variable} font-belleza bg-[#F7F4EF] relative`}>
 				<script
 					type="application/ld+json"
 					dangerouslySetInnerHTML={{

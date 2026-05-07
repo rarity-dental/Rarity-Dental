@@ -28,7 +28,7 @@ export const Navbar = () => {
 				} as React.CSSProperties
 			}>
 			<div className="absolute inset-0 bg-black bg-opacity-50  pointer-events-none" />
-			<div className="absolute top-0 left-0 w-full bg-[#1A1414] h-8   ">
+			<div className="absolute top-0 left-0 w-full bg-[#1A1614] h-8   ">
 				<div className="max-w-[372px] px-2 md:px-0 md:max-w-2xl lg:max-w-5xl xl:max-w-7xl mx-auto h-full">
 					<div className="flex justify-between items-center h-full">
 						<div className="flex gap-x-2">
@@ -93,9 +93,9 @@ export const Navbar = () => {
 					</div>
 				</div>
 			</div>
-			<div className="absolute h-2 w-full -bottom-2 left-0 bg-[#d4b89d]">
+			<div className="absolute h-2 w-full -bottom-2 left-0 bg-[#C9A96E]">
 				<motion.div
-					className="bg-[#b67e59] w-full h-2 origin-[0%]"
+					className="bg-[#C9A96E] w-full h-2 origin-[0%]"
 					style={{ scaleX }}
 				/>
 			</div>

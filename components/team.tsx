@@ -63,14 +63,14 @@ export const Team = ({ hasEndDiv = true }: TeamProps) => {
 				<PageStartDiv />
 				{hasEndDiv && <PageEndDiv />}
 				<div className="pt-[75px] md:pt-36 pb-12 flex flex-col justify-center items-center">
-					<h2 className="text-center text-[14px] tracking-widest leading-relaxed font-semibold mb-6 uppercase text-[#73383E] font-poppins">
+					<h2 className="text-center text-[14px] tracking-widest leading-relaxed font-semibold mb-6 uppercase text-[#64503C] font-poppins">
 						Our Team
 					</h2>
 					<h2 className="text-center text-[28px] md:text-[48px] font-normal text-copyColor max-w-[342px] sm:max-w-[480px] md:max-w-[600px] mx-auto leading-[1em] ">
 						Meet Our Globally Trusted Team of Dental Specialists
 					</h2>
 
-					<p className="text-center text-lg tracking-widest leading-relaxed font-semibold mt-3 uppercase text-[#73383E]/70 font-poppins">
+					<p className="text-center text-lg tracking-widest leading-relaxed font-semibold mt-3 uppercase text-[#64503C]/70 font-poppins">
 						Based in Gurgaon
 					</p>
 				</div>

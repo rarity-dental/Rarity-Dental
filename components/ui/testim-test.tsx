@@ -67,7 +67,7 @@ export const TestimonialSection: React.FC = () => {
 			stars.push(
 				<StarIcon
 					key={`full-${i}`}
-					className="text-[#73383E]"
+					className="text-[#64503C]"
 					fill="currentColor"
 					size={24}
 				/>
@@ -79,7 +79,7 @@ export const TestimonialSection: React.FC = () => {
 				<StarHalfIcon
 					size={24}
 					key={`half-${fullStars}`}
-					className="text-[#73383E]"
+					className="text-[#64503C]"
 					fill="currentColor"
 				/>
 			);
@@ -128,7 +128,7 @@ export const TestimonialSection: React.FC = () => {
 									zIndex: index === activeIndex ? 10 : 1,
 									boxShadow:
 										index === activeIndex
-											? "inset 0 0 0 10px #73383E"
+											? "inset 0 0 0 10px #64503C"
 											: "none",
 								}}>
 								<AnimatePresence mode="wait">

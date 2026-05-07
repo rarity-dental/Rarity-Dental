@@ -36,7 +36,7 @@ export const RelatedSpecialisedTreatments = ({
 					fontWeight: "bold",
 					marginTop: "2rem",
 					marginBottom: "1rem",
-					color: "#73383e",
+					color: "#64503C",
 				}}>
 				Explore Other Specialised Treatments
 			</h2>

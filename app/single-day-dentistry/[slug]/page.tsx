@@ -111,7 +111,7 @@ export default async function SingleDayDentistryPage({
 			id="form">
 			<a
 				href="#form"
-				className="fixed top-[40%] right-0 w-12 h-[18rem] bg-[#86806c] z-[10] cursor-pointer hover:bg-[#2a2424] transition-colors duration-300 group rounded-l-lg overflow-hidden">
+				className="fixed top-[40%] right-0 w-12 h-[18rem] bg-[#8C7864] z-[10] cursor-pointer hover:bg-[#3D3028] transition-colors duration-300 group rounded-l-lg overflow-hidden">
 				<div className="absolute w-[18rem] h-12 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
 					<div className="w-full h-full flex items-center justify-center -rotate-90 text-white font-bold tracking-[0.15em] text-2xl">
 						Talk To An Expert
@@ -246,11 +246,11 @@ export default async function SingleDayDentistryPage({
 							<Button
 								variant={"defaultWhite"}
 								className="group relative px-[40px] py-[20px] gap-x-[16px] bg-copyColor/15 rounded-none h-auto md:h-[60px] z-10 w-[242px] md:w-auto overflow-hidden border border-copyColor">
-								<span className="uppercase text-[12px] md:text-[14px] font-poppins font-semibold tracking-wide text-[#73383E] transition-colors duration-500 ease-out relative z-10 group-hover:text-white">
+								<span className="uppercase text-[12px] md:text-[14px] font-poppins font-semibold tracking-wide text-[#64503C] transition-colors duration-500 ease-out relative z-10 group-hover:text-white">
 									Connect with us
 								</span>
 								<div className="w-[20px] h-[20px] bg-[url('/images/arrow-right-brown.svg')] bg-cover transition-all duration-500 ease-out relative z-10 group-hover:bg-[url('/images/arrow-right-white.svg')]" />
-								<div className="absolute inset-0 bg-[#73383E] translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out" />
+								<div className="absolute inset-0 bg-[#64503C] translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out" />
 							</Button>
 						</a>
 					</div>
@@ -341,12 +341,12 @@ export default async function SingleDayDentistryPage({
 					<a href="#form">
 						<Button
 							variant={"defaultWhite"}
-							className="group relative px-[40px] py-[20px] gap-x-[16px] bg-[#f7f2ec] rounded-lg h-auto md:h-[60px] z-10 w-[242px] md:w-auto overflow-hidden border-4  border-[#86806c]">
-							<span className="uppercase text-[12px] md:text-xl font-poppins font-semibold tracking-wide text-[#73383E] transition-colors duration-500 ease-out relative z-10 group-hover:text-white">
+							className="group relative px-[40px] py-[20px] gap-x-[16px] bg-[#F7F4EF] rounded-lg h-auto md:h-[60px] z-10 w-[242px] md:w-auto overflow-hidden border-4  border-[#8C7864]">
+							<span className="uppercase text-[12px] md:text-xl font-poppins font-semibold tracking-wide text-[#64503C] transition-colors duration-500 ease-out relative z-10 group-hover:text-white">
 								Click Here
 							</span>
 							<div className="w-[20px] h-[20px] bg-[url('/images/arrow-right-brown.svg')] bg-cover transition-all duration-500 ease-out relative z-10 group-hover:bg-[url('/images/arrow-right-white.svg')]" />
-							<div className="absolute inset-0 bg-[#73383E]/50 translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out" />
+							<div className="absolute inset-0 bg-[#64503C]/50 translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out" />
 						</Button>
 					</a>
 				</div>
